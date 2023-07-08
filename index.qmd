@@ -1,0 +1,50 @@
+---
+logo: "img/wtf-logo-square-transparent.png"
+format: 
+  revealjs: 
+    theme: [night, slides.scss]
+    highlight-style: a11y
+    transition: fade
+    slide-number: true
+    chalkboard: true
+    navigation-mode: linear
+    controls: false
+    mermaid-format: svg
+execute:
+  freeze: auto
+from: markdown+emoji
+---
+
+# Using Version Control {background-image="img/forks.jpg"}
+
+## motivation
+
+::: notes
+let's talk about how we're not solving the problem:
+
+If you and I need to collaborate on a document _today_, what options do we have?
+what version of the document is the authoritative one?
+if you and I change the same thing:
+how do we discover that we did this?
+how do we know whose edits win?
+
+warm up discussion: consider these mechanisms for shared editing
+
+- dropbox
+- email attachments
+- shared drive
+- a google doc
+
+Limitations:
+You have to trust dropbox to figure out conflicts for you and then hope they got it right
+every email attachment of the document is a new, potentially authortiative copy and this gets increasingly confusing as you add collaborators
+we may not have access to the same proprietary program for editing
+shared drive: typically only one person can modify the program at a time, depends on shared disk access
+google docs are pretty good, actually, until we start talking about code
+
+what if you're working on code? what if your collaborators are strangers? what if they're halfway around the world?
+
+plain text is a least common denominator
+we're not assuming access to shared hardware
+we are assuming that collaboration is async
+:::
