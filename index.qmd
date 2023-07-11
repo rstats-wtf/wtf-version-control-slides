@@ -52,8 +52,9 @@ we are assuming that collaboration is async
 ## agenda
 
 - terminology
-- happy paths
+- workflows: I
 - tools
+- workflows: II
 - unhappy paths
 
 # terminology
@@ -68,7 +69,7 @@ we are assuming that collaboration is async
 
 ## stage
 
-# happy paths
+# workflows: I
 
 solo
 
@@ -86,7 +87,7 @@ Changes not staged for commit:
 
 ```
 
-## 
+## start locally
 
 ```bash
 git init
@@ -97,4 +98,44 @@ git commit
 ## `EDITOR`
 
 vim, nano
+
+## publish to github
+
+[existing project, github first](https://happygitwithr.com/existing-github-first.html)
+
+## push, pull
+
+# tools
+
+## `{prompt}`
+
+https://github.com/gaborcsardi/prompt
+
+## starship
+
+https://starship.rs/
+
+##  gh
+
+https://cli.github.com/
+
+## vs code
+
+https://code.visualstudio.com/
+
+# workflows: II
+
+## branch
+
+## merge
+
+## PRs
+
+## clean
+
+generated files chat
+
+# unhappy paths
+
+## merge conflicts
 
