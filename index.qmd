@@ -17,7 +17,18 @@ from: markdown+emoji
 
 # Using Version Control {background-image="img/forks.jpg"}
 
-## motivation
+## imagine we need to work on a paper together
+
+how could you do that?
+
+::: fragment
+::: {layout-nrow=1}
+![dropbox](img/dropbox.svg){width=20%}
+![shared drive](img/fileserver.svg){width=20%}
+![email](img/email.png){width=20%}
+![google docs](img/googledocs.svg){width=20%}
+:::
+:::
 
 ::: notes
 let's talk about how we're not solving the problem:
@@ -34,6 +45,7 @@ warm up discussion: consider these mechanisms for shared editing
 - email attachments
 - shared drive
 - a google doc
+- sharepoint
 
 Limitations:
 You have to trust dropbox to figure out conflicts for you and then hope they got it right
@@ -49,6 +61,10 @@ we're not assuming access to shared hardware
 we are assuming that collaboration is async
 :::
 
+## on plain text
+
+![beware](img/evernote.png)
+
 ## agenda
 
 - terminology
@@ -59,15 +75,66 @@ we are assuming that collaboration is async
 
 # terminology
 
+## git
+
+_distributed_ version control system
+
+::: notes
+distributed = we all have a copy
+contrast with other approaches where there is only one copy an
+:::
+
 ## repository
+
+```shell
+./
+├── ChangeLog
+├── config.site
+├── configure*
+├── configure.ac
+├── configure.patch
+├── COPYING
+├── doc/
+├── etc/
+├── INSTALL
+├── m4/
+├── Makeconf.in
+├── Makefile.fw
+├── Makefile.in
+├── po/
+├── README
+├── share/
+├── src/
+├── tests/
+├── tools/
+├── VERSION
+└── VERSION-NICK
+```
+
+::: notes
+a repository is a a project
+opinions on the scope of what belongs in a single repository vary widely
+monorepos?
+:::
 
 ## remote
 
+git vs. github / gitlab / bitbucket
+
 ## commit
+
+```{mermaid}
+gitGraph
+  commit id: "initial commit"
+  commit id: "snapshot one"
+  commit id: "snapshot two"
+```
 
 ## diff
 
 ## stage
+
+`git add`
 
 # workflows: I
 
@@ -125,17 +192,53 @@ https://code.visualstudio.com/
 
 # workflows: II
 
-## branch
-
-## merge
-
-## PRs
+## gitignore
 
 ## clean
 
 generated files chat
 
+## branch
+
+```{mermaid}
+gitGraph
+  commit
+  commit
+  commit
+  branch experiment
+  checkout experiment
+  commit
+```
+
+## merge
+
+
+```{mermaid}
+gitGraph
+  commit
+  commit
+  commit
+  branch experiment
+  checkout experiment
+  commit
+  checkout main
+  merge experiment
+```
+
+## PRs
+
 # unhappy paths
 
 ## merge conflicts
 
+```{mermaid}
+gitGraph
+  commit
+  commit
+  commit
+  branch experiment
+  checkout experiment
+  commit
+  checkout main
+  commit
+```
