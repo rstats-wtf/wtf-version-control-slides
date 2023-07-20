@@ -157,14 +157,6 @@ a snapshot of project state
 the difference between  _any_ two project snapshots
 :::
 
-## stage
-
-`git stage`
-
-::: notes
-all the documentation you will ever see is for `git add`
-:::
-
 # workflows: I
 
 
@@ -230,6 +222,11 @@ Changes to be committed:
 	new file:   _quarto.yml
 	new file:   index.qmd
 ```
+
+::: notes
+all the documentation you will ever see is for `git add`
+:::
+
 
 ## new project, who dis
 
