@@ -153,8 +153,16 @@ a snapshot of project state
 
 ## diff
 
+```{mermaid}
+gitGraph
+  commit id: "initial commit"
+  commit id: "snapshot one"
+  commit id: "snapshot two"
+```
+
 ::: notes
 the difference between  _any_ two project snapshots
+draw on the slides!
 :::
 
 # workflows: I
