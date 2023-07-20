@@ -178,18 +178,43 @@ cd intro-git
 git init
 ```
 
+::: notes
+inspect the directory
+hidden files
+presence of `.git` is what makes it a repository
+you can be a productive user of git without deeply understanding the contents of that directory
+:::
+
 ## `git status`
 
-```shell
+run often
+
+## `git status`
+
+```bash
+intro-git on  main
 ❯ git status
 On branch main
-Your branch is up to date with 'origin/main'.
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   index.qmd
+No commits yet
 
+nothing to commit (create/copy files and use "git add" to track)
+```
+
+## add some files
+
+```bash
+❯ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	_quarto.yml
+	index.qmd
+
+nothing added to commit but untracked files present (use "git add" to track)
 ```
 
 ## `git stage`
@@ -197,28 +222,50 @@ Changes not staged for commit:
 ```bash
 ❯ git status
 On branch main
-Your branch is up to date with 'origin/main'.
+
+No commits yet
 
 Changes to be committed:
-  (use "git restore --staged <file>..." to unstage)
-	modified:   index.qmd
+  (use "git rm --cached <file>..." to unstage)
+	new file:   _quarto.yml
+	new file:   index.qmd
 ```
+
+## new project, who dis
+
+
+::: panel-tabset
+
+### terminal
+
+```bash
+git config --global user.name edavidaja
+git config --global user.email david@posit.cor
+```
+
+### R
+
+```r
+usethis::git_sitrep()
+```
+
+:::
 
 ## `git commit`
 
 
 ```bash
-
 # Please enter the commit message for your changes. Lines starting
 # with '#' will be ignored, and an empty message aborts the commit.
 #
 # On branch main
-# Your branch is up to date with 'origin/main'.
+#
+# Initial commit
 #
 # Changes to be committed:
-#       modified:   index.qmd
-#
-"~/Documents/projects/wtf-version-control-slides/.git/COMMIT_EDITMSG" 13L, 317B
+#       new file:   _quarto.yml
+#       new file:   index.qmd
+"~/Documents/projects/intro-git/.git/COMMIT_EDITMSG" 12L, 255B
 ```
 
 ## `EDITOR`
@@ -238,9 +285,67 @@ start typing
 `CTRL + X` to exit
 :::
 
+## `git commit -m`
+
+```bash
+❯ git commit -m "initial commit"
+[main (root-commit) cab0112] initial commit
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 _quarto.yml
+ create mode 100644 index.qmd
+```
+
+## `git status`
+
+```bash
+❯ git status
+On branch main
+nothing to commit, working tree clean
+```
+
 ## repeat
 
 with rstudio, vscode
+
+## `git log`
+
+```bash
+❯ git log
+commit 3efdc26af7bf6ea223bfa61c6cb4507de632690e (HEAD -> main)
+Author: edavidaja <edavidaja@hey.com>
+Date:   Thu Jul 20 15:03:03 2023 -0400
+
+    added vs code workspace
+
+commit 0d98a3c9cf2a351da39b26adbfad442c834ff8d4
+Author: edavidaja <edavidaja@hey.com>
+Date:   Thu Jul 20 14:55:34 2023 -0400
+
+    added rstudio project files
+
+commit cab0112f6f96bdd82a46e622d8fccd445fc38d17
+Author: edavidaja <edavidaja@hey.com>
+Date:   Thu Jul 20 14:51:23 2023 -0400
+
+    initial commit
+```
+
+
+
+## `git status`
+
+```shell
+❯ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.qmd
+
+```
+
 
 ## publish to github
 
