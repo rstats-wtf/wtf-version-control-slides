@@ -138,6 +138,13 @@ github is how we coordinate
 the authoritative copy is stored by the code host
 :::
 
+## clone / fork
+
+::: notes
+who has permissions to make changes to a consensus copy is managed by the service provider
+forks are for untrusted collaborators / open source salt
+:::
+
 ## commit
 
 ```{mermaid}
@@ -149,6 +156,7 @@ gitGraph
 
 ::: notes
 a snapshot of project state
+shopping cart analogy?
 :::
 
 ## diff
@@ -167,6 +175,44 @@ draw on the slides!
 
 # workflows: I
 
+## systems check
+
+::: panel-tabset
+
+### terminal
+
+```bash
+git config --global --list
+```
+### R
+
+```r
+usethis::git_sitrep()
+```
+:::
+
+
+## systems check
+
+hidden files:
+
+::: panel-tabset
+
+### terminal
+
+```bash
+ls -lha
+```
+
+### {{< fa brands windows >}}
+
+click to "show hidden files"
+
+### {{< fa brands apple >}}
+
+`CMD + SHIFT + .`
+
+:::
 
 ## new project
 
@@ -180,7 +226,6 @@ git init
 
 ::: notes
 inspect the directory
-hidden files
 presence of `.git` is what makes it a repository
 you can be a productive user of git without deeply understanding the contents of that directory
 :::
@@ -233,6 +278,19 @@ Changes to be committed:
 
 ::: notes
 all the documentation you will ever see is for `git add`
+:::
+
+## WINDOWS
+
+```
+$ git add index.qmd
+warning: LF will be replaced by CRLF in index.qmd.
+The file will have its original line endings in your working directory
+```
+
+::: notes
+`\r\n`
+FYI: https://linux.die.net/man/1/dos2unix
 :::
 
 
@@ -334,7 +392,9 @@ Date:   Thu Jul 20 14:51:23 2023 -0400
 
     initial commit
 ```
-
+::: notes
+discuss hashes
+:::
 
 
 ## `git status`
@@ -414,6 +474,8 @@ gitGraph
 ## PRs
 
 # unhappy paths
+
+## push rejection
 
 ## merge conflicts
 
