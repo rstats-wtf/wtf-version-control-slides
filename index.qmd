@@ -17,7 +17,7 @@ from: markdown+emoji
 
 # Using Version Control {background-image="img/forks.jpg"}
 
-## imagine we need to work on a paper together 
+## imagine we need to work on a document together 
 
 how should we do that?  
 
