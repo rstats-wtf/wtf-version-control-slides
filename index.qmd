@@ -214,6 +214,10 @@ click to "show hidden files"
 
 :::
 
+## some terminal basics
+
+whereami, whoami
+
 ## new project
 
 - create project (from rstudio, or terminal)
@@ -435,6 +439,10 @@ https://cli.github.com/
 ## vs code
 
 https://code.visualstudio.com/
+
+## tldr
+
+https://dbrgn.github.io/tealdeer/
 
 # workflows: II
 
