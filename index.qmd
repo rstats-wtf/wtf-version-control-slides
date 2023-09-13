@@ -76,13 +76,46 @@ Be careful about storing valuable IP of yours in places that can take it away fr
 :::
 
 
+# agenda
+
 ## agenda
 
 - terminology
+- terminalogy
 - workflows: I
 - tools
 - workflows: II
 - unhappy paths
+
+## resources
+
+::: columns
+
+::: {.column}
+
+### What They Forgot
+
+[![](./img/wtf-logo-square-transparent.png)](https://rstats.wtf)
+:::
+
+::: {.column}
+
+### Happy Git with R
+
+[![](./img/happy-git.png)](https://happygitwithr.com)
+:::
+
+:::
+
+## goals
+
+![](./img/inception.webp)
+
+::: notes
+our objective is to go deeper
+this workshop will emphasize terminal workflows and preview how other tools layer interactions on top
+choose a workflow that works for you, and pick up sharper tools when needed
+:::
 
 # terminology
 
@@ -173,6 +206,45 @@ the difference between  _any_ two project snapshots
 draw on the slides!
 :::
 
+## `HEAD`
+
+```{mermaid}
+gitGraph
+  commit id: "initial commit"
+  commit id: "snapshot one"
+  commit id: "HEAD"
+```
+
+# terminalogy
+
+## words have meaning
+
+terminal  
+shell  
+command-line interface (CLI)[^so]
+
+[^so]: https://askubuntu.com/a/506628
+
+
+## structure
+
+`command subcommand --long-argument -s`
+
+## navigating
+
+`pwd`  
+`cd`  
+`ls -lha`  
+
+## creating
+
+`mkdir`  
+`rmdir`  
+`touch`  
+`cp`  
+`mv`  
+`rm`
+
 # workflows: I
 
 ## systems check
@@ -213,10 +285,6 @@ click to "show hidden files"
 `CMD + SHIFT + .`
 
 :::
-
-## some terminal basics
-
-whereami, whoami
 
 ## new project
 
@@ -420,7 +488,29 @@ Changes not staged for commit:
 
 [existing project, github first](https://happygitwithr.com/existing-github-first.html)
 
-## push
+## publish to github: setup
+
+```
+git remote add origin https://github.com/edavidaja/intro-git.git
+git branch -M main
+```
+
+## `git push`
+
+```shell
+intro-git on  main
+❯ git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 418 bytes | 418.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/edavidaja/intro-git.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+```
+
 
 # tools
 
@@ -485,6 +575,47 @@ gitGraph
 
 ## push rejection
 
+```shell
+intro-git on  main [⇡] via R v4.2.3
+❯ git push
+To https://github.com/edavidaja/intro-git.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/edavidaja/intro-git.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+## merge strategy
+
+```shell
+intro-git on  main [⇡] via R v4.2.3
+❯ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 636 bytes | 212.00 KiB/s, done.
+From https://github.com/edavidaja/intro-git
+   2bdda53..424444e  main       -> origin/main
+hint: You have divergent branches and need to specify how to reconcile them.
+hint: You can do so by running one of the following commands sometime before
+hint: your next pull:
+hint:
+hint:   git config pull.rebase false  # merge
+hint:   git config pull.rebase true   # rebase
+hint:   git config pull.ff only       # fast-forward only
+hint:
+hint: You can replace "git config" with "git config --global" to set a default
+hint: preference for all repositories. You can also pass --rebase, --no-rebase,
+hint: or --ff-only on the command line to override the configured default per
+hint: invocation.
+fatal: Need to specify how to reconcile divergent branches.
+```
+
+
 ## merge conflicts
 
 ```{mermaid}
@@ -497,4 +628,29 @@ gitGraph
   commit
   checkout main
   commit
+```
+## merge conflict
+
+```shell
+intro-git on  main [⇕] via R v4.2.3
+❯ git pull --rebase
+Auto-merging main.R
+CONFLICT (content): Merge conflict in main.R
+error: could not apply 160ea3e... added tidyverse
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 160ea3e... added tidyverse
+```
+## 
+
+```r
+<<<<<<< HEAD
+library(shiny)
+||||||| parent of 160ea3e (added tidyverse)
+=======
+library(tidyverse)
+>>>>>>> 160ea3e (added tidyverse)
+
 ```
