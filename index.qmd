@@ -15,7 +15,10 @@ execute:
 from: markdown+emoji
 ---
 
-# Using Version Control {background-image="img/forks.jpg"}
+# {background-image="img/forks.jpg"}
+
+<h1><span class="highlight">using version control<span></h1>
+
 
 ## imagine we need to work on a document together 
 
@@ -498,7 +501,6 @@ git branch -M main
 ## `git push`
 
 ```shell
-intro-git on  main
 ❯ git push -u origin main
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -576,7 +578,6 @@ gitGraph
 ## push rejection
 
 ```shell
-intro-git on  main [⇡] via R v4.2.3
 ❯ git push
 To https://github.com/edavidaja/intro-git.git
  ! [rejected]        main -> main (fetch first)
@@ -591,7 +592,6 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ## merge strategy
 
 ```shell
-intro-git on  main [⇡] via R v4.2.3
 ❯ git pull
 remote: Enumerating objects: 5, done.
 remote: Counting objects: 100% (5/5), done.
@@ -632,7 +632,6 @@ gitGraph
 ## merge conflict
 
 ```shell
-intro-git on  main [⇕] via R v4.2.3
 ❯ git pull --rebase
 Auto-merging main.R
 CONFLICT (content): Merge conflict in main.R
