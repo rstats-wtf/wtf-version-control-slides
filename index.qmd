@@ -133,7 +133,7 @@ contrast with other approaches where there is only one copy
 
 ## repository
 
-```shell
+```bash
 ./
 ├── ChangeLog
 ├── config.site
@@ -312,7 +312,6 @@ run often
 ## `git status`
 
 ```bash
-intro-git on  main
 ❯ git status
 On branch main
 
@@ -474,7 +473,7 @@ discuss hashes
 
 ## `git status`
 
-```shell
+```bash
 ❯ git status
 On branch main
 Your branch is up to date with 'origin/main'.
@@ -493,14 +492,14 @@ Changes not staged for commit:
 
 ## publish to github: setup
 
-```
+```bash
 git remote add origin https://github.com/edavidaja/intro-git.git
 git branch -M main
 ```
 
 ## `git push`
 
-```shell
+```bash
 ❯ git push -u origin main
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -577,7 +576,7 @@ gitGraph
 
 ## push rejection
 
-```shell
+```bash
 ❯ git push
 To https://github.com/edavidaja/intro-git.git
  ! [rejected]        main -> main (fetch first)
@@ -591,7 +590,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 ## merge strategy
 
-```shell
+```bash
 ❯ git pull
 remote: Enumerating objects: 5, done.
 remote: Counting objects: 100% (5/5), done.
@@ -631,7 +630,7 @@ gitGraph
 ```
 ## merge conflict
 
-```shell
+```bash
 ❯ git pull --rebase
 Auto-merging main.R
 CONFLICT (content): Merge conflict in main.R
