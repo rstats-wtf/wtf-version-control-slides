@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.366">
+
+  <title>Version Control</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #97947a;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #97947a;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2; background-color: #2b2b2b; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #dcc6e0; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #ffd700; } /* Attribute */
+    code span.bn { color: #dcc6e0; } /* BaseN */
+    code span.bu { color: #f5ab35; } /* BuiltIn */
+    code span.cf { color: #ffa07a; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffa07a; } /* Constant */
+    code span.co { color: #d4d0ab; } /* Comment */
+    code span.cv { color: #d4d0ab; font-style: italic; } /* CommentVar */
+    code span.do { color: #d4d0ab; font-style: italic; } /* Documentation */
+    code span.dt { color: #dcc6e0; } /* DataType */
+    code span.dv { color: #dcc6e0; } /* DecVal */
+    code span.er { color: #dcc6e0; } /* Error */
+    code span.ex { color: #ffd700; } /* Extension */
+    code span.fl { color: #f5ab35; } /* Float */
+    code span.fu { color: #ffd700; } /* Function */
+    code span.im { color: #f8f8f2; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; } /* Keyword */
+    code span.op { color: #00e0e0; } /* Operator */
+    code span.ot { color: #ffa07a; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.sc { color: #00e0e0; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #f5ab35; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #d4d0ab; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="site_libs/quarto-diagram/mermaid-postprocess-shim.js"></script>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section>
+<section id="section" class="title-slide slide level1 center" data-background-image="img/forks.jpg">
+<h1></h1>
+<h1>
+<span class="highlight">using version control<span>
+</span></span></h1>
+</section>
+<section id="imagine-we-need-to-work-on-a-document-together" class="slide level2">
+<h2>imagine we need to work on a document together</h2>
+<p>how should we do that?</p>
+</section>
+<section id="key-questions" class="slide level2">
+<h2>key questions</h2>
+<ul>
+<li>which version of the document is the authoritative one?<br>
+</li>
+<li>if you and I change the same thing:
+<ul>
+<li>how will we know we did that?</li>
+<li>whose edits should win?</li>
+</ul></li>
+</ul>
+</section>
+<section id="some-solutions" class="slide level2">
+<h2>some solutions</h2>
+<div class="fragment">
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img data-src="img/dropbox.svg" style="width:20.0%" alt="dropbox"> <img data-src="img/fileserver.svg" style="width:20.0%" alt="shared drive"> <img data-src="img/email.png" style="width:20.0%" alt="email"> <img data-src="img/googledocs.svg" style="width:20.0%" alt="google docs"></p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>let’s talk about how we’re not solving the problem:</p>
+<p>If you and I need to collaborate on a document <em>today</em>, what options do we have?</p>
+<p>warm up discussion: consider these mechanisms for shared editing and limitations:</p>
+<ul>
+<li>dropbox
+<ul>
+<li>You have to trust dropbox to figure out conflicts for you and then hope they got it right</li>
+</ul></li>
+<li>email attachments
+<ul>
+<li>every email attachment of the document is a new, potentially authortiative copy and this gets increasingly confusing as you add collaborators</li>
+<li><code>doc_date_FINAL.docx</code></li>
+</ul></li>
+<li>shared drive
+<ul>
+<li>typically only one person can modify the document at a time</li>
+</ul></li>
+<li>sharepoint
+<ul>
+<li>we may not have access to the same proprietary program for editing</li>
+<li>depends on shared service access</li>
+</ul></li>
+<li>a google doc
+<ul>
+<li>google docs are pretty good, actually, until we start talking about code</li>
+</ul></li>
+</ul>
+<p>what if you’re working on code? what if your collaborators are strangers? what if they’re halfway around the world?</p>
+<p>plain text is a least common denominator we’re not assuming access to shared hardware we are assuming that collaboration is async</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="on-plain-text" class="slide level2">
+<h2>on plain text</h2>
+
+<img data-src="img/evernote.png" class="r-stretch quarto-figure-center"><p class="caption">beware</p><aside class="notes">
+<p>Be careful about storing valuable IP of yours in places that can take it away from you when they change business models</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="agenda" class="title-slide slide level1 center">
+<h1>agenda</h1>
+
+</section>
+<section id="agenda-1" class="slide level2">
+<h2>agenda</h2>
+<ul>
+<li>terminology</li>
+<li>terminalogy</li>
+<li>workflows: I</li>
+<li>tools</li>
+<li>workflows: II</li>
+<li>unhappy paths</li>
+</ul>
+</section>
+<section id="resources" class="slide level2">
+<h2>resources</h2>
+<div class="columns">
+<div class="column">
+<h3 id="what-they-forgot">What They Forgot</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://rstats.wtf"><img data-src="./img/wtf-logo-square-transparent.png"></a></p>
+</figure>
+</div>
+</div><div class="column">
+<h3 id="happy-git-with-r">Happy Git with R</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://happygitwithr.com"><img data-src="./img/happy-git.png"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="goals" class="slide level2">
+<h2>goals</h2>
+
+<img data-src="./img/inception.webp" class="r-stretch"><aside class="notes">
+<p>our objective is to go deeper this workshop will emphasize terminal workflows and preview how other tools layer interactions on top choose a workflow that works for you, and pick up sharper tools when needed</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="terminology" class="title-slide slide level1 center">
+<h1>terminology</h1>
+
+</section>
+<section id="git" class="slide level2">
+<h2>git</h2>
+<p><em>distributed</em> version control system</p>
+<aside class="notes">
+<p>distributed = we all have a copy contrast with other approaches where there is only one copy</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="repository" class="slide level2">
+<h2>repository</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>./</span>
+<span id="cb1-2"><a href="#cb1-2"></a>├── ChangeLog</span>
+<span id="cb1-3"><a href="#cb1-3"></a>├── config.site</span>
+<span id="cb1-4"><a href="#cb1-4"></a>├── configure*</span>
+<span id="cb1-5"><a href="#cb1-5"></a>├── configure.ac</span>
+<span id="cb1-6"><a href="#cb1-6"></a>├── configure.patch</span>
+<span id="cb1-7"><a href="#cb1-7"></a>├── COPYING</span>
+<span id="cb1-8"><a href="#cb1-8"></a>├── doc/</span>
+<span id="cb1-9"><a href="#cb1-9"></a>├── etc/</span>
+<span id="cb1-10"><a href="#cb1-10"></a>├── INSTALL</span>
+<span id="cb1-11"><a href="#cb1-11"></a>├── m4/</span>
+<span id="cb1-12"><a href="#cb1-12"></a>├── Makeconf.in</span>
+<span id="cb1-13"><a href="#cb1-13"></a>├── Makefile.fw</span>
+<span id="cb1-14"><a href="#cb1-14"></a>├── Makefile.in</span>
+<span id="cb1-15"><a href="#cb1-15"></a>├── po/</span>
+<span id="cb1-16"><a href="#cb1-16"></a>├── README</span>
+<span id="cb1-17"><a href="#cb1-17"></a>├── share/</span>
+<span id="cb1-18"><a href="#cb1-18"></a>├── src/</span>
+<span id="cb1-19"><a href="#cb1-19"></a>├── tests/</span>
+<span id="cb1-20"><a href="#cb1-20"></a>├── tools/</span>
+<span id="cb1-21"><a href="#cb1-21"></a>├── VERSION</span>
+<span id="cb1-22"><a href="#cb1-22"></a>└── VERSION-NICK</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<p>a repository is a a project opinions on the scope of what belongs in a single repository vary widely monorepos?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="remote" class="slide level2">
+<h2>remote</h2>
+<p>git vs.&nbsp;github / gitlab / bitbucket</p>
+<aside class="notes">
+<p>git is decentralized github is how we coordinate the authoritative copy is stored by the code host</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="clone-fork" class="slide level2">
+<h2>clone / fork</h2>
+<aside class="notes">
+<p>who has permissions to make changes to a consensus copy is managed by the service provider forks are for untrusted collaborators / open source salt</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="commit" class="slide level2">
+<h2>commit</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<svg aria-roledescription="gitGraph" role="graphics-document document" viewbox="-95.9921875 -18.5 253.9921875 94.999755859375" height="480" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-1" style="; display: block; margin: auto auto auto auto">
+<style>#mermaid-figure-1{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-1 .error-icon{fill:#552222;}#mermaid-figure-1 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-1 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-1 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-1 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-1 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-1 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-1 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-1 .marker.cross{stroke:#333333;}#mermaid-figure-1 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-1 .commit-id,#mermaid-figure-1 .commit-msg,#mermaid-figure-1 .branch-label{fill:lightgrey;color:lightgrey;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}#mermaid-figure-1 .branch-label0{fill:#ffffff;}#mermaid-figure-1 .commit0{stroke:hsl(240, 100%, 46.2745098039%);fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-1 .commit-highlight0{stroke:hsl(60, 100%, 3.7254901961%);fill:hsl(60, 100%, 3.7254901961%);}#mermaid-figure-1 .label0{fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-1 .arrow0{stroke:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-1 .branch-label1{fill:black;}#mermaid-figure-1 .commit1{stroke:hsl(60, 100%, 43.5294117647%);fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-1 .commit-highlight1{stroke:rgb(0, 0, 160.5);fill:rgb(0, 0, 160.5);}#mermaid-figure-1 .label1{fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-1 .arrow1{stroke:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-1 .branch-label2{fill:black;}#mermaid-figure-1 .commit2{stroke:hsl(80, 100%, 46.2745098039%);fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-1 .commit-highlight2{stroke:rgb(48.8333333334, 0, 146.5000000001);fill:rgb(48.8333333334, 0, 146.5000000001);}#mermaid-figure-1 .label2{fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-1 .arrow2{stroke:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-1 .branch-label3{fill:#ffffff;}#mermaid-figure-1 .commit3{stroke:hsl(210, 100%, 46.2745098039%);fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-1 .commit-highlight3{stroke:rgb(146.5000000001, 73.2500000001, 0);fill:rgb(146.5000000001, 73.2500000001, 0);}#mermaid-figure-1 .label3{fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-1 .arrow3{stroke:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-1 .branch-label4{fill:black;}#mermaid-figure-1 .commit4{stroke:hsl(180, 100%, 46.2745098039%);fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-1 .commit-highlight4{stroke:rgb(146.5000000001, 0, 0);fill:rgb(146.5000000001, 0, 0);}#mermaid-figure-1 .label4{fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-1 .arrow4{stroke:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-1 .branch-label5{fill:black;}#mermaid-figure-1 .commit5{stroke:hsl(150, 100%, 46.2745098039%);fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-1 .commit-highlight5{stroke:rgb(146.5000000001, 0, 73.2500000001);fill:rgb(146.5000000001, 0, 73.2500000001);}#mermaid-figure-1 .label5{fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-1 .arrow5{stroke:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-1 .branch-label6{fill:black;}#mermaid-figure-1 .commit6{stroke:hsl(300, 100%, 46.2745098039%);fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-1 .commit-highlight6{stroke:rgb(0, 146.5000000001, 0);fill:rgb(0, 146.5000000001, 0);}#mermaid-figure-1 .label6{fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-1 .arrow6{stroke:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-1 .branch-label7{fill:black;}#mermaid-figure-1 .commit7{stroke:hsl(0, 100%, 46.2745098039%);fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-1 .commit-highlight7{stroke:rgb(0, 146.5000000001, 146.5000000001);fill:rgb(0, 146.5000000001, 146.5000000001);}#mermaid-figure-1 .label7{fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-1 .arrow7{stroke:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-1 .branch{stroke-width:1;stroke:#333333;stroke-dasharray:2;}#mermaid-figure-1 .commit-label{font-size:10px;fill:#000021;}#mermaid-figure-1 .commit-label-bkg{font-size:10px;fill:#ffffde;opacity:0.5;}#mermaid-figure-1 .tag-label{font-size:10px;fill:#131300;}#mermaid-figure-1 .tag-label-bkg{fill:#ECECFF;stroke:hsl(240, 60%, 86.2745098039%);}#mermaid-figure-1 .tag-hole{fill:#333;}#mermaid-figure-1 .commit-merge{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-1 .commit-reverse{stroke:#ECECFF;fill:#ECECFF;stroke-width:3;}#mermaid-figure-1 .commit-highlight-inner{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-1 .arrow{stroke-width:8;stroke-linecap:round;fill:none;}#mermaid-figure-1 .gitTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-1 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="150" y1="0" x1="0"></line><rect transform="translate(-19, -9.25)" height="22.5" width="52.9921875" y="-1.25" x="-68.9921875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.9921875, -10.25)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path></g><g class="commit-bullets"><circle class="commit initial commit commit0" r="10" cy="0" cx="10"></circle><circle class="commit snapshot one commit0" r="10" cy="0" cx="60"></circle><circle class="commit snapshot two commit0" r="10" cy="0" cx="110"></circle></g><g class="commit-labels"><g transform="translate(-35.21625, 31.39875) rotate(-45, 0, 0)"><rect height="15.5" width="66.9375" y="13.5" x="-23.46875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-21.46875">initial commit</text></g><g transform="translate(-33.521093750000006, 29.882031249999997) rotate(-45, 50, 0)"><rect height="15.55078125" width="62.4765625" y="13.5" x="28.76171875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="30.76171875">snapshot one</text></g><g transform="translate(-33.708124999999995, 30.049375) rotate(-45, 100, 0)"><rect height="15.55078125" width="62.96875" y="13.5" x="78.515625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="80.515625">snapshot two</text></g></g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>a snapshot of project state shopping cart analogy?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="diff" class="slide level2">
+<h2>diff</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<svg aria-roledescription="gitGraph" role="graphics-document document" viewbox="-95.9921875 -18.5 253.9921875 94.999755859375" height="480" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-6" style="; display: block; margin: auto auto auto auto">
+<style>#mermaid-figure-6{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-6 .error-icon{fill:#552222;}#mermaid-figure-6 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-6 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-6 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-6 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-6 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-6 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-6 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-6 .marker.cross{stroke:#333333;}#mermaid-figure-6 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-6 .commit-id,#mermaid-figure-6 .commit-msg,#mermaid-figure-6 .branch-label{fill:lightgrey;color:lightgrey;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}#mermaid-figure-6 .branch-label0{fill:#ffffff;}#mermaid-figure-6 .commit0{stroke:hsl(240, 100%, 46.2745098039%);fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-6 .commit-highlight0{stroke:hsl(60, 100%, 3.7254901961%);fill:hsl(60, 100%, 3.7254901961%);}#mermaid-figure-6 .label0{fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-6 .arrow0{stroke:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-6 .branch-label1{fill:black;}#mermaid-figure-6 .commit1{stroke:hsl(60, 100%, 43.5294117647%);fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-6 .commit-highlight1{stroke:rgb(0, 0, 160.5);fill:rgb(0, 0, 160.5);}#mermaid-figure-6 .label1{fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-6 .arrow1{stroke:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-6 .branch-label2{fill:black;}#mermaid-figure-6 .commit2{stroke:hsl(80, 100%, 46.2745098039%);fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-6 .commit-highlight2{stroke:rgb(48.8333333334, 0, 146.5000000001);fill:rgb(48.8333333334, 0, 146.5000000001);}#mermaid-figure-6 .label2{fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-6 .arrow2{stroke:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-6 .branch-label3{fill:#ffffff;}#mermaid-figure-6 .commit3{stroke:hsl(210, 100%, 46.2745098039%);fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-6 .commit-highlight3{stroke:rgb(146.5000000001, 73.2500000001, 0);fill:rgb(146.5000000001, 73.2500000001, 0);}#mermaid-figure-6 .label3{fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-6 .arrow3{stroke:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-6 .branch-label4{fill:black;}#mermaid-figure-6 .commit4{stroke:hsl(180, 100%, 46.2745098039%);fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-6 .commit-highlight4{stroke:rgb(146.5000000001, 0, 0);fill:rgb(146.5000000001, 0, 0);}#mermaid-figure-6 .label4{fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-6 .arrow4{stroke:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-6 .branch-label5{fill:black;}#mermaid-figure-6 .commit5{stroke:hsl(150, 100%, 46.2745098039%);fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-6 .commit-highlight5{stroke:rgb(146.5000000001, 0, 73.2500000001);fill:rgb(146.5000000001, 0, 73.2500000001);}#mermaid-figure-6 .label5{fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-6 .arrow5{stroke:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-6 .branch-label6{fill:black;}#mermaid-figure-6 .commit6{stroke:hsl(300, 100%, 46.2745098039%);fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-6 .commit-highlight6{stroke:rgb(0, 146.5000000001, 0);fill:rgb(0, 146.5000000001, 0);}#mermaid-figure-6 .label6{fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-6 .arrow6{stroke:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-6 .branch-label7{fill:black;}#mermaid-figure-6 .commit7{stroke:hsl(0, 100%, 46.2745098039%);fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-6 .commit-highlight7{stroke:rgb(0, 146.5000000001, 146.5000000001);fill:rgb(0, 146.5000000001, 146.5000000001);}#mermaid-figure-6 .label7{fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-6 .arrow7{stroke:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-6 .branch{stroke-width:1;stroke:#333333;stroke-dasharray:2;}#mermaid-figure-6 .commit-label{font-size:10px;fill:#000021;}#mermaid-figure-6 .commit-label-bkg{font-size:10px;fill:#ffffde;opacity:0.5;}#mermaid-figure-6 .tag-label{font-size:10px;fill:#131300;}#mermaid-figure-6 .tag-label-bkg{fill:#ECECFF;stroke:hsl(240, 60%, 86.2745098039%);}#mermaid-figure-6 .tag-hole{fill:#333;}#mermaid-figure-6 .commit-merge{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-6 .commit-reverse{stroke:#ECECFF;fill:#ECECFF;stroke-width:3;}#mermaid-figure-6 .commit-highlight-inner{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-6 .arrow{stroke-width:8;stroke-linecap:round;fill:none;}#mermaid-figure-6 .gitTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-6 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="150" y1="0" x1="0"></line><rect transform="translate(-19, -9.25)" height="22.5" width="52.9921875" y="-1.25" x="-68.9921875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.9921875, -10.25)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path></g><g class="commit-bullets"><circle class="commit initial commit commit0" r="10" cy="0" cx="10"></circle><circle class="commit snapshot one commit0" r="10" cy="0" cx="60"></circle><circle class="commit snapshot two commit0" r="10" cy="0" cx="110"></circle></g><g class="commit-labels"><g transform="translate(-35.21625, 31.39875) rotate(-45, 0, 0)"><rect height="15.5" width="66.9375" y="13.5" x="-23.46875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-21.46875">initial commit</text></g><g transform="translate(-33.521093750000006, 29.882031249999997) rotate(-45, 50, 0)"><rect height="15.55078125" width="62.4765625" y="13.5" x="28.76171875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="30.76171875">snapshot one</text></g><g transform="translate(-33.708124999999995, 30.049375) rotate(-45, 100, 0)"><rect height="15.55078125" width="62.96875" y="13.5" x="78.515625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="80.515625">snapshot two</text></g></g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>the difference between <em>any</em> two project snapshots draw on the slides!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="head" class="slide level2">
+<h2><code>HEAD</code></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<svg aria-roledescription="gitGraph" role="graphics-document document" viewbox="-95.9921875 -18.5 253.9921875 94.999755859375" height="480" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-5" style="; display: block; margin: auto auto auto auto">
+<style>#mermaid-figure-5{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-5 .error-icon{fill:#552222;}#mermaid-figure-5 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-5 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-5 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-5 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-5 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-5 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-5 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-5 .marker.cross{stroke:#333333;}#mermaid-figure-5 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-5 .commit-id,#mermaid-figure-5 .commit-msg,#mermaid-figure-5 .branch-label{fill:lightgrey;color:lightgrey;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}#mermaid-figure-5 .branch-label0{fill:#ffffff;}#mermaid-figure-5 .commit0{stroke:hsl(240, 100%, 46.2745098039%);fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-5 .commit-highlight0{stroke:hsl(60, 100%, 3.7254901961%);fill:hsl(60, 100%, 3.7254901961%);}#mermaid-figure-5 .label0{fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-5 .arrow0{stroke:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-5 .branch-label1{fill:black;}#mermaid-figure-5 .commit1{stroke:hsl(60, 100%, 43.5294117647%);fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-5 .commit-highlight1{stroke:rgb(0, 0, 160.5);fill:rgb(0, 0, 160.5);}#mermaid-figure-5 .label1{fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-5 .arrow1{stroke:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-5 .branch-label2{fill:black;}#mermaid-figure-5 .commit2{stroke:hsl(80, 100%, 46.2745098039%);fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-5 .commit-highlight2{stroke:rgb(48.8333333334, 0, 146.5000000001);fill:rgb(48.8333333334, 0, 146.5000000001);}#mermaid-figure-5 .label2{fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-5 .arrow2{stroke:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-5 .branch-label3{fill:#ffffff;}#mermaid-figure-5 .commit3{stroke:hsl(210, 100%, 46.2745098039%);fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-5 .commit-highlight3{stroke:rgb(146.5000000001, 73.2500000001, 0);fill:rgb(146.5000000001, 73.2500000001, 0);}#mermaid-figure-5 .label3{fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-5 .arrow3{stroke:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-5 .branch-label4{fill:black;}#mermaid-figure-5 .commit4{stroke:hsl(180, 100%, 46.2745098039%);fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-5 .commit-highlight4{stroke:rgb(146.5000000001, 0, 0);fill:rgb(146.5000000001, 0, 0);}#mermaid-figure-5 .label4{fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-5 .arrow4{stroke:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-5 .branch-label5{fill:black;}#mermaid-figure-5 .commit5{stroke:hsl(150, 100%, 46.2745098039%);fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-5 .commit-highlight5{stroke:rgb(146.5000000001, 0, 73.2500000001);fill:rgb(146.5000000001, 0, 73.2500000001);}#mermaid-figure-5 .label5{fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-5 .arrow5{stroke:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-5 .branch-label6{fill:black;}#mermaid-figure-5 .commit6{stroke:hsl(300, 100%, 46.2745098039%);fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-5 .commit-highlight6{stroke:rgb(0, 146.5000000001, 0);fill:rgb(0, 146.5000000001, 0);}#mermaid-figure-5 .label6{fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-5 .arrow6{stroke:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-5 .branch-label7{fill:black;}#mermaid-figure-5 .commit7{stroke:hsl(0, 100%, 46.2745098039%);fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-5 .commit-highlight7{stroke:rgb(0, 146.5000000001, 146.5000000001);fill:rgb(0, 146.5000000001, 146.5000000001);}#mermaid-figure-5 .label7{fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-5 .arrow7{stroke:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-5 .branch{stroke-width:1;stroke:#333333;stroke-dasharray:2;}#mermaid-figure-5 .commit-label{font-size:10px;fill:#000021;}#mermaid-figure-5 .commit-label-bkg{font-size:10px;fill:#ffffde;opacity:0.5;}#mermaid-figure-5 .tag-label{font-size:10px;fill:#131300;}#mermaid-figure-5 .tag-label-bkg{fill:#ECECFF;stroke:hsl(240, 60%, 86.2745098039%);}#mermaid-figure-5 .tag-hole{fill:#333;}#mermaid-figure-5 .commit-merge{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-5 .commit-reverse{stroke:#ECECFF;fill:#ECECFF;stroke-width:3;}#mermaid-figure-5 .commit-highlight-inner{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-5 .arrow{stroke-width:8;stroke-linecap:round;fill:none;}#mermaid-figure-5 .gitTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-5 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="150" y1="0" x1="0"></line><rect transform="translate(-19, -9.25)" height="22.5" width="52.9921875" y="-1.25" x="-68.9921875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.9921875, -10.25)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path></g><g class="commit-bullets"><circle class="commit initial commit commit0" r="10" cy="0" cx="10"></circle><circle class="commit snapshot one commit0" r="10" cy="0" cx="60"></circle><circle class="commit HEAD commit0" r="10" cy="0" cx="110"></circle></g><g class="commit-labels"><g transform="translate(-35.21625, 31.39875) rotate(-45, 0, 0)"><rect height="15.5" width="66.9375" y="13.5" x="-23.46875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-21.46875">initial commit</text></g><g transform="translate(-33.521093750000006, 29.882031249999997) rotate(-45, 50, 0)"><rect height="15.55078125" width="62.4765625" y="13.5" x="28.76171875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="30.76171875">snapshot one</text></g><g transform="translate(-20.39625, 18.13875) rotate(-45, 100, 0)"><rect height="15.5" width="27.9375" y="13.5" x="96.03125" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="98.03125">HEAD</text></g></g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="terminalogy" class="title-slide slide level1 center">
+<h1>terminalogy</h1>
+
+</section>
+<section id="words-have-meaning" class="slide level2">
+<h2>words have meaning</h2>
+<p>terminal<br>
+shell<br>
+command-line interface (CLI)<sup>1</sup></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>https://askubuntu.com/a/506628</p></li></ol></aside></section>
+<section id="structure" class="slide level2">
+<h2>structure</h2>
+<p><code>command subcommand --long-argument -s</code></p>
+</section>
+<section id="navigating" class="slide level2">
+<h2>navigating</h2>
+<p><code>pwd</code><br>
+<code>cd</code><br>
+<code>ls -lha</code></p>
+</section>
+<section id="creating" class="slide level2">
+<h2>creating</h2>
+<p><code>mkdir</code><br>
+<code>rmdir</code><br>
+<code>touch</code><br>
+<code>cp</code><br>
+<code>mv</code><br>
+<code>rm</code></p>
+</section></section>
+<section>
+<section id="workflows-i" class="title-slide slide level1 center">
+<h1>workflows: I</h1>
+
+</section>
+<section id="systems-check" class="slide level2">
+<h2>systems check</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">terminal</a></li><li><a href="#tabset-1-2">R</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="systems-check-1" class="slide level2">
+<h2>systems check</h2>
+<p>hidden files:</p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">terminal</a></li><li><a href="#tabset-2-2"><i class="fa-brands fa-windows" aria-label="windows"></i></a></li><li><a href="#tabset-2-3"><i class="fa-brands fa-apple" aria-label="apple"></i></a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">ls</span> <span class="at">-lha</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-2">
+<p>click to “show hidden files”</p>
+</div>
+<div id="tabset-2-3">
+<p><code>CMD + SHIFT + .</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="new-project" class="slide level2">
+<h2>new project</h2>
+<ul>
+<li>create project (from rstudio, or terminal)</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">mkdir</span> intro-git</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="bu">cd</span> intro-git</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<p>inspect the directory presence of <code>.git</code> is what makes it a repository you can be a productive user of git without deeply understanding the contents of that directory</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="git-status" class="slide level2">
+<h2><code>git status</code></h2>
+<p>run often</p>
+</section>
+<section id="git-status-1" class="slide level2">
+<h2><code>git status</code></h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="ex">intro-git</span> on  main</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">❯</span> git status</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="ex">On</span> branch main</span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="ex">No</span> commits yet</span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="ex">nothing</span> to commit <span class="er">(</span><span class="ex">create/copy</span> files and use <span class="st">"git add"</span> to track<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="add-some-files" class="slide level2">
+<h2>add some files</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">❯</span> git status</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="ex">On</span> branch main</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="ex">No</span> commits yet</span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="ex">Untracked</span> files:</span>
+<span id="cb7-7"><a href="#cb7-7"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to include in what will be committed<span class="kw">)</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>    <span class="ex">_quarto.yml</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>    <span class="ex">index.qmd</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="ex">nothing</span> added to commit but untracked files present <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> to track<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="git-stage" class="slide level2">
+<h2><code>git stage</code></h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">❯</span> git status</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="ex">On</span> branch main</span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="ex">No</span> commits yet</span>
+<span id="cb8-5"><a href="#cb8-5"></a></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="ex">Changes</span> to be committed:</span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git rm --cached &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="ex">new</span> file:   _quarto.yml</span>
+<span id="cb8-9"><a href="#cb8-9"></a>    <span class="ex">new</span> file:   index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<p>all the documentation you will ever see is for <code>git add</code></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="windows" class="slide level2">
+<h2>WINDOWS</h2>
+<pre><code>$ git add index.qmd
+warning: LF will be replaced by CRLF in index.qmd.
+The file will have its original line endings in your working directory</code></pre>
+<aside class="notes">
+<p><code>\r\n</code> FYI: https://linux.die.net/man/1/dos2unix</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="new-project-who-dis" class="slide level2">
+<h2>new project, who dis</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">terminal</a></li><li><a href="#tabset-3-2">R</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name edavidaja</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">git</span> config <span class="at">--global</span> user.email david@posit.cor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-3-2">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="git-commit" class="slide level2">
+<h2><code>git commit</code></h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Please enter the commit message for your changes. Lines starting</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="co"># with '#' will be ignored, and an empty message aborts the commit.</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="co">#</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># On branch main</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="co">#</span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="co"># Initial commit</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="co">#</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="co"># Changes to be committed:</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="co">#       new file:   _quarto.yml</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="co">#       new file:   index.qmd</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="st">"~/Documents/projects/intro-git/.git/COMMIT_EDITMSG"</span> 12L, 255B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="editor" class="slide level2">
+<h2><code>EDITOR</code></h2>
+<aside class="notes">
+<h3 id="vim">vim</h3>
+<p>normal mode insert mode, write a message <code>ESC</code> to return to normal mode <code>:</code> to enter command mode <code>wq</code> to write the file and quit</p>
+<h3 id="nano">nano</h3>
+<p>start typing <code>CTRL + O</code> to save <code>CTRL + X</code> to exit</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="git-commit--m" class="slide level2">
+<h2><code>git commit -m</code></h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="ex">❯</span> git commit <span class="at">-m</span> <span class="st">"initial commit"</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="ex">[main</span> <span class="er">(</span><span class="ex">root-commit</span><span class="kw">)</span> <span class="ex">cab0112]</span> initial commit</span>
+<span id="cb13-3"><a href="#cb13-3"></a> <span class="ex">2</span> files changed, 0 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 0 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a> <span class="ex">create</span> mode 100644 _quarto.yml</span>
+<span id="cb13-5"><a href="#cb13-5"></a> <span class="ex">create</span> mode 100644 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="git-status-2" class="slide level2">
+<h2><code>git status</code></h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="ex">❯</span> git status</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="ex">On</span> branch main</span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="repeat" class="slide level2">
+<h2>repeat</h2>
+<p>with rstudio, vscode</p>
+</section>
+<section id="git-log" class="slide level2">
+<h2><code>git log</code></h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">❯</span> git log</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="ex">commit</span> 3efdc26af7bf6ea223bfa61c6cb4507de632690e <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="ex">Author:</span> edavidaja <span class="op">&lt;</span>edavidaja@hey.com<span class="op">&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="ex">Date:</span>   Thu Jul 20 15:03:03 2023 <span class="at">-0400</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a></span>
+<span id="cb15-6"><a href="#cb15-6"></a>    <span class="ex">added</span> vs code workspace</span>
+<span id="cb15-7"><a href="#cb15-7"></a></span>
+<span id="cb15-8"><a href="#cb15-8"></a><span class="ex">commit</span> 0d98a3c9cf2a351da39b26adbfad442c834ff8d4</span>
+<span id="cb15-9"><a href="#cb15-9"></a><span class="ex">Author:</span> edavidaja <span class="op">&lt;</span>edavidaja@hey.com<span class="op">&gt;</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a><span class="ex">Date:</span>   Thu Jul 20 14:55:34 2023 <span class="at">-0400</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a></span>
+<span id="cb15-12"><a href="#cb15-12"></a>    <span class="ex">added</span> rstudio project files</span>
+<span id="cb15-13"><a href="#cb15-13"></a></span>
+<span id="cb15-14"><a href="#cb15-14"></a><span class="ex">commit</span> cab0112f6f96bdd82a46e622d8fccd445fc38d17</span>
+<span id="cb15-15"><a href="#cb15-15"></a><span class="ex">Author:</span> edavidaja <span class="op">&lt;</span>edavidaja@hey.com<span class="op">&gt;</span></span>
+<span id="cb15-16"><a href="#cb15-16"></a><span class="ex">Date:</span>   Thu Jul 20 14:51:23 2023 <span class="at">-0400</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a></span>
+<span id="cb15-18"><a href="#cb15-18"></a>    <span class="ex">initial</span> commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<aside class="notes">
+<p>discuss hashes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="git-status-3" class="slide level2">
+<h2><code>git status</code></h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb16-1"><a href="#cb16-1"></a>❯ git status</span>
+<span id="cb16-2"><a href="#cb16-2"></a>On branch main</span>
+<span id="cb16-3"><a href="#cb16-3"></a>Your branch is up to date with 'origin/main'.</span>
+<span id="cb16-4"><a href="#cb16-4"></a></span>
+<span id="cb16-5"><a href="#cb16-5"></a>Changes not staged for commit:</span>
+<span id="cb16-6"><a href="#cb16-6"></a>  (use "git add &lt;file&gt;..." to update what will be committed)</span>
+<span id="cb16-7"><a href="#cb16-7"></a>  (use "git restore &lt;file&gt;..." to discard changes in working directory)</span>
+<span id="cb16-8"><a href="#cb16-8"></a>        modified:   index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="publish-to-github" class="slide level2">
+<h2>publish to github</h2>
+<p><a href="https://happygitwithr.com/existing-github-first.html">existing project, github first</a></p>
+</section>
+<section id="publish-to-github-setup" class="slide level2">
+<h2>publish to github: setup</h2>
+<pre><code>git remote add origin https://github.com/edavidaja/intro-git.git
+git branch -M main</code></pre>
+</section>
+<section id="git-push" class="slide level2">
+<h2><code>git push</code></h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb18-1"><a href="#cb18-1"></a>❯ git push -u origin main</span>
+<span id="cb18-2"><a href="#cb18-2"></a>Enumerating objects: 5, done.</span>
+<span id="cb18-3"><a href="#cb18-3"></a>Counting objects: 100% (5/5), done.</span>
+<span id="cb18-4"><a href="#cb18-4"></a>Delta compression using up to 12 threads</span>
+<span id="cb18-5"><a href="#cb18-5"></a>Compressing objects: 100% (3/3), done.</span>
+<span id="cb18-6"><a href="#cb18-6"></a>Writing objects: 100% (5/5), 418 bytes | 418.00 KiB/s, done.</span>
+<span id="cb18-7"><a href="#cb18-7"></a>Total 5 (delta 0), reused 0 (delta 0), pack-reused 0</span>
+<span id="cb18-8"><a href="#cb18-8"></a>To https://github.com/edavidaja/intro-git.git</span>
+<span id="cb18-9"><a href="#cb18-9"></a> * [new branch]      main -&gt; main</span>
+<span id="cb18-10"><a href="#cb18-10"></a>branch 'main' set up to track 'origin/main'.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section></section>
+<section>
+<section id="tools" class="title-slide slide level1 center">
+<h1>tools</h1>
+
+</section>
+<section id="prompt" class="slide level2">
+<h2><code>{prompt}</code></h2>
+<p>https://github.com/gaborcsardi/prompt</p>
+</section>
+<section id="starship" class="slide level2">
+<h2>starship</h2>
+<p>https://starship.rs/</p>
+</section>
+<section id="gh" class="slide level2">
+<h2>gh</h2>
+<p>https://cli.github.com/</p>
+</section>
+<section id="vs-code" class="slide level2">
+<h2>vs code</h2>
+<p>https://code.visualstudio.com/</p>
+</section>
+<section id="tldr" class="slide level2">
+<h2>tldr</h2>
+<p>https://dbrgn.github.io/tealdeer/</p>
+</section></section>
+<section>
+<section id="workflows-ii" class="title-slide slide level1 center">
+<h1>workflows: II</h1>
+
+</section>
+<section id="gitignore" class="slide level2">
+<h2>gitignore</h2>
+</section>
+<section id="clean" class="slide level2">
+<h2>clean</h2>
+<p>generated files chat</p>
+</section>
+<section id="branch" class="slide level2">
+<h2>branch</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<svg aria-roledescription="gitGraph" role="graphics-document document" viewbox="-143.2578125 -18.5 351.2578125 173.22018432617188" height="480" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-4" style="; display: block; margin: auto auto auto auto">
+<style>#mermaid-figure-4{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-4 .error-icon{fill:#552222;}#mermaid-figure-4 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-4 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-4 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-4 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-4 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-4 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-4 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-4 .marker.cross{stroke:#333333;}#mermaid-figure-4 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-4 .commit-id,#mermaid-figure-4 .commit-msg,#mermaid-figure-4 .branch-label{fill:lightgrey;color:lightgrey;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}#mermaid-figure-4 .branch-label0{fill:#ffffff;}#mermaid-figure-4 .commit0{stroke:hsl(240, 100%, 46.2745098039%);fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight0{stroke:hsl(60, 100%, 3.7254901961%);fill:hsl(60, 100%, 3.7254901961%);}#mermaid-figure-4 .label0{fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow0{stroke:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label1{fill:black;}#mermaid-figure-4 .commit1{stroke:hsl(60, 100%, 43.5294117647%);fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-4 .commit-highlight1{stroke:rgb(0, 0, 160.5);fill:rgb(0, 0, 160.5);}#mermaid-figure-4 .label1{fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-4 .arrow1{stroke:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-4 .branch-label2{fill:black;}#mermaid-figure-4 .commit2{stroke:hsl(80, 100%, 46.2745098039%);fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight2{stroke:rgb(48.8333333334, 0, 146.5000000001);fill:rgb(48.8333333334, 0, 146.5000000001);}#mermaid-figure-4 .label2{fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow2{stroke:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label3{fill:#ffffff;}#mermaid-figure-4 .commit3{stroke:hsl(210, 100%, 46.2745098039%);fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight3{stroke:rgb(146.5000000001, 73.2500000001, 0);fill:rgb(146.5000000001, 73.2500000001, 0);}#mermaid-figure-4 .label3{fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow3{stroke:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label4{fill:black;}#mermaid-figure-4 .commit4{stroke:hsl(180, 100%, 46.2745098039%);fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight4{stroke:rgb(146.5000000001, 0, 0);fill:rgb(146.5000000001, 0, 0);}#mermaid-figure-4 .label4{fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow4{stroke:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label5{fill:black;}#mermaid-figure-4 .commit5{stroke:hsl(150, 100%, 46.2745098039%);fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight5{stroke:rgb(146.5000000001, 0, 73.2500000001);fill:rgb(146.5000000001, 0, 73.2500000001);}#mermaid-figure-4 .label5{fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow5{stroke:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label6{fill:black;}#mermaid-figure-4 .commit6{stroke:hsl(300, 100%, 46.2745098039%);fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight6{stroke:rgb(0, 146.5000000001, 0);fill:rgb(0, 146.5000000001, 0);}#mermaid-figure-4 .label6{fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow6{stroke:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label7{fill:black;}#mermaid-figure-4 .commit7{stroke:hsl(0, 100%, 46.2745098039%);fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight7{stroke:rgb(0, 146.5000000001, 146.5000000001);fill:rgb(0, 146.5000000001, 146.5000000001);}#mermaid-figure-4 .label7{fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow7{stroke:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-4 .branch{stroke-width:1;stroke:#333333;stroke-dasharray:2;}#mermaid-figure-4 .commit-label{font-size:10px;fill:#000021;}#mermaid-figure-4 .commit-label-bkg{font-size:10px;fill:#ffffde;opacity:0.5;}#mermaid-figure-4 .tag-label{font-size:10px;fill:#131300;}#mermaid-figure-4 .tag-label-bkg{fill:#ECECFF;stroke:hsl(240, 60%, 86.2745098039%);}#mermaid-figure-4 .tag-hole{fill:#333;}#mermaid-figure-4 .commit-merge{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-4 .commit-reverse{stroke:#ECECFF;fill:#ECECFF;stroke-width:3;}#mermaid-figure-4 .commit-highlight-inner{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-4 .arrow{stroke-width:8;stroke-linecap:round;fill:none;}#mermaid-figure-4 .gitTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-4 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="200" y1="0" x1="0"></line><rect transform="translate(-19, -9.25)" height="22.5" width="52.9921875" y="-1.25" x="-68.9921875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.9921875, -10.25)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g><line class="branch branch1" y2="90" x2="200" y1="90" x1="0"></line><rect transform="translate(-19, 80.75)" height="22.5" width="100.2578125" y="-1.25" x="-116.2578125" ry="4" rx="4" class="branchLabelBkg label1"></rect><g class="branchLabel"><g transform="translate(-126.2578125, 79.75)" class="label branch-label1"><text><tspan class="row" x="0" dy="1em" space="preserve">experiment</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path><path class="arrow arrow1" d="M 110 0 L 110 70 A 20 20, 0, 0, 0, 130 90 L 160 90"></path></g><g class="commit-bullets"><circle class="commit 0-36f0e66 commit0" r="10" cy="0" cx="10"></circle><circle class="commit 1-3072956 commit0" r="10" cy="0" cx="60"></circle><circle class="commit 2-a20fe04 commit0" r="10" cy="0" cx="110"></circle><circle class="commit 3-446b198 commit1" r="10" cy="90" cx="160"></circle></g><g class="commit-labels"><g transform="translate(-28.12984375, 25.05828125) rotate(-45, 0, 0)"><rect height="15.5" width="48.2890625" y="13.5" x="-14.14453125" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-12.14453125">0-36f0e66</text></g><g transform="translate(-28.6375, 25.5125) rotate(-45, 50, 0)"><rect height="15.5" width="49.625" y="13.5" x="35.1875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="37.1875">1-3072956</text></g><g transform="translate(-28.1328125, 25.0609375) rotate(-45, 100, 0)"><rect height="15.5" width="48.296875" y="13.5" x="85.8515625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="87.8515625">2-a20fe04</text></g><g transform="translate(-28.762187500000003, 25.6240625) rotate(-45, 150, 90)"><rect height="15.5" width="49.953125" y="103.5" x="135.0234375" class="commit-label-bkg"></rect><text class="commit-label" y="115" x="137.0234375">3-446b198</text></g></g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="merge" class="slide level2">
+<h2>merge</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<svg aria-roledescription="gitGraph" role="graphics-document document" viewbox="-143.2578125 -18.5 401.2578125 171.51339721679688" height="480" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-3" style="; display: block; margin: auto auto auto auto">
+<style>#mermaid-figure-3{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-3 .error-icon{fill:#552222;}#mermaid-figure-3 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-3 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-3 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-3 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-3 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-3 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-3 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-3 .marker.cross{stroke:#333333;}#mermaid-figure-3 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-3 .commit-id,#mermaid-figure-3 .commit-msg,#mermaid-figure-3 .branch-label{fill:lightgrey;color:lightgrey;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}#mermaid-figure-3 .branch-label0{fill:#ffffff;}#mermaid-figure-3 .commit0{stroke:hsl(240, 100%, 46.2745098039%);fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight0{stroke:hsl(60, 100%, 3.7254901961%);fill:hsl(60, 100%, 3.7254901961%);}#mermaid-figure-3 .label0{fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow0{stroke:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label1{fill:black;}#mermaid-figure-3 .commit1{stroke:hsl(60, 100%, 43.5294117647%);fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-3 .commit-highlight1{stroke:rgb(0, 0, 160.5);fill:rgb(0, 0, 160.5);}#mermaid-figure-3 .label1{fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-3 .arrow1{stroke:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-3 .branch-label2{fill:black;}#mermaid-figure-3 .commit2{stroke:hsl(80, 100%, 46.2745098039%);fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight2{stroke:rgb(48.8333333334, 0, 146.5000000001);fill:rgb(48.8333333334, 0, 146.5000000001);}#mermaid-figure-3 .label2{fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow2{stroke:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label3{fill:#ffffff;}#mermaid-figure-3 .commit3{stroke:hsl(210, 100%, 46.2745098039%);fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight3{stroke:rgb(146.5000000001, 73.2500000001, 0);fill:rgb(146.5000000001, 73.2500000001, 0);}#mermaid-figure-3 .label3{fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow3{stroke:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label4{fill:black;}#mermaid-figure-3 .commit4{stroke:hsl(180, 100%, 46.2745098039%);fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight4{stroke:rgb(146.5000000001, 0, 0);fill:rgb(146.5000000001, 0, 0);}#mermaid-figure-3 .label4{fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow4{stroke:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label5{fill:black;}#mermaid-figure-3 .commit5{stroke:hsl(150, 100%, 46.2745098039%);fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight5{stroke:rgb(146.5000000001, 0, 73.2500000001);fill:rgb(146.5000000001, 0, 73.2500000001);}#mermaid-figure-3 .label5{fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow5{stroke:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label6{fill:black;}#mermaid-figure-3 .commit6{stroke:hsl(300, 100%, 46.2745098039%);fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight6{stroke:rgb(0, 146.5000000001, 0);fill:rgb(0, 146.5000000001, 0);}#mermaid-figure-3 .label6{fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow6{stroke:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label7{fill:black;}#mermaid-figure-3 .commit7{stroke:hsl(0, 100%, 46.2745098039%);fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight7{stroke:rgb(0, 146.5000000001, 146.5000000001);fill:rgb(0, 146.5000000001, 146.5000000001);}#mermaid-figure-3 .label7{fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow7{stroke:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-3 .branch{stroke-width:1;stroke:#333333;stroke-dasharray:2;}#mermaid-figure-3 .commit-label{font-size:10px;fill:#000021;}#mermaid-figure-3 .commit-label-bkg{font-size:10px;fill:#ffffde;opacity:0.5;}#mermaid-figure-3 .tag-label{font-size:10px;fill:#131300;}#mermaid-figure-3 .tag-label-bkg{fill:#ECECFF;stroke:hsl(240, 60%, 86.2745098039%);}#mermaid-figure-3 .tag-hole{fill:#333;}#mermaid-figure-3 .commit-merge{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-3 .commit-reverse{stroke:#ECECFF;fill:#ECECFF;stroke-width:3;}#mermaid-figure-3 .commit-highlight-inner{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-3 .arrow{stroke-width:8;stroke-linecap:round;fill:none;}#mermaid-figure-3 .gitTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-3 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="250" y1="0" x1="0"></line><rect transform="translate(-19, -9.25)" height="22.5" width="52.9921875" y="-1.25" x="-68.9921875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.9921875, -10.25)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g><line class="branch branch1" y2="90" x2="250" y1="90" x1="0"></line><rect transform="translate(-19, 80.75)" height="22.5" width="100.2578125" y="-1.25" x="-116.2578125" ry="4" rx="4" class="branchLabelBkg label1"></rect><g class="branchLabel"><g transform="translate(-126.2578125, 79.75)" class="label branch-label1"><text><tspan class="row" x="0" dy="1em" space="preserve">experiment</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path><path class="arrow arrow1" d="M 110 0 L 110 70 A 20 20, 0, 0, 0, 130 90 L 160 90"></path><path class="arrow arrow0" d="M 110 0 L 110 0  110 0 L 210 0"></path><path class="arrow arrow1" d="M 160 90 L 190 90 A 20 20, 0, 0, 0, 210 70 L 210 0"></path></g><g class="commit-bullets"><circle class="commit 0-563ee6c commit0" r="10" cy="0" cx="10"></circle><circle class="commit 1-fd6f0e9 commit0" r="10" cy="0" cx="60"></circle><circle class="commit 2-86a88a1 commit0" r="10" cy="0" cx="110"></circle><circle class="commit 3-cfc4526 commit1" r="10" cy="90" cx="160"></circle><circle class="commit 4-a71b077 commit0" r="9" cy="0" cx="210"></circle><circle class="commit commit-merge 4-a71b077 commit0" r="6" cy="0" cx="210"></circle></g><g class="commit-labels"><g transform="translate(-28.687968750000003, 25.55765625) rotate(-45, 0, 0)"><rect height="15.5" width="49.7578125" y="13.5" x="-14.87890625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-12.87890625">0-563ee6c</text></g><g transform="translate(-27.66671875, 24.64390625) rotate(-45, 50, 0)"><rect height="15.5" width="47.0703125" y="13.5" x="36.46484375" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="38.46484375">1-fd6f0e9</text></g><g transform="translate(-28.646406250000002, 25.52046875) rotate(-45, 100, 0)"><rect height="15.5" width="49.6484375" y="13.5" x="85.17578125" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="87.17578125">2-86a88a1</text></g><g transform="translate(-27.82703125, 24.787343749999998) rotate(-45, 150, 90)"><rect height="15.5" width="47.4921875" y="103.5" x="136.25390625" class="commit-label-bkg"></rect><text class="commit-label" y="115" x="138.25390625">3-cfc4526</text></g></g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="prs" class="slide level2">
+<h2>PRs</h2>
+</section></section>
+<section>
+<section id="unhappy-paths" class="title-slide slide level1 center">
+<h1>unhappy paths</h1>
+
+</section>
+<section id="push-rejection" class="slide level2">
+<h2>push rejection</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb19-1"><a href="#cb19-1"></a>❯ git push</span>
+<span id="cb19-2"><a href="#cb19-2"></a>To https://github.com/edavidaja/intro-git.git</span>
+<span id="cb19-3"><a href="#cb19-3"></a> ! [rejected]        main -&gt; main (fetch first)</span>
+<span id="cb19-4"><a href="#cb19-4"></a>error: failed to push some refs to 'https://github.com/edavidaja/intro-git.git'</span>
+<span id="cb19-5"><a href="#cb19-5"></a>hint: Updates were rejected because the remote contains work that you do</span>
+<span id="cb19-6"><a href="#cb19-6"></a>hint: not have locally. This is usually caused by another repository pushing</span>
+<span id="cb19-7"><a href="#cb19-7"></a>hint: to the same ref. You may want to first integrate the remote changes</span>
+<span id="cb19-8"><a href="#cb19-8"></a>hint: (e.g., 'git pull ...') before pushing again.</span>
+<span id="cb19-9"><a href="#cb19-9"></a>hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="merge-strategy" class="slide level2">
+<h2>merge strategy</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb20-1"><a href="#cb20-1"></a>❯ git pull</span>
+<span id="cb20-2"><a href="#cb20-2"></a>remote: Enumerating objects: 5, done.</span>
+<span id="cb20-3"><a href="#cb20-3"></a>remote: Counting objects: 100% (5/5), done.</span>
+<span id="cb20-4"><a href="#cb20-4"></a>remote: Compressing objects: 100% (2/2), done.</span>
+<span id="cb20-5"><a href="#cb20-5"></a>remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0</span>
+<span id="cb20-6"><a href="#cb20-6"></a>Unpacking objects: 100% (3/3), 636 bytes | 212.00 KiB/s, done.</span>
+<span id="cb20-7"><a href="#cb20-7"></a>From https://github.com/edavidaja/intro-git</span>
+<span id="cb20-8"><a href="#cb20-8"></a>   2bdda53..424444e  main       -&gt; origin/main</span>
+<span id="cb20-9"><a href="#cb20-9"></a>hint: You have divergent branches and need to specify how to reconcile them.</span>
+<span id="cb20-10"><a href="#cb20-10"></a>hint: You can do so by running one of the following commands sometime before</span>
+<span id="cb20-11"><a href="#cb20-11"></a>hint: your next pull:</span>
+<span id="cb20-12"><a href="#cb20-12"></a>hint:</span>
+<span id="cb20-13"><a href="#cb20-13"></a>hint:   git config pull.rebase false  # merge</span>
+<span id="cb20-14"><a href="#cb20-14"></a>hint:   git config pull.rebase true   # rebase</span>
+<span id="cb20-15"><a href="#cb20-15"></a>hint:   git config pull.ff only       # fast-forward only</span>
+<span id="cb20-16"><a href="#cb20-16"></a>hint:</span>
+<span id="cb20-17"><a href="#cb20-17"></a>hint: You can replace "git config" with "git config --global" to set a default</span>
+<span id="cb20-18"><a href="#cb20-18"></a>hint: preference for all repositories. You can also pass --rebase, --no-rebase,</span>
+<span id="cb20-19"><a href="#cb20-19"></a>hint: or --ff-only on the command line to override the configured default per</span>
+<span id="cb20-20"><a href="#cb20-20"></a>hint: invocation.</span>
+<span id="cb20-21"><a href="#cb20-21"></a>fatal: Need to specify how to reconcile divergent branches.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="merge-conflicts" class="slide level2">
+<h2>merge conflicts</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<svg aria-roledescription="gitGraph" role="graphics-document document" viewbox="-143.2578125 -18.5 401.2578125 171.22622680664062" height="480" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-2" style="; display: block; margin: auto auto auto auto">
+<style>#mermaid-figure-2{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-2 .error-icon{fill:#552222;}#mermaid-figure-2 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-2 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-2 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-2 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-2 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-2 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-2 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-2 .marker.cross{stroke:#333333;}#mermaid-figure-2 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-2 .commit-id,#mermaid-figure-2 .commit-msg,#mermaid-figure-2 .branch-label{fill:lightgrey;color:lightgrey;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}#mermaid-figure-2 .branch-label0{fill:#ffffff;}#mermaid-figure-2 .commit0{stroke:hsl(240, 100%, 46.2745098039%);fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight0{stroke:hsl(60, 100%, 3.7254901961%);fill:hsl(60, 100%, 3.7254901961%);}#mermaid-figure-2 .label0{fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow0{stroke:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label1{fill:black;}#mermaid-figure-2 .commit1{stroke:hsl(60, 100%, 43.5294117647%);fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-2 .commit-highlight1{stroke:rgb(0, 0, 160.5);fill:rgb(0, 0, 160.5);}#mermaid-figure-2 .label1{fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-2 .arrow1{stroke:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-2 .branch-label2{fill:black;}#mermaid-figure-2 .commit2{stroke:hsl(80, 100%, 46.2745098039%);fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight2{stroke:rgb(48.8333333334, 0, 146.5000000001);fill:rgb(48.8333333334, 0, 146.5000000001);}#mermaid-figure-2 .label2{fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow2{stroke:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label3{fill:#ffffff;}#mermaid-figure-2 .commit3{stroke:hsl(210, 100%, 46.2745098039%);fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight3{stroke:rgb(146.5000000001, 73.2500000001, 0);fill:rgb(146.5000000001, 73.2500000001, 0);}#mermaid-figure-2 .label3{fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow3{stroke:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label4{fill:black;}#mermaid-figure-2 .commit4{stroke:hsl(180, 100%, 46.2745098039%);fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight4{stroke:rgb(146.5000000001, 0, 0);fill:rgb(146.5000000001, 0, 0);}#mermaid-figure-2 .label4{fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow4{stroke:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label5{fill:black;}#mermaid-figure-2 .commit5{stroke:hsl(150, 100%, 46.2745098039%);fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight5{stroke:rgb(146.5000000001, 0, 73.2500000001);fill:rgb(146.5000000001, 0, 73.2500000001);}#mermaid-figure-2 .label5{fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow5{stroke:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label6{fill:black;}#mermaid-figure-2 .commit6{stroke:hsl(300, 100%, 46.2745098039%);fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight6{stroke:rgb(0, 146.5000000001, 0);fill:rgb(0, 146.5000000001, 0);}#mermaid-figure-2 .label6{fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow6{stroke:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label7{fill:black;}#mermaid-figure-2 .commit7{stroke:hsl(0, 100%, 46.2745098039%);fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight7{stroke:rgb(0, 146.5000000001, 146.5000000001);fill:rgb(0, 146.5000000001, 146.5000000001);}#mermaid-figure-2 .label7{fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow7{stroke:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-2 .branch{stroke-width:1;stroke:#333333;stroke-dasharray:2;}#mermaid-figure-2 .commit-label{font-size:10px;fill:#000021;}#mermaid-figure-2 .commit-label-bkg{font-size:10px;fill:#ffffde;opacity:0.5;}#mermaid-figure-2 .tag-label{font-size:10px;fill:#131300;}#mermaid-figure-2 .tag-label-bkg{fill:#ECECFF;stroke:hsl(240, 60%, 86.2745098039%);}#mermaid-figure-2 .tag-hole{fill:#333;}#mermaid-figure-2 .commit-merge{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-2 .commit-reverse{stroke:#ECECFF;fill:#ECECFF;stroke-width:3;}#mermaid-figure-2 .commit-highlight-inner{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-2 .arrow{stroke-width:8;stroke-linecap:round;fill:none;}#mermaid-figure-2 .gitTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-2 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="250" y1="0" x1="0"></line><rect transform="translate(-19, -9.25)" height="22.5" width="52.9921875" y="-1.25" x="-68.9921875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.9921875, -10.25)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g><line class="branch branch1" y2="90" x2="250" y1="90" x1="0"></line><rect transform="translate(-19, 80.75)" height="22.5" width="100.2578125" y="-1.25" x="-116.2578125" ry="4" rx="4" class="branchLabelBkg label1"></rect><g class="branchLabel"><g transform="translate(-126.2578125, 79.75)" class="label branch-label1"><text><tspan class="row" x="0" dy="1em" space="preserve">experiment</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path><path class="arrow arrow1" d="M 110 0 L 110 70 A 20 20, 0, 0, 0, 130 90 L 160 90"></path><path class="arrow arrow0" d="M 110 0 L 110 0  110 0 L 210 0"></path></g><g class="commit-bullets"><circle class="commit 0-53cb058 commit0" r="10" cy="0" cx="10"></circle><circle class="commit 1-dbada61 commit0" r="10" cy="0" cx="60"></circle><circle class="commit 2-f64a9d8 commit0" r="10" cy="0" cx="110"></circle><circle class="commit 3-d9fef1a commit1" r="10" cy="90" cx="160"></circle><circle class="commit 4-4584e85 commit0" r="10" cy="0" cx="210"></circle></g><g class="commit-labels"><g transform="translate(-28.65234375, 25.52578125) rotate(-45, 0, 0)"><rect height="15.5" width="49.6640625" y="13.5" x="-14.83203125" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-12.83203125">0-53cb058</text></g><g transform="translate(-29.02046875, 25.85515625) rotate(-45, 50, 0)"><rect height="15.5" width="50.6328125" y="13.5" x="34.68359375" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="36.68359375">1-dbada61</text></g><g transform="translate(-28.177343750000002, 25.10078125) rotate(-45, 100, 0)"><rect height="15.5" width="48.4140625" y="13.5" x="85.79296875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="87.79296875">2-f64a9d8</text></g><g transform="translate(-27.6696875, 24.6465625) rotate(-45, 150, 90)"><rect height="15.5" width="47.078125" y="103.5" x="136.4609375" class="commit-label-bkg"></rect><text class="commit-label" y="115" x="138.4609375">3-d9fef1a</text></g><g transform="translate(-28.71765625, 25.584218749999998) rotate(-45, 200, 0)"><rect height="15.5" width="49.8359375" y="13.5" x="185.08203125" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="187.08203125">4-4584e85</text></g></g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="merge-conflict" class="slide level2">
+<h2>merge conflict</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb21-1"><a href="#cb21-1"></a>❯ git pull --rebase</span>
+<span id="cb21-2"><a href="#cb21-2"></a>Auto-merging main.R</span>
+<span id="cb21-3"><a href="#cb21-3"></a>CONFLICT (content): Merge conflict in main.R</span>
+<span id="cb21-4"><a href="#cb21-4"></a>error: could not apply 160ea3e... added tidyverse</span>
+<span id="cb21-5"><a href="#cb21-5"></a>hint: Resolve all conflicts manually, mark them as resolved with</span>
+<span id="cb21-6"><a href="#cb21-6"></a>hint: "git add/rm &lt;conflicted_files&gt;", then run "git rebase --continue".</span>
+<span id="cb21-7"><a href="#cb21-7"></a>hint: You can instead skip this commit: run "git rebase --skip".</span>
+<span id="cb21-8"><a href="#cb21-8"></a>hint: To abort and get back to the state before "git rebase", run "git rebase --abort".</span>
+<span id="cb21-9"><a href="#cb21-9"></a>Could not apply 160ea3e... added tidyverse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="sc">&lt;</span><span class="er">&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="sc">||</span><span class="er">|||||</span> parent of <span class="dv">160</span><span class="fu">ea3e</span> (added tidyverse)</span>
+<span id="cb22-4"><a href="#cb22-4"></a><span class="sc">==</span><span class="er">=====</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb22-6"><a href="#cb22-6"></a><span class="sc">&gt;</span><span class="er">&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="dv">160</span><span class="fu">ea3e</span> (added tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+<img src="img/wtf-logo-square-transparent.png" class="slide-logo r-stretch"><div class="footer footer-default">
+
+</div>
+</section></section>
+
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

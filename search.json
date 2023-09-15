@@ -1,0 +1,366 @@
+[
+  {
+    "objectID": "index.html#imagine-we-need-to-work-on-a-document-together",
+    "href": "index.html#imagine-we-need-to-work-on-a-document-together",
+    "title": "Version Control",
+    "section": "imagine we need to work on a document together",
+    "text": "imagine we need to work on a document together\nhow should we do that?"
+  },
+  {
+    "objectID": "index.html#key-questions",
+    "href": "index.html#key-questions",
+    "title": "Version Control",
+    "section": "key questions",
+    "text": "key questions\n\nwhich version of the document is the authoritative one?\n\nif you and I change the same thing:\n\nhow will we know we did that?\nwhose edits should win?"
+  },
+  {
+    "objectID": "index.html#some-solutions",
+    "href": "index.html#some-solutions",
+    "title": "Version Control",
+    "section": "some solutions",
+    "text": "some solutions\n\n\n\n\n   \n\n\n\n\n\nlet’s talk about how we’re not solving the problem:\nIf you and I need to collaborate on a document today, what options do we have?\nwarm up discussion: consider these mechanisms for shared editing and limitations:\n\ndropbox\n\nYou have to trust dropbox to figure out conflicts for you and then hope they got it right\n\nemail attachments\n\nevery email attachment of the document is a new, potentially authortiative copy and this gets increasingly confusing as you add collaborators\ndoc_date_FINAL.docx\n\nshared drive\n\ntypically only one person can modify the document at a time\n\nsharepoint\n\nwe may not have access to the same proprietary program for editing\ndepends on shared service access\n\na google doc\n\ngoogle docs are pretty good, actually, until we start talking about code\n\n\nwhat if you’re working on code? what if your collaborators are strangers? what if they’re halfway around the world?\nplain text is a least common denominator we’re not assuming access to shared hardware we are assuming that collaboration is async"
+  },
+  {
+    "objectID": "index.html#on-plain-text",
+    "href": "index.html#on-plain-text",
+    "title": "Version Control",
+    "section": "on plain text",
+    "text": "on plain text\n\nbeware\nBe careful about storing valuable IP of yours in places that can take it away from you when they change business models"
+  },
+  {
+    "objectID": "index.html#agenda-1",
+    "href": "index.html#agenda-1",
+    "title": "Version Control",
+    "section": "agenda",
+    "text": "agenda\n\nterminology\nterminalogy\nworkflows: I\ntools\nworkflows: II\nunhappy paths"
+  },
+  {
+    "objectID": "index.html#resources",
+    "href": "index.html#resources",
+    "title": "Version Control",
+    "section": "resources",
+    "text": "resources\n\n\nWhat They Forgot\n\n\n\n\n\n\nHappy Git with R"
+  },
+  {
+    "objectID": "index.html#goals",
+    "href": "index.html#goals",
+    "title": "Version Control",
+    "section": "goals",
+    "text": "goals\n\n\nour objective is to go deeper this workshop will emphasize terminal workflows and preview how other tools layer interactions on top choose a workflow that works for you, and pick up sharper tools when needed"
+  },
+  {
+    "objectID": "index.html#git",
+    "href": "index.html#git",
+    "title": "Version Control",
+    "section": "git",
+    "text": "git\ndistributed version control system\n\ndistributed = we all have a copy contrast with other approaches where there is only one copy"
+  },
+  {
+    "objectID": "index.html#repository",
+    "href": "index.html#repository",
+    "title": "Version Control",
+    "section": "repository",
+    "text": "repository\n./\n├── ChangeLog\n├── config.site\n├── configure*\n├── configure.ac\n├── configure.patch\n├── COPYING\n├── doc/\n├── etc/\n├── INSTALL\n├── m4/\n├── Makeconf.in\n├── Makefile.fw\n├── Makefile.in\n├── po/\n├── README\n├── share/\n├── src/\n├── tests/\n├── tools/\n├── VERSION\n└── VERSION-NICK\n\na repository is a a project opinions on the scope of what belongs in a single repository vary widely monorepos?"
+  },
+  {
+    "objectID": "index.html#remote",
+    "href": "index.html#remote",
+    "title": "Version Control",
+    "section": "remote",
+    "text": "remote\ngit vs. github / gitlab / bitbucket\n\ngit is decentralized github is how we coordinate the authoritative copy is stored by the code host"
+  },
+  {
+    "objectID": "index.html#clone-fork",
+    "href": "index.html#clone-fork",
+    "title": "Version Control",
+    "section": "clone / fork",
+    "text": "clone / fork\n\nwho has permissions to make changes to a consensus copy is managed by the service provider forks are for untrusted collaborators / open source salt"
+  },
+  {
+    "objectID": "index.html#commit",
+    "href": "index.html#commit",
+    "title": "Version Control",
+    "section": "commit",
+    "text": "commit\n\n\n\n\n\n\nmaininitial commitsnapshot onesnapshot two\n\n\n\n\n\n\na snapshot of project state shopping cart analogy?"
+  },
+  {
+    "objectID": "index.html#diff",
+    "href": "index.html#diff",
+    "title": "Version Control",
+    "section": "diff",
+    "text": "diff\n\n\n\n\n\n\nmaininitial commitsnapshot onesnapshot two\n\n\n\n\n\n\nthe difference between any two project snapshots draw on the slides!"
+  },
+  {
+    "objectID": "index.html#head",
+    "href": "index.html#head",
+    "title": "Version Control",
+    "section": "HEAD",
+    "text": "HEAD\n\n\n\n\n\n\nmaininitial commitsnapshot oneHEAD"
+  },
+  {
+    "objectID": "index.html#words-have-meaning",
+    "href": "index.html#words-have-meaning",
+    "title": "Version Control",
+    "section": "words have meaning",
+    "text": "words have meaning\nterminal\nshell\ncommand-line interface (CLI)1\nhttps://askubuntu.com/a/506628"
+  },
+  {
+    "objectID": "index.html#structure",
+    "href": "index.html#structure",
+    "title": "Version Control",
+    "section": "structure",
+    "text": "structure\ncommand subcommand --long-argument -s"
+  },
+  {
+    "objectID": "index.html#navigating",
+    "href": "index.html#navigating",
+    "title": "Version Control",
+    "section": "navigating",
+    "text": "navigating\npwd\ncd\nls -lha"
+  },
+  {
+    "objectID": "index.html#creating",
+    "href": "index.html#creating",
+    "title": "Version Control",
+    "section": "creating",
+    "text": "creating\nmkdir\nrmdir\ntouch\ncp\nmv\nrm"
+  },
+  {
+    "objectID": "index.html#systems-check",
+    "href": "index.html#systems-check",
+    "title": "Version Control",
+    "section": "systems check",
+    "text": "systems check\n\nterminalR\n\n\ngit config --global --list\n\n\nusethis::git_sitrep()"
+  },
+  {
+    "objectID": "index.html#systems-check-1",
+    "href": "index.html#systems-check-1",
+    "title": "Version Control",
+    "section": "systems check",
+    "text": "systems check\nhidden files:\n\nterminal\n\n\nls -lha\n\n\nclick to “show hidden files”\n\n\nCMD + SHIFT + ."
+  },
+  {
+    "objectID": "index.html#new-project",
+    "href": "index.html#new-project",
+    "title": "Version Control",
+    "section": "new project",
+    "text": "new project\n\ncreate project (from rstudio, or terminal)\n\nmkdir intro-git\ncd intro-git\ngit init\n\ninspect the directory presence of .git is what makes it a repository you can be a productive user of git without deeply understanding the contents of that directory"
+  },
+  {
+    "objectID": "index.html#git-status",
+    "href": "index.html#git-status",
+    "title": "Version Control",
+    "section": "git status",
+    "text": "git status\nrun often"
+  },
+  {
+    "objectID": "index.html#git-status-1",
+    "href": "index.html#git-status-1",
+    "title": "Version Control",
+    "section": "git status",
+    "text": "git status\nintro-git on  main\n❯ git status\nOn branch main\n\nNo commits yet\n\nnothing to commit (create/copy files and use \"git add\" to track)"
+  },
+  {
+    "objectID": "index.html#add-some-files",
+    "href": "index.html#add-some-files",
+    "title": "Version Control",
+    "section": "add some files",
+    "text": "add some files\n❯ git status\nOn branch main\n\nNo commits yet\n\nUntracked files:\n  (use \"git add &lt;file&gt;...\" to include in what will be committed)\n    _quarto.yml\n    index.qmd\n\nnothing added to commit but untracked files present (use \"git add\" to track)"
+  },
+  {
+    "objectID": "index.html#git-stage",
+    "href": "index.html#git-stage",
+    "title": "Version Control",
+    "section": "git stage",
+    "text": "git stage\n❯ git status\nOn branch main\n\nNo commits yet\n\nChanges to be committed:\n  (use \"git rm --cached &lt;file&gt;...\" to unstage)\n    new file:   _quarto.yml\n    new file:   index.qmd\n\nall the documentation you will ever see is for git add"
+  },
+  {
+    "objectID": "index.html#windows",
+    "href": "index.html#windows",
+    "title": "Version Control",
+    "section": "WINDOWS",
+    "text": "WINDOWS\n$ git add index.qmd\nwarning: LF will be replaced by CRLF in index.qmd.\nThe file will have its original line endings in your working directory\n\n\\r\\n FYI: https://linux.die.net/man/1/dos2unix"
+  },
+  {
+    "objectID": "index.html#new-project-who-dis",
+    "href": "index.html#new-project-who-dis",
+    "title": "Version Control",
+    "section": "new project, who dis",
+    "text": "new project, who dis\n\nterminalR\n\n\ngit config --global user.name edavidaja\ngit config --global user.email david@posit.cor\n\n\nusethis::git_sitrep()"
+  },
+  {
+    "objectID": "index.html#git-commit",
+    "href": "index.html#git-commit",
+    "title": "Version Control",
+    "section": "git commit",
+    "text": "git commit\n# Please enter the commit message for your changes. Lines starting\n# with '#' will be ignored, and an empty message aborts the commit.\n#\n# On branch main\n#\n# Initial commit\n#\n# Changes to be committed:\n#       new file:   _quarto.yml\n#       new file:   index.qmd\n\"~/Documents/projects/intro-git/.git/COMMIT_EDITMSG\" 12L, 255B"
+  },
+  {
+    "objectID": "index.html#editor",
+    "href": "index.html#editor",
+    "title": "Version Control",
+    "section": "EDITOR",
+    "text": "EDITOR\n\nvim\nnormal mode insert mode, write a message ESC to return to normal mode : to enter command mode wq to write the file and quit\nnano\nstart typing CTRL + O to save CTRL + X to exit"
+  },
+  {
+    "objectID": "index.html#git-commit--m",
+    "href": "index.html#git-commit--m",
+    "title": "Version Control",
+    "section": "git commit -m",
+    "text": "git commit -m\n❯ git commit -m \"initial commit\"\n[main (root-commit) cab0112] initial commit\n 2 files changed, 0 insertions(+), 0 deletions(-)\n create mode 100644 _quarto.yml\n create mode 100644 index.qmd"
+  },
+  {
+    "objectID": "index.html#git-status-2",
+    "href": "index.html#git-status-2",
+    "title": "Version Control",
+    "section": "git status",
+    "text": "git status\n❯ git status\nOn branch main\nnothing to commit, working tree clean"
+  },
+  {
+    "objectID": "index.html#repeat",
+    "href": "index.html#repeat",
+    "title": "Version Control",
+    "section": "repeat",
+    "text": "repeat\nwith rstudio, vscode"
+  },
+  {
+    "objectID": "index.html#git-log",
+    "href": "index.html#git-log",
+    "title": "Version Control",
+    "section": "git log",
+    "text": "git log\n❯ git log\ncommit 3efdc26af7bf6ea223bfa61c6cb4507de632690e (HEAD -&gt; main)\nAuthor: edavidaja &lt;edavidaja@hey.com&gt;\nDate:   Thu Jul 20 15:03:03 2023 -0400\n\n    added vs code workspace\n\ncommit 0d98a3c9cf2a351da39b26adbfad442c834ff8d4\nAuthor: edavidaja &lt;edavidaja@hey.com&gt;\nDate:   Thu Jul 20 14:55:34 2023 -0400\n\n    added rstudio project files\n\ncommit cab0112f6f96bdd82a46e622d8fccd445fc38d17\nAuthor: edavidaja &lt;edavidaja@hey.com&gt;\nDate:   Thu Jul 20 14:51:23 2023 -0400\n\n    initial commit\n\ndiscuss hashes"
+  },
+  {
+    "objectID": "index.html#git-status-3",
+    "href": "index.html#git-status-3",
+    "title": "Version Control",
+    "section": "git status",
+    "text": "git status\n❯ git status\nOn branch main\nYour branch is up to date with 'origin/main'.\n\nChanges not staged for commit:\n  (use \"git add &lt;file&gt;...\" to update what will be committed)\n  (use \"git restore &lt;file&gt;...\" to discard changes in working directory)\n        modified:   index.qmd"
+  },
+  {
+    "objectID": "index.html#publish-to-github",
+    "href": "index.html#publish-to-github",
+    "title": "Version Control",
+    "section": "publish to github",
+    "text": "publish to github\nexisting project, github first"
+  },
+  {
+    "objectID": "index.html#publish-to-github-setup",
+    "href": "index.html#publish-to-github-setup",
+    "title": "Version Control",
+    "section": "publish to github: setup",
+    "text": "publish to github: setup\ngit remote add origin https://github.com/edavidaja/intro-git.git\ngit branch -M main"
+  },
+  {
+    "objectID": "index.html#git-push",
+    "href": "index.html#git-push",
+    "title": "Version Control",
+    "section": "git push",
+    "text": "git push\n❯ git push -u origin main\nEnumerating objects: 5, done.\nCounting objects: 100% (5/5), done.\nDelta compression using up to 12 threads\nCompressing objects: 100% (3/3), done.\nWriting objects: 100% (5/5), 418 bytes | 418.00 KiB/s, done.\nTotal 5 (delta 0), reused 0 (delta 0), pack-reused 0\nTo https://github.com/edavidaja/intro-git.git\n * [new branch]      main -&gt; main\nbranch 'main' set up to track 'origin/main'."
+  },
+  {
+    "objectID": "index.html#prompt",
+    "href": "index.html#prompt",
+    "title": "Version Control",
+    "section": "{prompt}",
+    "text": "{prompt}\nhttps://github.com/gaborcsardi/prompt"
+  },
+  {
+    "objectID": "index.html#starship",
+    "href": "index.html#starship",
+    "title": "Version Control",
+    "section": "starship",
+    "text": "starship\nhttps://starship.rs/"
+  },
+  {
+    "objectID": "index.html#gh",
+    "href": "index.html#gh",
+    "title": "Version Control",
+    "section": "gh",
+    "text": "gh\nhttps://cli.github.com/"
+  },
+  {
+    "objectID": "index.html#vs-code",
+    "href": "index.html#vs-code",
+    "title": "Version Control",
+    "section": "vs code",
+    "text": "vs code\nhttps://code.visualstudio.com/"
+  },
+  {
+    "objectID": "index.html#tldr",
+    "href": "index.html#tldr",
+    "title": "Version Control",
+    "section": "tldr",
+    "text": "tldr\nhttps://dbrgn.github.io/tealdeer/"
+  },
+  {
+    "objectID": "index.html#gitignore",
+    "href": "index.html#gitignore",
+    "title": "Version Control",
+    "section": "gitignore",
+    "text": "gitignore"
+  },
+  {
+    "objectID": "index.html#clean",
+    "href": "index.html#clean",
+    "title": "Version Control",
+    "section": "clean",
+    "text": "clean\ngenerated files chat"
+  },
+  {
+    "objectID": "index.html#branch",
+    "href": "index.html#branch",
+    "title": "Version Control",
+    "section": "branch",
+    "text": "branch\n\n\n\n\n\n\nmainexperiment0-36f0e661-30729562-a20fe043-446b198"
+  },
+  {
+    "objectID": "index.html#merge",
+    "href": "index.html#merge",
+    "title": "Version Control",
+    "section": "merge",
+    "text": "merge\n\n\n\n\n\n\nmainexperiment0-563ee6c1-fd6f0e92-86a88a13-cfc4526"
+  },
+  {
+    "objectID": "index.html#prs",
+    "href": "index.html#prs",
+    "title": "Version Control",
+    "section": "PRs",
+    "text": "PRs"
+  },
+  {
+    "objectID": "index.html#push-rejection",
+    "href": "index.html#push-rejection",
+    "title": "Version Control",
+    "section": "push rejection",
+    "text": "push rejection\n❯ git push\nTo https://github.com/edavidaja/intro-git.git\n ! [rejected]        main -&gt; main (fetch first)\nerror: failed to push some refs to 'https://github.com/edavidaja/intro-git.git'\nhint: Updates were rejected because the remote contains work that you do\nhint: not have locally. This is usually caused by another repository pushing\nhint: to the same ref. You may want to first integrate the remote changes\nhint: (e.g., 'git pull ...') before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details."
+  },
+  {
+    "objectID": "index.html#merge-strategy",
+    "href": "index.html#merge-strategy",
+    "title": "Version Control",
+    "section": "merge strategy",
+    "text": "merge strategy\n❯ git pull\nremote: Enumerating objects: 5, done.\nremote: Counting objects: 100% (5/5), done.\nremote: Compressing objects: 100% (2/2), done.\nremote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0\nUnpacking objects: 100% (3/3), 636 bytes | 212.00 KiB/s, done.\nFrom https://github.com/edavidaja/intro-git\n   2bdda53..424444e  main       -&gt; origin/main\nhint: You have divergent branches and need to specify how to reconcile them.\nhint: You can do so by running one of the following commands sometime before\nhint: your next pull:\nhint:\nhint:   git config pull.rebase false  # merge\nhint:   git config pull.rebase true   # rebase\nhint:   git config pull.ff only       # fast-forward only\nhint:\nhint: You can replace \"git config\" with \"git config --global\" to set a default\nhint: preference for all repositories. You can also pass --rebase, --no-rebase,\nhint: or --ff-only on the command line to override the configured default per\nhint: invocation.\nfatal: Need to specify how to reconcile divergent branches."
+  },
+  {
+    "objectID": "index.html#merge-conflicts",
+    "href": "index.html#merge-conflicts",
+    "title": "Version Control",
+    "section": "merge conflicts",
+    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-53cb0581-dbada612-f64a9d83-d9fef1a4-4584e85"
+  },
+  {
+    "objectID": "index.html#merge-conflict",
+    "href": "index.html#merge-conflict",
+    "title": "Version Control",
+    "section": "merge conflict",
+    "text": "merge conflict\n❯ git pull --rebase\nAuto-merging main.R\nCONFLICT (content): Merge conflict in main.R\nerror: could not apply 160ea3e... added tidyverse\nhint: Resolve all conflicts manually, mark them as resolved with\nhint: \"git add/rm &lt;conflicted_files&gt;\", then run \"git rebase --continue\".\nhint: You can instead skip this commit: run \"git rebase --skip\".\nhint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\".\nCould not apply 160ea3e... added tidyverse"
+  },
+  {
+    "objectID": "index.html#section-3",
+    "href": "index.html#section-3",
+    "title": "Version Control",
+    "section": "",
+    "text": "&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nlibrary(shiny)\n||||||| parent of 160ea3e (added tidyverse)\n=======\nlibrary(tidyverse)\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; 160ea3e (added tidyverse)"
+  }
+]
