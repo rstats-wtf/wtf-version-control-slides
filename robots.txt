@@ -1,1 +1,1 @@
-Sitemap: https://rstats-wtf.github.io/wtf-version-control-slides/sitemap.xml
+Sitemap: https://github.com/rstats-wtf/wtf-version-control-slides/sitemap.xml
