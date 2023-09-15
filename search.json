@@ -158,7 +158,7 @@
     "href": "index.html#git-status-1",
     "title": "Version Control",
     "section": "git status",
-    "text": "git status\nintro-git on  main\n❯ git status\nOn branch main\n\nNo commits yet\n\nnothing to commit (create/copy files and use \"git add\" to track)"
+    "text": "git status\n❯ git status\nOn branch main\n\nNo commits yet\n\nnothing to commit (create/copy files and use \"git add\" to track)"
   },
   {
     "objectID": "index.html#add-some-files",
@@ -312,14 +312,14 @@
     "href": "index.html#branch",
     "title": "Version Control",
     "section": "branch",
-    "text": "branch\n\n\n\n\n\n\n\n\n\nmainexperiment0-6ab63661-6dd96aa2-32234773-986f0c7"
+    "text": "branch\n\n\n\n\n\n\n\n\n\nmainexperiment0-9b224901-67059d62-8bc1aa63-a33339e"
   },
   {
     "objectID": "index.html#merge",
     "href": "index.html#merge",
     "title": "Version Control",
     "section": "merge",
-    "text": "merge\n\n\n\n\n\n\n\n\n\nmainexperiment0-465108d1-9edc3cc2-78637c13-98402af"
+    "text": "merge\n\n\n\n\n\n\n\n\n\nmainexperiment0-844cdb51-b9b03532-4ef04dd3-20bf810"
   },
   {
     "objectID": "index.html#prs",
@@ -347,7 +347,7 @@
     "href": "index.html#merge-conflicts",
     "title": "Version Control",
     "section": "merge conflicts",
-    "text": "merge conflicts\n\n\n\n\n\n\n\n\n\nmainexperiment0-f779d5d1-f6c77f82-735a2c93-4594e0b4-124c71e"
+    "text": "merge conflicts\n\n\n\n\n\n\n\n\n\nmainexperiment0-eea5e6c1-1a6246a2-ddeb7f83-84098dd4-ac825cf"
   },
   {
     "objectID": "index.html#merge-conflict",
