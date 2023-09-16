@@ -39,7 +39,7 @@
     "href": "index.html#resources",
     "title": "Version Control",
     "section": "resources",
-    "text": "resources\n\n\nWhat They Forgot\n\n\n\n\n\n\nHappy Git with R"
+    "text": "resources\n\n\nWhat They Forgot\n\n\nHappy Git with R"
   },
   {
     "objectID": "index.html#goals",
@@ -81,21 +81,21 @@
     "href": "index.html#commit",
     "title": "Version Control",
     "section": "commit",
-    "text": "commit\n\n\n\n\n\n\n\n\n\nmaininitial commitsnapshot onesnapshot two\n\n\n\n\n\n\na snapshot of project state shopping cart analogy?"
+    "text": "commit\n\n\n\n\n\n\nmaininitial commitsnapshot onesnapshot two\n\n\n\n\n\n\na snapshot of project state shopping cart analogy?"
   },
   {
     "objectID": "index.html#diff",
     "href": "index.html#diff",
     "title": "Version Control",
     "section": "diff",
-    "text": "diff\n\n\n\n\n\n\n\n\n\nmaininitial commitsnapshot onesnapshot two\n\n\n\n\n\n\nthe difference between any two project snapshots draw on the slides!"
+    "text": "diff\n\n\n\n\n\n\nmaininitial commitsnapshot onesnapshot two\n\n\n\n\n\n\nthe difference between any two project snapshots draw on the slides!"
   },
   {
     "objectID": "index.html#head",
     "href": "index.html#head",
     "title": "Version Control",
     "section": "HEAD",
-    "text": "HEAD\n\n\n\n\n\n\n\n\n\nmaininitial commitsnapshot oneHEAD"
+    "text": "HEAD\n\n\n\n\n\n\nmaininitial commitsnapshot oneHEAD"
   },
   {
     "objectID": "index.html#words-have-meaning",
@@ -137,7 +137,7 @@
     "href": "index.html#systems-check-1",
     "title": "Version Control",
     "section": "systems check",
-    "text": "systems check\nhidden files:\n\nterminal\n\n\nls -lha\n\n\nclick to “show hidden files”\n\n\nCMD + SHIFT + ."
+    "text": "systems check\nhidden files:\n\nterminal\n\n\nls -lha\n\n\n\n\n\n\n\n\n\n\n\nCMD + SHIFT + ."
   },
   {
     "objectID": "index.html#new-project",
@@ -175,11 +175,11 @@
     "text": "git stage\n❯ git status\nOn branch main\n\nNo commits yet\n\nChanges to be committed:\n  (use \"git rm --cached &lt;file&gt;...\" to unstage)\n    new file:   _quarto.yml\n    new file:   index.qmd\n\nall the documentation you will ever see is for git add"
   },
   {
-    "objectID": "index.html#windows",
-    "href": "index.html#windows",
+    "objectID": "index.html#section-3",
+    "href": "index.html#section-3",
     "title": "Version Control",
-    "section": "WINDOWS",
-    "text": "WINDOWS\n$ git add index.qmd\nwarning: LF will be replaced by CRLF in index.qmd.\nThe file will have its original line endings in your working directory\n\n\\r\\n FYI: https://linux.die.net/man/1/dos2unix"
+    "section": "",
+    "text": "$ git add index.qmd\nwarning: LF will be replaced by CRLF in index.qmd.\nThe file will have its original line endings in your working directory\n\nCRLFCRLF\n\n\n\\r\n\n\n\\n\n\n\n\\r\\n\n\n\n\n\ndos2unix"
   },
   {
     "objectID": "index.html#new-project-who-dis",
@@ -200,7 +200,7 @@
     "href": "index.html#editor",
     "title": "Version Control",
     "section": "EDITOR",
-    "text": "EDITOR\n\nvim\nnormal mode insert mode, write a message ESC to return to normal mode : to enter command mode wq to write the file and quit\nnano\nstart typing CTRL + O to save CTRL + X to exit"
+    "text": "EDITOR\n\nvimnano\n\n\n➡️normal mode\nI: insert mode, write a message\nESC: return to normal mode\n: : command mode\nwq: write the file and quit\nq!: quit without saving\n\n\nCTRL|CMD + O to save\nCTRL|CMD + X to exit"
   },
   {
     "objectID": "index.html#git-commit--m",
@@ -312,14 +312,14 @@
     "href": "index.html#branch",
     "title": "Version Control",
     "section": "branch",
-    "text": "branch\n\n\n\n\n\n\n\n\n\nmainexperiment0-9b224901-67059d62-8bc1aa63-a33339e"
+    "text": "branch\n\n\n\n\n\n\nmainexperiment0-873b1091-61910c22-35dc4743-fe64ae6"
   },
   {
     "objectID": "index.html#merge",
     "href": "index.html#merge",
     "title": "Version Control",
     "section": "merge",
-    "text": "merge\n\n\n\n\n\n\n\n\n\nmainexperiment0-844cdb51-b9b03532-4ef04dd3-20bf810"
+    "text": "merge\n\n\n\n\n\n\nmainexperiment0-bd72d6d1-2ba3eb12-d5509d03-efc0649"
   },
   {
     "objectID": "index.html#prs",
@@ -347,7 +347,7 @@
     "href": "index.html#merge-conflicts",
     "title": "Version Control",
     "section": "merge conflicts",
-    "text": "merge conflicts\n\n\n\n\n\n\n\n\n\nmainexperiment0-eea5e6c1-1a6246a2-ddeb7f83-84098dd4-ac825cf"
+    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-17de99e1-a3e012f2-0da1e6b3-5edfc4b4-7830ff8"
   },
   {
     "objectID": "index.html#merge-conflict",
@@ -357,8 +357,8 @@
     "text": "merge conflict\n❯ git pull --rebase\nAuto-merging main.R\nCONFLICT (content): Merge conflict in main.R\nerror: could not apply 160ea3e... added tidyverse\nhint: Resolve all conflicts manually, mark them as resolved with\nhint: \"git add/rm &lt;conflicted_files&gt;\", then run \"git rebase --continue\".\nhint: You can instead skip this commit: run \"git rebase --skip\".\nhint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\".\nCould not apply 160ea3e... added tidyverse"
   },
   {
-    "objectID": "index.html#section-1",
-    "href": "index.html#section-1",
+    "objectID": "index.html#section-4",
+    "href": "index.html#section-4",
     "title": "Version Control",
     "section": "",
     "text": "&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nlibrary(shiny)\n||||||| parent of 160ea3e (added tidyverse)\n=======\nlibrary(tidyverse)\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; 160ea3e (added tidyverse)"
