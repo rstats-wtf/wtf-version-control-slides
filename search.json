@@ -277,7 +277,7 @@
     "href": "index.html#terminals",
     "title": "Version Control",
     "section": "terminals",
-    "text": "terminals\n\n\n\n\nwarp\niTerm2\n\n\n\n\nwt\n\n\n\nalacritty"
+    "text": "terminals\n\n\n\n\nTerminal.app\nwarp\niTerm2\n\n\n\n\nwt\n\n\n\ncross-platform\nalacritty"
   },
   {
     "objectID": "index.html#shell-helpers",
@@ -319,7 +319,7 @@
     "href": "index.html#branch",
     "title": "Version Control",
     "section": "branch",
-    "text": "branch\n\n\n\n\n\n\nmainexperiment0-aef53af1-d3e8aae2-9f02eff3-ea23ea4"
+    "text": "branch\n\n\n\n\n\n\nmainexperiment0-a16401b1-948cda72-c6846d53-928b1be"
   },
   {
     "objectID": "index.html#create-a-branch",
@@ -343,18 +343,53 @@
     "text": "back to main\n❯ git checkout main\nSwitched to branch 'main'\n\n\n\n❯ git switch main\nSwitched to branch 'main'"
   },
   {
+    "objectID": "index.html#multiverse",
+    "href": "index.html#multiverse",
+    "title": "Version Control",
+    "section": "multiverse",
+    "text": "multiverse\n\ncheckout new_branch\nedit an existing file\ncommit\nswitch back to main"
+  },
+  {
+    "objectID": "index.html#section-8",
+    "href": "index.html#section-8",
+    "title": "Version Control",
+    "section": "",
+    "text": "❯ git commit -am \"commit on a branch\"\n[new_branch f1c234b] commit on a branch\n 1 file changed, 3 insertions(+)\n\n❯ cat index.qmd\n---\ntitle: happy git\n---\n\n❯ git checkout main\nSwitched to branch 'main'\n\n❯ cat index.qmd"
+  },
+  {
     "objectID": "index.html#merge",
     "href": "index.html#merge",
     "title": "Version Control",
     "section": "merge",
-    "text": "merge\n\n\n\n\n\n\nmainexperiment0-eaa49431-afe7fdf2-9c27a3a3-78abb26"
+    "text": "merge\n\n\n\n\n\n\nmainexperiment0-fdebc3b1-6d4192a2-3cdaeed3-a4cead2"
+  },
+  {
+    "objectID": "index.html#git-merge",
+    "href": "index.html#git-merge",
+    "title": "Version Control",
+    "section": "git merge",
+    "text": "git merge\ngit merge new_branch\n❯ git merge new_branch\nUpdating 7614b5c..f1c234b\nFast-forward\n index.qmd | 3 +++\n 1 file changed, 3 insertions(+)"
   },
   {
     "objectID": "index.html#prs",
     "href": "index.html#prs",
     "title": "Version Control",
     "section": "PRs",
-    "text": "PRs"
+    "text": "PRs\n\ncheckout second_branch\nedit an existing file\ncommit\npush the branch to GitHub"
+  },
+  {
+    "objectID": "index.html#set-upstream",
+    "href": "index.html#set-upstream",
+    "title": "Version Control",
+    "section": "--set-upstream",
+    "text": "--set-upstream\n❯ git push\nfatal: The current branch second-branch has no upstream branch.\nTo push the current branch and set the remote as upstream, use\n\n    git push --set-upstream origin second-branch\n\nTo have this happen automatically for branches without a tracking\nupstream, see 'push.autoSetupRemote' in 'git help config'."
+  },
+  {
+    "objectID": "index.html#git-config",
+    "href": "index.html#git-config",
+    "title": "Version Control",
+    "section": "git config",
+    "text": "git config\ngit config --global push.autoSetupRemote true\n\n\n\n\n\n\n\n\n\nI set this globally because my workflow is pretty basic, ymmv"
   },
   {
     "objectID": "index.html#push-rejection",
@@ -375,7 +410,7 @@
     "href": "index.html#merge-conflicts",
     "title": "Version Control",
     "section": "merge conflicts",
-    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-24b64581-59ecfdb2-e6a4e8d3-9ba51d44-2a91813"
+    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-23e64441-20b64502-8d6c5f83-f1e6b2a4-c79bfbf"
   },
   {
     "objectID": "index.html#merge-conflict",
@@ -385,8 +420,8 @@
     "text": "merge conflict\n❯ git pull --rebase\nAuto-merging main.R\nCONFLICT (content): Merge conflict in main.R\nerror: could not apply 160ea3e... added tidyverse\nhint: Resolve all conflicts manually, mark them as resolved with\nhint: \"git add/rm &lt;conflicted_files&gt;\", then run \"git rebase --continue\".\nhint: You can instead skip this commit: run \"git rebase --skip\".\nhint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\".\nCould not apply 160ea3e... added tidyverse"
   },
   {
-    "objectID": "index.html#section-8",
-    "href": "index.html#section-8",
+    "objectID": "index.html#section-9",
+    "href": "index.html#section-9",
     "title": "Version Control",
     "section": "",
     "text": "&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nlibrary(shiny)\n||||||| parent of 160ea3e (added tidyverse)\n=======\nlibrary(tidyverse)\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; 160ea3e (added tidyverse)"
