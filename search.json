@@ -18,7 +18,7 @@
     "href": "index.html#some-solutions",
     "title": "Version Control",
     "section": "some solutions",
-    "text": "some solutions\n\n\n\n\n   \n\n\n\n\n\nlet’s talk about how we’re not solving the problem:\nIf you and I need to collaborate on a document today, what options do we have?\nwarm up discussion: consider these mechanisms for shared editing and limitations:\n\ndropbox\n\nYou have to trust dropbox to figure out conflicts for you and then hope they got it right\n\nemail attachments\n\nevery email attachment of the document is a new, potentially authortiative copy and this gets increasingly confusing as you add collaborators\ndoc_date_FINAL.docx\n\nshared drive\n\ntypically only one person can modify the document at a time\n\nsharepoint\n\nwe may not have access to the same proprietary program for editing\ndepends on shared service access\n\na google doc\n\ngoogle docs are pretty good, actually, until we start talking about code\n\n\nwhat if you’re working on code? what if your collaborators are strangers? what if they’re halfway around the world?\nplain text is a least common denominator we’re not assuming access to shared hardware we are assuming that collaboration is async"
+    "text": "some solutions\n\n\n\n\n\n\ndropbox\n\n\n\n\n\n\n\nshared drive\n\n\n\n\n\n\n\nemail\n\n\n\n\n\n\n\ngoogle docs\n\n\n\n\n\n\nlet’s talk about how we’re not solving the problem:\nIf you and I need to collaborate on a document today, what options do we have?\nwarm up discussion: consider these mechanisms for shared editing and limitations:\n\ndropbox\n\nYou have to trust dropbox to figure out conflicts for you and then hope they got it right\n\nemail attachments\n\nevery email attachment of the document is a new, potentially authortiative copy and this gets increasingly confusing as you add collaborators\ndoc_date_FINAL.docx\n\nshared drive\n\ntypically only one person can modify the document at a time\n\nsharepoint\n\nwe may not have access to the same proprietary program for editing\ndepends on shared service access\n\na google doc\n\ngoogle docs are pretty good, actually, until we start talking about code\n\n\nwhat if you’re working on code? what if your collaborators are strangers? what if they’re halfway around the world?\nplain text is a least common denominator we’re not assuming access to shared hardware we are assuming that collaboration is async"
   },
   {
     "objectID": "index.html#on-plain-text",
@@ -259,67 +259,81 @@
     "text": "git push\n❯ git push -u origin main\nEnumerating objects: 5, done.\nCounting objects: 100% (5/5), done.\nDelta compression using up to 12 threads\nCompressing objects: 100% (3/3), done.\nWriting objects: 100% (5/5), 418 bytes | 418.00 KiB/s, done.\nTotal 5 (delta 0), reused 0 (delta 0), pack-reused 0\nTo https://github.com/edavidaja/intro-git.git\n * [new branch]      main -&gt; main\nbranch 'main' set up to track 'origin/main'."
   },
   {
-    "objectID": "index.html#prompt",
-    "href": "index.html#prompt",
-    "title": "Version Control",
-    "section": "{prompt}",
-    "text": "{prompt}\nhttps://github.com/gaborcsardi/prompt"
-  },
-  {
-    "objectID": "index.html#starship",
-    "href": "index.html#starship",
-    "title": "Version Control",
-    "section": "starship",
-    "text": "starship\nhttps://starship.rs/"
-  },
-  {
-    "objectID": "index.html#gh",
-    "href": "index.html#gh",
-    "title": "Version Control",
-    "section": "gh",
-    "text": "gh\nhttps://cli.github.com/"
-  },
-  {
-    "objectID": "index.html#vs-code",
-    "href": "index.html#vs-code",
-    "title": "Version Control",
-    "section": "vs code",
-    "text": "vs code\nhttps://code.visualstudio.com/"
-  },
-  {
-    "objectID": "index.html#tldr",
-    "href": "index.html#tldr",
-    "title": "Version Control",
-    "section": "tldr",
-    "text": "tldr\nhttps://dbrgn.github.io/tealdeer/"
-  },
-  {
     "objectID": "index.html#gitignore",
     "href": "index.html#gitignore",
     "title": "Version Control",
-    "section": "gitignore",
-    "text": "gitignore"
+    "section": ".gitignore",
+    "text": ".gitignore\n.Renviron\n.env\n.Rproj.user\n*.csv\ndata/"
   },
   {
-    "objectID": "index.html#clean",
-    "href": "index.html#clean",
+    "objectID": "index.html#launchers",
+    "href": "index.html#launchers",
     "title": "Version Control",
-    "section": "clean",
-    "text": "clean\ngenerated files chat"
+    "section": "launchers",
+    "text": "launchers\n\n\n\n\nspotlight\nalfred\nraycast\n\n\n\n\nCTRL + ESC\nPowerToys Run"
+  },
+  {
+    "objectID": "index.html#terminals",
+    "href": "index.html#terminals",
+    "title": "Version Control",
+    "section": "terminals",
+    "text": "terminals\n\n\n\n\nwarp\niTerm2\n\n\n\n\nwt\n\n\n\nalacritty"
+  },
+  {
+    "objectID": "index.html#shell-helpers",
+    "href": "index.html#shell-helpers",
+    "title": "Version Control",
+    "section": "shell helpers",
+    "text": "shell helpers\n\nNerd Fonts\nstarship\nfig\n{prompt}\noh-my-* (zsh, posh, bash)\nfzf\natuin"
+  },
+  {
+    "objectID": "index.html#command-line-interfaes",
+    "href": "index.html#command-line-interfaes",
+    "title": "Version Control",
+    "section": "command line interfaes",
+    "text": "command line interfaes\n\ntldr\ngh"
+  },
+  {
+    "objectID": "index.html#editors",
+    "href": "index.html#editors",
+    "title": "Version Control",
+    "section": "editors",
+    "text": "editors\n\nvs code\nsublime\nnotepad++"
+  },
+  {
+    "objectID": "index.html#git-guis",
+    "href": "index.html#git-guis",
+    "title": "Version Control",
+    "section": "git GUIs",
+    "text": "git GUIs\nRecommended Git Clients"
+  },
+  {
+    "objectID": "index.html#how",
+    "href": "index.html#how",
+    "title": "Version Control",
+    "section": "how?!",
+    "text": "how?!\npersonal radmin"
+  },
+  {
+    "objectID": "index.html#git-branch",
+    "href": "index.html#git-branch",
+    "title": "Version Control",
+    "section": "git branch",
+    "text": "git branch"
   },
   {
     "objectID": "index.html#branch",
     "href": "index.html#branch",
     "title": "Version Control",
     "section": "branch",
-    "text": "branch\n\n\n\n\n\n\nmainexperiment0-873b1091-61910c22-35dc4743-fe64ae6"
+    "text": "branch\n\n\n\n\n\n\nmainexperiment0-7e0735f1-3b259ad2-43fc6f93-32fb456"
   },
   {
     "objectID": "index.html#merge",
     "href": "index.html#merge",
     "title": "Version Control",
     "section": "merge",
-    "text": "merge\n\n\n\n\n\n\nmainexperiment0-bd72d6d1-2ba3eb12-d5509d03-efc0649"
+    "text": "merge\n\n\n\n\n\n\nmainexperiment0-64792c41-13e82992-0b661943-6c822f8"
   },
   {
     "objectID": "index.html#prs",
@@ -347,7 +361,7 @@
     "href": "index.html#merge-conflicts",
     "title": "Version Control",
     "section": "merge conflicts",
-    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-17de99e1-a3e012f2-0da1e6b3-5edfc4b4-7830ff8"
+    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-a0a16f41-0d518a12-84cc5673-fa4862e4-3f34528"
   },
   {
     "objectID": "index.html#merge-conflict",
@@ -357,8 +371,8 @@
     "text": "merge conflict\n❯ git pull --rebase\nAuto-merging main.R\nCONFLICT (content): Merge conflict in main.R\nerror: could not apply 160ea3e... added tidyverse\nhint: Resolve all conflicts manually, mark them as resolved with\nhint: \"git add/rm &lt;conflicted_files&gt;\", then run \"git rebase --continue\".\nhint: You can instead skip this commit: run \"git rebase --skip\".\nhint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\".\nCould not apply 160ea3e... added tidyverse"
   },
   {
-    "objectID": "index.html#section-4",
-    "href": "index.html#section-4",
+    "objectID": "index.html#section-8",
+    "href": "index.html#section-8",
     "title": "Version Control",
     "section": "",
     "text": "&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nlibrary(shiny)\n||||||| parent of 160ea3e (added tidyverse)\n=======\nlibrary(tidyverse)\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; 160ea3e (added tidyverse)"
