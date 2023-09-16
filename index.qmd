@@ -580,8 +580,10 @@ data/
 ::: column
 ### {{< fa brands apple >}}
 
+- [Terminal.app](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac)
 - [warp](https://warp.dev)
 - [iTerm2](https://iterm2.com/)
+
 
 :::
 
@@ -593,6 +595,8 @@ data/
 :::
 
 :::
+
+### cross-platform
 
 [alacritty](https://alacritty.org/)
 
@@ -711,9 +715,33 @@ Switched to branch 'main'
 Switched to branch 'main'
 ```
 
+## multiverse
+
+- checkout `new_branch`
+- edit an existing file
+- commit
+- switch back to main
+
+## 
+
+```bash
+❯ git commit -am "commit on a branch"
+[new_branch f1c234b] commit on a branch
+ 1 file changed, 3 insertions(+)
+
+❯ cat index.qmd
+---
+title: happy git
+---
+
+❯ git checkout main
+Switched to branch 'main'
+
+❯ cat index.qmd
+
+```
 
 ## merge
-
 
 ```{mermaid}
 gitGraph
@@ -727,7 +755,45 @@ gitGraph
   merge experiment
 ```
 
+## `git merge`
+
+```bash
+git merge new_branch
+❯ git merge new_branch
+Updating 7614b5c..f1c234b
+Fast-forward
+ index.qmd | 3 +++
+ 1 file changed, 3 insertions(+)
+```
+
 ## PRs
+
+- checkout `second_branch`
+- edit an existing file
+- commit
+- push the branch to GitHub
+
+
+## `--set-upstream`
+
+```bash
+❯ git push
+fatal: The current branch second-branch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin second-branch
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+```
+
+## `git config`
+
+[`git config --global push.autoSetupRemote true`](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote)
+
+::: callout-warning
+I set this globally because my workflow is pretty basic, ymmv
+:::
 
 # unhappy paths
 
