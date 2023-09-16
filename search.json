@@ -315,25 +315,39 @@
     "text": "how?!\npersonal radmin"
   },
   {
-    "objectID": "index.html#git-branch",
-    "href": "index.html#git-branch",
-    "title": "Version Control",
-    "section": "git branch",
-    "text": "git branch"
-  },
-  {
     "objectID": "index.html#branch",
     "href": "index.html#branch",
     "title": "Version Control",
     "section": "branch",
-    "text": "branch\n\n\n\n\n\n\nmainexperiment0-7e0735f1-3b259ad2-43fc6f93-32fb456"
+    "text": "branch\n\n\n\n\n\n\nmainexperiment0-aef53af1-d3e8aae2-9f02eff3-ea23ea4"
+  },
+  {
+    "objectID": "index.html#create-a-branch",
+    "href": "index.html#create-a-branch",
+    "title": "Version Control",
+    "section": "create a branch",
+    "text": "create a branch\nall equivalent:\n❯ git branch new_branch\n❯ git checkout new_branch\nSwitched to branch 'new_branch'\n\n\n\n❯ git checkout -b new_branch\nSwitched to a new branch 'new_branch'\n\n\n\n❯ git switch --create new_branch\nSwitched to a new branch 'new_branch'"
+  },
+  {
+    "objectID": "index.html#git-status-4",
+    "href": "index.html#git-status-4",
+    "title": "Version Control",
+    "section": "git status",
+    "text": "git status\n❯ git status\nOn branch new_branch\nnothing to commit, working tree clean"
+  },
+  {
+    "objectID": "index.html#back-to-main",
+    "href": "index.html#back-to-main",
+    "title": "Version Control",
+    "section": "back to main",
+    "text": "back to main\n❯ git checkout main\nSwitched to branch 'main'\n\n\n\n❯ git switch main\nSwitched to branch 'main'"
   },
   {
     "objectID": "index.html#merge",
     "href": "index.html#merge",
     "title": "Version Control",
     "section": "merge",
-    "text": "merge\n\n\n\n\n\n\nmainexperiment0-64792c41-13e82992-0b661943-6c822f8"
+    "text": "merge\n\n\n\n\n\n\nmainexperiment0-eaa49431-afe7fdf2-9c27a3a3-78abb26"
   },
   {
     "objectID": "index.html#prs",
@@ -361,7 +375,7 @@
     "href": "index.html#merge-conflicts",
     "title": "Version Control",
     "section": "merge conflicts",
-    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-a0a16f41-0d518a12-84cc5673-fa4862e4-3f34528"
+    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-24b64581-59ecfdb2-e6a4e8d3-9ba51d44-2a91813"
   },
   {
     "objectID": "index.html#merge-conflict",
