@@ -33,11 +33,17 @@ how should we do that?
 
 ## some solutions
 
-::: fragment
 ::: {layout-nrow=1}
+::: fragment
 ![dropbox](img/dropbox.svg){width=20%}
+:::
+::: fragment
 ![shared drive](img/fileserver.svg){width=20%}
+:::
+::: fragment
 ![email](img/email.png){width=20%}
+:::
+::: fragment
 ![google docs](img/googledocs.svg){width=20%}
 :::
 :::
@@ -530,36 +536,119 @@ To https://github.com/edavidaja/intro-git.git
 branch 'main' set up to track 'origin/main'.
 ```
 
+## `.gitignore`
+
+```bash
+.Renviron
+.env
+.Rproj.user
+*.csv
+data/
+```
 
 # tools
 
-## `{prompt}`
+## launchers
 
-https://github.com/gaborcsardi/prompt
+::: columns
 
-## starship
+::: column
 
-https://starship.rs/
+### {{< fa brands apple >}}
 
-##  gh
+- [spotlight](https://support.apple.com/guide/mac-help/search-with-spotlight-mchlp1008/mac)
+- [alfred](https://www.alfredapp.com/)
+- [raycast](https://www.raycast.com/)
 
-https://cli.github.com/
+:::
 
-## vs code
+::: column
+### {{< fa brands windows >}}
 
-https://code.visualstudio.com/
+- `CTRL + ESC`
+- [PowerToys Run](https://learn.microsoft.com/en-us/windows/powertoys/run)
 
-## tldr
+:::
 
-https://dbrgn.github.io/tealdeer/
+:::
+
+
+## terminals
+
+::: columns
+
+::: column
+### {{< fa brands apple >}}
+
+- [warp](https://warp.dev)
+- [iTerm2](https://iterm2.com/)
+
+:::
+
+::: column
+### {{< fa brands windows >}}
+
+- [wt](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701)
+
+:::
+
+:::
+
+[alacritty](https://alacritty.org/)
+
+## shell helpers
+
+- [Nerd Fonts](https://www.nerdfonts.com/)
+- [starship](https://starship.rs/)
+- [fig](https://fig.io)
+- [`{prompt}`](https://github.com/gaborcsardi/prompt)
+- `oh-my-*` ([zsh](https://ohmyz.sh/), [posh](https://ohmyposh.dev/), [bash](https://ohmybash.nntoan.com/))
+- [fzf](https://github.com/junegunn/fzf)
+- [atuin](https://atuin.sh/)
+
+
+## command line interfaes
+
+- [tldr](https://tldr.sh)
+- [gh](https://cli.github.com/)
+
+## editors
+
+- [vs code](https://code.visualstudio.com/) 
+- [sublime](https://www.sublimetext.com/)
+- [notepad++](https://notepad-plus-plus.org/)
+
+## git GUIs
+
+[Recommended Git Clients](https://happygitwithr.com/git-client#recommended-git-clients)
+
+## how?!
+
+[personal radmin](https://rstats.wtf/personal-radmin)
+
 
 # workflows: II
 
-## gitignore
+::: notes
+1.  local workflow:
+branch
+commit
+log
+merge
+log
 
-## clean
+2. GitHub Workflow
+branch 
+commit
+log
+push
+open PR
+merge on GH
+pull
 
-generated files chat
+:::
+
+## `git branch`
 
 ## branch
 
