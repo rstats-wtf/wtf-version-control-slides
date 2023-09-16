@@ -648,8 +648,6 @@ pull
 
 :::
 
-## `git branch`
-
 ## branch
 
 ```{mermaid}
@@ -661,6 +659,58 @@ gitGraph
   checkout experiment
   commit
 ```
+
+## create a branch
+
+all equivalent:
+
+```bash
+❯ git branch new_branch
+❯ git checkout new_branch
+Switched to branch 'new_branch'
+```
+<br/>
+<hr>
+<br/>
+
+```bash
+❯ git checkout -b new_branch
+Switched to a new branch 'new_branch'
+```
+<br/>
+<hr>
+<br/>
+
+
+```bash
+❯ git switch --create new_branch
+Switched to a new branch 'new_branch'
+```
+
+## `git status`
+
+```bash
+❯ git status
+On branch new_branch
+nothing to commit, working tree clean
+```
+
+## back to main
+
+```bash
+❯ git checkout main
+Switched to branch 'main'
+```
+
+<br/>
+<hr>
+<br/>
+
+```bash
+❯ git switch main
+Switched to branch 'main'
+```
+
 
 ## merge
 
