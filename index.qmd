@@ -281,7 +281,7 @@ ls -lha
 
 ### {{< fa brands windows >}}
 
-click to "show hidden files"
+![](./img/show-hidden-files.png)
 
 ### {{< fa brands apple >}}
 
@@ -354,18 +354,33 @@ Changes to be committed:
 all the documentation you will ever see is for `git add`
 :::
 
-## WINDOWS
+## {{< fa brands windows >}}
 
-```
+```bash
 $ git add index.qmd
 warning: LF will be replaced by CRLF in index.qmd.
 The file will have its original line endings in your working directory
 ```
 
-::: notes
+::: panel-tabset
+
+### CR
+
+`\r`
+
+### LF
+
+`\n`
+
+### CRLF
+
 `\r\n`
-FYI: https://linux.die.net/man/1/dos2unix
+
 :::
+
+<hr>
+
+[dos2unix](https://linux.die.net/man/1/dos2unix)
 
 
 ## new project, who dis
@@ -407,19 +422,22 @@ usethis::git_sitrep()
 
 ## `EDITOR`
 
-::: notes
+::: panel-tabset
+
 ### vim
-normal mode
-insert mode, write a message
-`ESC` to return to normal mode
-`:` to enter command mode
-`wq` to write the file and quit
+
+➡️normal mode  
+`I`: insert mode, write a message  
+`ESC`: return to normal mode  
+`:` : command mode  
+`wq`: write the file and quit  
+`q!`: quit without saving  
 
 ### nano
 
-start typing
-`CTRL + O` to save
-`CTRL + X` to exit
+`CTRL|CMD + O` to save  
+`CTRL|CMD + X` to exit  
+
 :::
 
 ## `git commit -m`
