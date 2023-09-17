@@ -797,8 +797,38 @@ upstream, see 'push.autoSetupRemote' in 'git help config'.
 
 [`git config --global push.autoSetupRemote true`](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushautoSetupRemote)
 
+<br/>
+
 ::: callout-warning
 I set this globally because my workflow is pretty basic, ymmv
+:::
+
+## `git push -u`
+
+```bash
+❯ git push -u origin second-branch
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 308 bytes | 308.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'second-branch' on GitHub by visiting:
+remote:      https://github.com/edavidaja/intro-git/pull/new/second-branch
+remote:
+To https://github.com/edavidaja/intro-git.git
+ * [new branch]      second-branch -> second-branch
+branch 'second-branch' set up to track 'origin/second-branch'.
+```
+
+## permissions & project management
+
+![](./img/gh-pr.png)
+
+::: notes
+GitHub makes it easier to collaborate on who is allowed to make changes to projects and under what circumstances
+you might want to condition a merge on whether all your test pass with the new code
 :::
 
 # unhappy paths
