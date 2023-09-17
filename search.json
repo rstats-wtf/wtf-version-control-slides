@@ -11,7 +11,7 @@
     "href": "index.html#key-questions",
     "title": "Version Control",
     "section": "key questions",
-    "text": "key questions\n\nwhich version of the document is the authoritative one?\n\nif you and I change the same thing:\n\nhow will we know we did that?\nwhose edits should win?"
+    "text": "key questions\n\nwhich version of the document is the authoritative one?\n\nif you and I change the same thing:\n\nhow will we know we did that?\nwhose edits should win?\n\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "index.html#some-solutions",
@@ -123,7 +123,14 @@
     "href": "index.html#creating",
     "title": "Version Control",
     "section": "creating",
-    "text": "creating\nmkdir\nrmdir\ntouch\ncp\nmv\nrm"
+    "text": "creating\nmkdir &lt;directory-name&gt;\nrmdir &lt;directory-name&gt;\ntouch &lt;file-name.ext&gt;\ncp &lt;from-file&gt; &lt;to-file&gt;\nmv\n\n\n\n\n\n\n\n\n\nrm -rf &lt;directory&gt;"
+  },
+  {
+    "objectID": "index.html#look-around",
+    "href": "index.html#look-around",
+    "title": "Version Control",
+    "section": "look around",
+    "text": "look around\n\ncreate a directory\nput some files in it\ndelete it\n\n\n\n\n−+\n03:00"
   },
   {
     "objectID": "index.html#systems-check",
@@ -266,6 +273,13 @@
     "text": "git push\n❯ git push -u origin main\nEnumerating objects: 5, done.\nCounting objects: 100% (5/5), done.\nDelta compression using up to 12 threads\nCompressing objects: 100% (3/3), done.\nWriting objects: 100% (5/5), 418 bytes | 418.00 KiB/s, done.\nTotal 5 (delta 0), reused 0 (delta 0), pack-reused 0\nTo https://github.com/edavidaja/intro-git.git\n * [new branch]      main -&gt; main\nbranch 'main' set up to track 'origin/main'."
   },
   {
+    "objectID": "index.html#all-together-now",
+    "href": "index.html#all-together-now",
+    "title": "Version Control",
+    "section": "all together now",
+    "text": "all together now\nmkdir intro-git\ncd intro-git\ngit init\ntouch _quarto.yml\ngit stage _quarto.yml\ngit commit -m \"added quarto yml\"\ntouch index.qmd\ngit stage index.qmd\ngit commit -m \"added quarto document\"\ncreate intro-git on GH\nfollow instructions to push\n\n\n\n−+\n10:00"
+  },
+  {
     "objectID": "index.html#gitignore",
     "href": "index.html#gitignore",
     "title": "Version Control",
@@ -326,7 +340,7 @@
     "href": "index.html#branch",
     "title": "Version Control",
     "section": "branch",
-    "text": "branch\n\n\n\n\n\n\nmainexperiment0-b7db9521-0f29b792-6331ced3-bc7d9b1"
+    "text": "branch\n\n\n\n\n\n\nmainexperiment0-36694691-1d908ce2-052a2463-6c51b1c"
   },
   {
     "objectID": "index.html#create-a-branch",
@@ -354,21 +368,21 @@
     "href": "index.html#multiverse",
     "title": "Version Control",
     "section": "multiverse",
-    "text": "multiverse\n\ncheckout new_branch\nedit an existing file\ncommit\nswitch back to main"
+    "text": "multiverse\n\ncheckout new_branch\nedit an existing file\ncommit\nswitch back to main\n\n\n\n\n−+\n10:00"
   },
   {
-    "objectID": "index.html#section-8",
-    "href": "index.html#section-8",
+    "objectID": "index.html#commit-on-branch",
+    "href": "index.html#commit-on-branch",
     "title": "Version Control",
-    "section": "",
-    "text": "❯ git commit -am \"commit on a branch\"\n[new_branch f1c234b] commit on a branch\n 1 file changed, 3 insertions(+)\n\n❯ cat index.qmd\n---\ntitle: happy git\n---\n\n❯ git checkout main\nSwitched to branch 'main'\n\n❯ cat index.qmd"
+    "section": "commit on branch",
+    "text": "commit on branch\n❯ git commit -am \"commit on a branch\"\n[new_branch f1c234b] commit on a branch\n 1 file changed, 3 insertions(+)\n\n❯ cat index.qmd\n---\ntitle: happy git\n---\n\n❯ git checkout main\nSwitched to branch 'main'\n\n❯ cat index.qmd"
   },
   {
     "objectID": "index.html#merge",
     "href": "index.html#merge",
     "title": "Version Control",
     "section": "merge",
-    "text": "merge\n\n\n\n\n\n\nmainexperiment0-0d42bdd1-9b314e22-e91b6313-e1531be"
+    "text": "merge\n\n\n\n\n\n\nmainexperiment0-31375711-d16ae9e2-294b8333-48f02af"
   },
   {
     "objectID": "index.html#git-merge",
@@ -417,7 +431,7 @@
     "href": "index.html#push-rejection",
     "title": "Version Control",
     "section": "push rejection",
-    "text": "push rejection\n❯ git push\nTo https://github.com/edavidaja/intro-git.git\n ! [rejected]        main -&gt; main (fetch first)\nerror: failed to push some refs to 'https://github.com/edavidaja/intro-git.git'\nhint: Updates were rejected because the remote contains work that you do\nhint: not have locally. This is usually caused by another repository pushing\nhint: to the same ref. You may want to first integrate the remote changes\nhint: (e.g., 'git pull ...') before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details."
+    "text": "push rejection\n\nmake a new file locally, then try to push to GH\n\n❯ git push\nTo https://github.com/edavidaja/intro-git.git\n ! [rejected]        main -&gt; main (fetch first)\nerror: failed to push some refs to 'https://github.com/edavidaja/intro-git.git'\nhint: Updates were rejected because the remote contains work that you do\nhint: not have locally. This is usually caused by another repository pushing\nhint: to the same ref. You may want to first integrate the remote changes\nhint: (e.g., 'git pull ...') before pushing again.\nhint: See the 'Note about fast-forwards' in 'git push --help' for details.\n\n\n\n−+\n02:00"
   },
   {
     "objectID": "index.html#merge-strategy",
@@ -431,18 +445,18 @@
     "href": "index.html#merge-conflicts",
     "title": "Version Control",
     "section": "merge conflicts",
-    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-fdcbbea1-7007a722-3ad737d3-47672b84-8e3ee41"
+    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-505879b1-55b10a22-556dc6d3-b45b5fe4-a6c4f8e"
   },
   {
     "objectID": "index.html#merge-conflict",
     "href": "index.html#merge-conflict",
     "title": "Version Control",
     "section": "merge conflict",
-    "text": "merge conflict\n❯ git pull --rebase\nAuto-merging main.R\nCONFLICT (content): Merge conflict in main.R\nerror: could not apply 160ea3e... added tidyverse\nhint: Resolve all conflicts manually, mark them as resolved with\nhint: \"git add/rm &lt;conflicted_files&gt;\", then run \"git rebase --continue\".\nhint: You can instead skip this commit: run \"git rebase --skip\".\nhint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\".\nCould not apply 160ea3e... added tidyverse"
+    "text": "merge conflict\n\nmodify a file on GH\nmodify the same file locally\n\n❯ git pull --rebase\nAuto-merging main.R\nCONFLICT (content): Merge conflict in main.R\nerror: could not apply 160ea3e... added tidyverse\nhint: Resolve all conflicts manually, mark them as resolved with\nhint: \"git add/rm &lt;conflicted_files&gt;\", then run \"git rebase --continue\".\nhint: You can instead skip this commit: run \"git rebase --skip\".\nhint: To abort and get back to the state before \"git rebase\", run \"git rebase --abort\".\nCould not apply 160ea3e... added tidyverse\n\n\n\n−+\n02:00"
   },
   {
-    "objectID": "index.html#section-9",
-    "href": "index.html#section-9",
+    "objectID": "index.html#section-8",
+    "href": "index.html#section-8",
     "title": "Version Control",
     "section": "",
     "text": "&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD\nlibrary(shiny)\n||||||| parent of 160ea3e (added tidyverse)\n=======\nlibrary(tidyverse)\n&gt;&gt;&gt;&gt;&gt;&gt;&gt; 160ea3e (added tidyverse)"
