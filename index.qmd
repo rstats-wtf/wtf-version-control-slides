@@ -34,7 +34,6 @@ how should we do that?
 ```{r}
 countdown::countdown(
   minutes = 3,
-  # Fanfare when it's over
   play_sound = FALSE,
   # Set timer theme to match solarized colors
   color_border              = "#FFFFFF",
@@ -43,8 +42,7 @@ countdown::countdown(
   color_running_text        = "#FFFFFF",
   color_finished_background = "#ffa07a",
   color_finished_text       = "#FFFFFF",
-  font_size = "2em",
-  bottom = "30%"
+  font_size = "2em"
   )
 ```
 
@@ -272,7 +270,7 @@ command-line interface (CLI)[^so]
 
 ::: callout-caution
 `rm -rf <directory>`
-::
+:::
 
 
 ## look around
@@ -284,8 +282,7 @@ command-line interface (CLI)[^so]
 ```{r}
 countdown::countdown(
   minutes = 3,
-  # Fanfare when it's over
-  play_sound = TRUE,
+  play_sound = FALSE,
   # Set timer theme to match solarized colors
   color_border              = "#FFFFFF",
   color_text                = "#7aa81e",
@@ -607,8 +604,7 @@ follow instructions to push
 ```{r}
 countdown::countdown(
   minutes = 10,
-  # Fanfare when it's over
-  play_sound = TRUE,
+  play_sound = FALSE,
   # Set timer theme to match solarized colors
   color_border              = "#FFFFFF",
   color_text                = "#7aa81e",
@@ -806,6 +802,22 @@ Switched to branch 'main'
 - commit
 - switch back to main
 
+```{r}
+countdown::countdown(
+  minutes = 10,
+  play_sound = FALSE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  bottom = "30%"
+  )
+```
+
 ## commit on branch
 
 ```bash
@@ -913,6 +925,8 @@ you might want to condition a merge on whether all your test pass with the new c
 
 ## push rejection
 
+- make a new file locally, then try to push to GH
+
 ```bash
 ❯ git push
 To https://github.com/edavidaja/intro-git.git
@@ -923,6 +937,22 @@ hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
 hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # Fanfare when it's over
+  play_sound = FALSE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em"
+  )
 ```
 
 ## merge strategy
@@ -967,6 +997,9 @@ gitGraph
 ```
 ## merge conflict
 
+- modify a file on GH
+- modify the same file locally
+
 ```bash
 ❯ git pull --rebase
 Auto-merging main.R
@@ -978,6 +1011,23 @@ hint: You can instead skip this commit: run "git rebase --skip".
 hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
 Could not apply 160ea3e... added tidyverse
 ```
+
+```{r}
+countdown::countdown(
+  minutes = 2,
+  # Fanfare when it's over
+  play_sound = FALSE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em"
+  )
+```
+
 ## 
 
 ```r
