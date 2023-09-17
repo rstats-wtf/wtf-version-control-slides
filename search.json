@@ -165,7 +165,14 @@
     "href": "index.html#add-some-files",
     "title": "Version Control",
     "section": "add some files",
-    "text": "add some files\n❯ git status\nOn branch main\n\nNo commits yet\n\nUntracked files:\n  (use \"git add &lt;file&gt;...\" to include in what will be committed)\n    _quarto.yml\n    index.qmd\n\nnothing added to commit but untracked files present (use \"git add\" to track)"
+    "text": "add some files\ntouch index.qmd"
+  },
+  {
+    "objectID": "index.html#untracked-files",
+    "href": "index.html#untracked-files",
+    "title": "Version Control",
+    "section": "untracked files",
+    "text": "untracked files\n❯ git status\nOn branch main\n\nNo commits yet\n\nUntracked files:\n  (use \"git add &lt;file&gt;...\" to include in what will be committed)\n    _quarto.yml\n    index.qmd\n\nnothing added to commit but untracked files present (use \"git add\" to track)"
   },
   {
     "objectID": "index.html#git-stage",
@@ -319,7 +326,7 @@
     "href": "index.html#branch",
     "title": "Version Control",
     "section": "branch",
-    "text": "branch\n\n\n\n\n\n\nmainexperiment0-a16401b1-948cda72-c6846d53-928b1be"
+    "text": "branch\n\n\n\n\n\n\nmainexperiment0-309d81b1-825c8562-39e23b03-a0d7446"
   },
   {
     "objectID": "index.html#create-a-branch",
@@ -361,7 +368,7 @@
     "href": "index.html#merge",
     "title": "Version Control",
     "section": "merge",
-    "text": "merge\n\n\n\n\n\n\nmainexperiment0-fdebc3b1-6d4192a2-3cdaeed3-a4cead2"
+    "text": "merge\n\n\n\n\n\n\nmainexperiment0-d5d44b31-e3af4c32-07765e83-9fca940"
   },
   {
     "objectID": "index.html#git-merge",
@@ -410,7 +417,7 @@
     "href": "index.html#merge-conflicts",
     "title": "Version Control",
     "section": "merge conflicts",
-    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-23e64441-20b64502-8d6c5f83-f1e6b2a4-c79bfbf"
+    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-8d3241a1-f8c8d342-9adcfaf3-2c196e44-9a475a7"
   },
   {
     "objectID": "index.html#merge-conflict",

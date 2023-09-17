@@ -834,29 +834,33 @@ command-line interface (CLI)<sup>1</sup></p>
 </section>
 <section id="add-some-files" class="slide level2">
 <h2>add some files</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="ex">❯</span> git status</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="ex">On</span> branch main</span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="ex">No</span> commits yet</span>
-<span id="cb7-5"><a href="#cb7-5"></a></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="ex">Untracked</span> files:</span>
-<span id="cb7-7"><a href="#cb7-7"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to include in what will be committed<span class="kw">)</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a>    <span class="ex">_quarto.yml</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a>    <span class="ex">index.qmd</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a></span>
-<span id="cb7-11"><a href="#cb7-11"></a><span class="ex">nothing</span> added to commit but untracked files present <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> to track<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">touch</span> index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="git-stage" class="slide level2">
-<h2><code>git stage</code></h2>
+<section id="untracked-files" class="slide level2">
+<h2>untracked files</h2>
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">❯</span> git status</span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="ex">On</span> branch main</span>
 <span id="cb8-3"><a href="#cb8-3"></a></span>
 <span id="cb8-4"><a href="#cb8-4"></a><span class="ex">No</span> commits yet</span>
 <span id="cb8-5"><a href="#cb8-5"></a></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="ex">Changes</span> to be committed:</span>
-<span id="cb8-7"><a href="#cb8-7"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git rm --cached &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
-<span id="cb8-8"><a href="#cb8-8"></a>    <span class="ex">new</span> file:   _quarto.yml</span>
-<span id="cb8-9"><a href="#cb8-9"></a>    <span class="ex">new</span> file:   index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="ex">Untracked</span> files:</span>
+<span id="cb8-7"><a href="#cb8-7"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to include in what will be committed<span class="kw">)</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>    <span class="ex">_quarto.yml</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a>    <span class="ex">index.qmd</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="ex">nothing</span> added to commit but untracked files present <span class="er">(</span><span class="ex">use</span> <span class="st">"git add"</span> to track<span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="git-stage" class="slide level2">
+<h2><code>git stage</code></h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">❯</span> git status</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="ex">On</span> branch main</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="ex">No</span> commits yet</span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="ex">Changes</span> to be committed:</span>
+<span id="cb9-7"><a href="#cb9-7"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git rm --cached &lt;file&gt;..."</span> to unstage<span class="kw">)</span></span>
+<span id="cb9-8"><a href="#cb9-8"></a>    <span class="ex">new</span> file:   _quarto.yml</span>
+<span id="cb9-9"><a href="#cb9-9"></a>    <span class="ex">new</span> file:   index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <p>all the documentation you will ever see is for <code>git add</code></p>
 <style type="text/css">
@@ -873,9 +877,9 @@ command-line interface (CLI)<sup>1</sup></p>
 </section>
 <section id="section-3" class="slide level2">
 <h2><i class="fa-brands fa-windows" aria-label="windows"></i></h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a><span class="ex">$</span> git add index.qmd</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="ex">warning:</span> LF will be replaced by CRLF in index.qmd.</span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="ex">The</span> file will have its original line endings in your working directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="ex">$</span> git add index.qmd</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="ex">warning:</span> LF will be replaced by CRLF in index.qmd.</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="ex">The</span> file will have its original line endings in your working directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="panel-tabset">
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">CR</a></li><li><a href="#tabset-3-2">LF</a></li><li><a href="#tabset-3-3">CRLF</a></li></ul>
 <div class="tab-content">
@@ -899,28 +903,28 @@ command-line interface (CLI)<sup>1</sup></p>
 <ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">terminal</a></li><li><a href="#tabset-4-2">R</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name edavidaja</span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">git</span> config <span class="at">--global</span> user.email david@posit.cor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name edavidaja</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">git</span> config <span class="at">--global</span> user.email david@posit.cor</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-4-2">
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="git-commit" class="slide level2">
 <h2><code>git commit</code></h2>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Please enter the commit message for your changes. Lines starting</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="co"># with '#' will be ignored, and an empty message aborts the commit.</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a><span class="co">#</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="co"># On branch main</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="co">#</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="co"># Initial commit</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="co">#</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="co"># Changes to be committed:</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="co">#       new file:   _quarto.yml</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="co">#       new file:   index.qmd</span></span>
-<span id="cb12-11"><a href="#cb12-11"></a><span class="st">"~/Documents/projects/intro-git/.git/COMMIT_EDITMSG"</span> 12L, 255B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Please enter the commit message for your changes. Lines starting</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="co"># with '#' will be ignored, and an empty message aborts the commit.</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="co">#</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a><span class="co"># On branch main</span></span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="co">#</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="co"># Initial commit</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a><span class="co">#</span></span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="co"># Changes to be committed:</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a><span class="co">#       new file:   _quarto.yml</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a><span class="co">#       new file:   index.qmd</span></span>
+<span id="cb13-11"><a href="#cb13-11"></a><span class="st">"~/Documents/projects/intro-git/.git/COMMIT_EDITMSG"</span> 12L, 255B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="editor" class="slide level2">
 <h2><code>EDITOR</code></h2>
@@ -944,17 +948,17 @@ command-line interface (CLI)<sup>1</sup></p>
 </section>
 <section id="git-commit--m" class="slide level2">
 <h2><code>git commit -m</code></h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a><span class="ex">❯</span> git commit <span class="at">-m</span> <span class="st">"initial commit"</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="ex">[main</span> <span class="er">(</span><span class="ex">root-commit</span><span class="kw">)</span> <span class="ex">cab0112]</span> initial commit</span>
-<span id="cb13-3"><a href="#cb13-3"></a> <span class="ex">2</span> files changed, 0 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 0 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a> <span class="ex">create</span> mode 100644 _quarto.yml</span>
-<span id="cb13-5"><a href="#cb13-5"></a> <span class="ex">create</span> mode 100644 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="ex">❯</span> git commit <span class="at">-m</span> <span class="st">"initial commit"</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="ex">[main</span> <span class="er">(</span><span class="ex">root-commit</span><span class="kw">)</span> <span class="ex">cab0112]</span> initial commit</span>
+<span id="cb14-3"><a href="#cb14-3"></a> <span class="ex">2</span> files changed, 0 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 0 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a> <span class="ex">create</span> mode 100644 _quarto.yml</span>
+<span id="cb14-5"><a href="#cb14-5"></a> <span class="ex">create</span> mode 100644 index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="git-status-2" class="slide level2">
 <h2><code>git status</code></h2>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1"></a><span class="ex">❯</span> git status</span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="ex">On</span> branch main</span>
-<span id="cb14-3"><a href="#cb14-3"></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">❯</span> git status</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="ex">On</span> branch main</span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="repeat" class="slide level2">
 <h2>repeat</h2>
@@ -962,24 +966,24 @@ command-line interface (CLI)<sup>1</sup></p>
 </section>
 <section id="git-log" class="slide level2">
 <h2><code>git log</code></h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1"></a><span class="ex">❯</span> git log</span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="ex">commit</span> 3efdc26af7bf6ea223bfa61c6cb4507de632690e <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
-<span id="cb15-3"><a href="#cb15-3"></a><span class="ex">Author:</span> edavidaja <span class="op">&lt;</span>edavidaja@hey.com<span class="op">&gt;</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a><span class="ex">Date:</span>   Thu Jul 20 15:03:03 2023 <span class="at">-0400</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a></span>
-<span id="cb15-6"><a href="#cb15-6"></a>    <span class="ex">added</span> vs code workspace</span>
-<span id="cb15-7"><a href="#cb15-7"></a></span>
-<span id="cb15-8"><a href="#cb15-8"></a><span class="ex">commit</span> 0d98a3c9cf2a351da39b26adbfad442c834ff8d4</span>
-<span id="cb15-9"><a href="#cb15-9"></a><span class="ex">Author:</span> edavidaja <span class="op">&lt;</span>edavidaja@hey.com<span class="op">&gt;</span></span>
-<span id="cb15-10"><a href="#cb15-10"></a><span class="ex">Date:</span>   Thu Jul 20 14:55:34 2023 <span class="at">-0400</span></span>
-<span id="cb15-11"><a href="#cb15-11"></a></span>
-<span id="cb15-12"><a href="#cb15-12"></a>    <span class="ex">added</span> rstudio project files</span>
-<span id="cb15-13"><a href="#cb15-13"></a></span>
-<span id="cb15-14"><a href="#cb15-14"></a><span class="ex">commit</span> cab0112f6f96bdd82a46e622d8fccd445fc38d17</span>
-<span id="cb15-15"><a href="#cb15-15"></a><span class="ex">Author:</span> edavidaja <span class="op">&lt;</span>edavidaja@hey.com<span class="op">&gt;</span></span>
-<span id="cb15-16"><a href="#cb15-16"></a><span class="ex">Date:</span>   Thu Jul 20 14:51:23 2023 <span class="at">-0400</span></span>
-<span id="cb15-17"><a href="#cb15-17"></a></span>
-<span id="cb15-18"><a href="#cb15-18"></a>    <span class="ex">initial</span> commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="ex">❯</span> git log</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="ex">commit</span> 3efdc26af7bf6ea223bfa61c6cb4507de632690e <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="ex">Author:</span> edavidaja <span class="op">&lt;</span>edavidaja@hey.com<span class="op">&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4"></a><span class="ex">Date:</span>   Thu Jul 20 15:03:03 2023 <span class="at">-0400</span></span>
+<span id="cb16-5"><a href="#cb16-5"></a></span>
+<span id="cb16-6"><a href="#cb16-6"></a>    <span class="ex">added</span> vs code workspace</span>
+<span id="cb16-7"><a href="#cb16-7"></a></span>
+<span id="cb16-8"><a href="#cb16-8"></a><span class="ex">commit</span> 0d98a3c9cf2a351da39b26adbfad442c834ff8d4</span>
+<span id="cb16-9"><a href="#cb16-9"></a><span class="ex">Author:</span> edavidaja <span class="op">&lt;</span>edavidaja@hey.com<span class="op">&gt;</span></span>
+<span id="cb16-10"><a href="#cb16-10"></a><span class="ex">Date:</span>   Thu Jul 20 14:55:34 2023 <span class="at">-0400</span></span>
+<span id="cb16-11"><a href="#cb16-11"></a></span>
+<span id="cb16-12"><a href="#cb16-12"></a>    <span class="ex">added</span> rstudio project files</span>
+<span id="cb16-13"><a href="#cb16-13"></a></span>
+<span id="cb16-14"><a href="#cb16-14"></a><span class="ex">commit</span> cab0112f6f96bdd82a46e622d8fccd445fc38d17</span>
+<span id="cb16-15"><a href="#cb16-15"></a><span class="ex">Author:</span> edavidaja <span class="op">&lt;</span>edavidaja@hey.com<span class="op">&gt;</span></span>
+<span id="cb16-16"><a href="#cb16-16"></a><span class="ex">Date:</span>   Thu Jul 20 14:51:23 2023 <span class="at">-0400</span></span>
+<span id="cb16-17"><a href="#cb16-17"></a></span>
+<span id="cb16-18"><a href="#cb16-18"></a>    <span class="ex">initial</span> commit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <aside class="notes">
 <p>discuss hashes</p>
 <style type="text/css">
@@ -996,14 +1000,14 @@ command-line interface (CLI)<sup>1</sup></p>
 </section>
 <section id="git-status-3" class="slide level2">
 <h2><code>git status</code></h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1"></a><span class="ex">❯</span> git status</span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="ex">On</span> branch main</span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="ex">Your</span> branch is up to date with <span class="st">'origin/main'</span>.</span>
-<span id="cb16-4"><a href="#cb16-4"></a></span>
-<span id="cb16-5"><a href="#cb16-5"></a><span class="ex">Changes</span> not staged for commit:</span>
-<span id="cb16-6"><a href="#cb16-6"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to update what will be committed<span class="kw">)</span></span>
-<span id="cb16-7"><a href="#cb16-7"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
-<span id="cb16-8"><a href="#cb16-8"></a>        <span class="ex">modified:</span>   index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="ex">❯</span> git status</span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="ex">On</span> branch main</span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="ex">Your</span> branch is up to date with <span class="st">'origin/main'</span>.</span>
+<span id="cb17-4"><a href="#cb17-4"></a></span>
+<span id="cb17-5"><a href="#cb17-5"></a><span class="ex">Changes</span> not staged for commit:</span>
+<span id="cb17-6"><a href="#cb17-6"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git add &lt;file&gt;..."</span> to update what will be committed<span class="kw">)</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>  <span class="kw">(</span><span class="ex">use</span> <span class="st">"git restore &lt;file&gt;..."</span> to discard changes in working directory<span class="kw">)</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a>        <span class="ex">modified:</span>   index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="publish-to-github" class="slide level2">
 <h2>publish to github</h2>
@@ -1011,29 +1015,29 @@ command-line interface (CLI)<sup>1</sup></p>
 </section>
 <section id="publish-to-github-setup" class="slide level2">
 <h2>publish to github: setup</h2>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">git</span> remote add origin https://github.com/edavidaja/intro-git.git</span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">git</span> remote add origin https://github.com/edavidaja/intro-git.git</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="git-push" class="slide level2">
 <h2><code>git push</code></h2>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1"></a><span class="ex">❯</span> git push <span class="at">-u</span> origin main</span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="ex">Enumerating</span> objects: 5, done.</span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="ex">Counting</span> objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb18-4"><a href="#cb18-4"></a><span class="ex">Delta</span> compression using up to 12 threads</span>
-<span id="cb18-5"><a href="#cb18-5"></a><span class="ex">Compressing</span> objects: 100% <span class="er">(</span><span class="ex">3/3</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb18-6"><a href="#cb18-6"></a><span class="ex">Writing</span> objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> 418 bytes <span class="kw">|</span> <span class="ex">418.00</span> KiB/s, done.</span>
-<span id="cb18-7"><a href="#cb18-7"></a><span class="ex">Total</span> 5 <span class="er">(</span><span class="ex">delta</span> 0<span class="kw">)</span><span class="ex">,</span> reused 0 <span class="er">(</span><span class="ex">delta</span> 0<span class="kw">)</span><span class="ex">,</span> pack-reused 0</span>
-<span id="cb18-8"><a href="#cb18-8"></a><span class="ex">To</span> https://github.com/edavidaja/intro-git.git</span>
-<span id="cb18-9"><a href="#cb18-9"></a> <span class="ex">*</span> [new branch]      main <span class="at">-</span><span class="op">&gt;</span> main</span>
-<span id="cb18-10"><a href="#cb18-10"></a><span class="ex">branch</span> <span class="st">'main'</span> set up to track <span class="st">'origin/main'</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="ex">❯</span> git push <span class="at">-u</span> origin main</span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="ex">Enumerating</span> objects: 5, done.</span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="ex">Counting</span> objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> done.</span>
+<span id="cb19-4"><a href="#cb19-4"></a><span class="ex">Delta</span> compression using up to 12 threads</span>
+<span id="cb19-5"><a href="#cb19-5"></a><span class="ex">Compressing</span> objects: 100% <span class="er">(</span><span class="ex">3/3</span><span class="kw">)</span><span class="ex">,</span> done.</span>
+<span id="cb19-6"><a href="#cb19-6"></a><span class="ex">Writing</span> objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> 418 bytes <span class="kw">|</span> <span class="ex">418.00</span> KiB/s, done.</span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="ex">Total</span> 5 <span class="er">(</span><span class="ex">delta</span> 0<span class="kw">)</span><span class="ex">,</span> reused 0 <span class="er">(</span><span class="ex">delta</span> 0<span class="kw">)</span><span class="ex">,</span> pack-reused 0</span>
+<span id="cb19-8"><a href="#cb19-8"></a><span class="ex">To</span> https://github.com/edavidaja/intro-git.git</span>
+<span id="cb19-9"><a href="#cb19-9"></a> <span class="ex">*</span> [new branch]      main <span class="at">-</span><span class="op">&gt;</span> main</span>
+<span id="cb19-10"><a href="#cb19-10"></a><span class="ex">branch</span> <span class="st">'main'</span> set up to track <span class="st">'origin/main'</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="gitignore" class="slide level2">
 <h2><code>.gitignore</code></h2>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1"></a><span class="ex">.Renviron</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="ex">.env</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="ex">.Rproj.user</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="ex">*.csv</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="ex">data/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="ex">.Renviron</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="ex">.env</span></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="ex">.Rproj.user</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a><span class="ex">*.csv</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a><span class="ex">data/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="tools" class="title-slide slide level1 center">
@@ -1142,7 +1146,7 @@ command-line interface (CLI)<sup>1</sup></p>
 <div>
 <svg aria-roledescription="gitGraph" role="graphics-document document" viewbox="-140.703125 -18 348.703125 173.9670867919922" height="480" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-4" style="; display: block; margin: auto auto auto auto">
 <style>#mermaid-figure-4{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-4 .error-icon{fill:#552222;}#mermaid-figure-4 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-4 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-4 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-4 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-4 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-4 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-4 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-4 .marker.cross{stroke:#333333;}#mermaid-figure-4 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-4 .commit-id,#mermaid-figure-4 .commit-msg,#mermaid-figure-4 .branch-label{fill:lightgrey;color:lightgrey;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}#mermaid-figure-4 .branch-label0{fill:#ffffff;}#mermaid-figure-4 .commit0{stroke:hsl(240, 100%, 46.2745098039%);fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight0{stroke:hsl(60, 100%, 3.7254901961%);fill:hsl(60, 100%, 3.7254901961%);}#mermaid-figure-4 .label0{fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow0{stroke:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label1{fill:black;}#mermaid-figure-4 .commit1{stroke:hsl(60, 100%, 43.5294117647%);fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-4 .commit-highlight1{stroke:rgb(0, 0, 160.5);fill:rgb(0, 0, 160.5);}#mermaid-figure-4 .label1{fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-4 .arrow1{stroke:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-4 .branch-label2{fill:black;}#mermaid-figure-4 .commit2{stroke:hsl(80, 100%, 46.2745098039%);fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight2{stroke:rgb(48.8333333334, 0, 146.5000000001);fill:rgb(48.8333333334, 0, 146.5000000001);}#mermaid-figure-4 .label2{fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow2{stroke:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label3{fill:#ffffff;}#mermaid-figure-4 .commit3{stroke:hsl(210, 100%, 46.2745098039%);fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight3{stroke:rgb(146.5000000001, 73.2500000001, 0);fill:rgb(146.5000000001, 73.2500000001, 0);}#mermaid-figure-4 .label3{fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow3{stroke:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label4{fill:black;}#mermaid-figure-4 .commit4{stroke:hsl(180, 100%, 46.2745098039%);fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight4{stroke:rgb(146.5000000001, 0, 0);fill:rgb(146.5000000001, 0, 0);}#mermaid-figure-4 .label4{fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow4{stroke:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label5{fill:black;}#mermaid-figure-4 .commit5{stroke:hsl(150, 100%, 46.2745098039%);fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight5{stroke:rgb(146.5000000001, 0, 73.2500000001);fill:rgb(146.5000000001, 0, 73.2500000001);}#mermaid-figure-4 .label5{fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow5{stroke:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label6{fill:black;}#mermaid-figure-4 .commit6{stroke:hsl(300, 100%, 46.2745098039%);fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight6{stroke:rgb(0, 146.5000000001, 0);fill:rgb(0, 146.5000000001, 0);}#mermaid-figure-4 .label6{fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow6{stroke:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-4 .branch-label7{fill:black;}#mermaid-figure-4 .commit7{stroke:hsl(0, 100%, 46.2745098039%);fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-4 .commit-highlight7{stroke:rgb(0, 146.5000000001, 146.5000000001);fill:rgb(0, 146.5000000001, 146.5000000001);}#mermaid-figure-4 .label7{fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-4 .arrow7{stroke:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-4 .branch{stroke-width:1;stroke:#333333;stroke-dasharray:2;}#mermaid-figure-4 .commit-label{font-size:10px;fill:#000021;}#mermaid-figure-4 .commit-label-bkg{font-size:10px;fill:#ffffde;opacity:0.5;}#mermaid-figure-4 .tag-label{font-size:10px;fill:#131300;}#mermaid-figure-4 .tag-label-bkg{fill:#ECECFF;stroke:hsl(240, 60%, 86.2745098039%);}#mermaid-figure-4 .tag-hole{fill:#333;}#mermaid-figure-4 .commit-merge{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-4 .commit-reverse{stroke:#ECECFF;fill:#ECECFF;stroke-width:3;}#mermaid-figure-4 .commit-highlight-inner{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-4 .arrow{stroke-width:8;stroke-linecap:round;fill:none;}#mermaid-figure-4 .gitTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-4 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
-<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="200" y1="0" x1="0"></line><rect transform="translate(-19, -8.5)" height="21" width="52.6875" y="-0.5" x="-68.6875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.6875, -9.5)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g><line class="branch branch1" y2="90" x2="200" y1="90" x1="0"></line><rect transform="translate(-19, 81.5)" height="21" width="97.703125" y="-0.5" x="-113.703125" ry="4" rx="4" class="branchLabelBkg label1"></rect><g class="branchLabel"><g transform="translate(-123.703125, 80.5)" class="label branch-label1"><text><tspan class="row" x="0" dy="1em" space="preserve">experiment</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path><path class="arrow arrow1" d="M 110 0 L 110 70 A 20 20, 0, 0, 0, 130 90 L 160 90"></path></g><g class="commit-bullets"><circle class="commit 0-a16401b commit0" r="10" cy="0" cx="10"></circle><circle class="commit 1-948cda7 commit0" r="10" cy="0" cx="60"></circle><circle class="commit 2-c6846d5 commit0" r="10" cy="0" cx="110"></circle><circle class="commit 3-928b1be commit1" r="10" cy="90" cx="160"></circle></g><g class="commit-labels"><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 0, 0)"><rect height="15" width="52.2607421875" y="13.5" x="-16.13037109375" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-14.13037109375">0-a16401b</text></g><g transform="translate(-29.425703125000002, 26.217734375) rotate(-45, 50, 0)"><rect height="15" width="51.69921875" y="13.5" x="34.150390625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="36.150390625">1-948cda7</text></g><g transform="translate(-29.425703125000002, 26.217734375) rotate(-45, 100, 0)"><rect height="15" width="51.69921875" y="13.5" x="84.150390625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="86.150390625">2-c6846d5</text></g><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 150, 90)"><rect height="15" width="52.2607421875" y="103.5" x="133.86962890625" class="commit-label-bkg"></rect><text class="commit-label" y="115" x="135.86962890625">3-928b1be</text></g></g>
+<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="200" y1="0" x1="0"></line><rect transform="translate(-19, -8.5)" height="21" width="52.6875" y="-0.5" x="-68.6875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.6875, -9.5)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g><line class="branch branch1" y2="90" x2="200" y1="90" x1="0"></line><rect transform="translate(-19, 81.5)" height="21" width="97.703125" y="-0.5" x="-113.703125" ry="4" rx="4" class="branchLabelBkg label1"></rect><g class="branchLabel"><g transform="translate(-123.703125, 80.5)" class="label branch-label1"><text><tspan class="row" x="0" dy="1em" space="preserve">experiment</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path><path class="arrow arrow1" d="M 110 0 L 110 70 A 20 20, 0, 0, 0, 130 90 L 160 90"></path></g><g class="commit-bullets"><circle class="commit 0-309d81b commit0" r="10" cy="0" cx="10"></circle><circle class="commit 1-825c856 commit0" r="10" cy="0" cx="60"></circle><circle class="commit 2-39e23b0 commit0" r="10" cy="0" cx="110"></circle><circle class="commit 3-a0d7446 commit1" r="10" cy="90" cx="160"></circle></g><g class="commit-labels"><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 0, 0)"><rect height="15" width="52.2607421875" y="13.5" x="-16.13037109375" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-14.13037109375">0-309d81b</text></g><g transform="translate(-29.425703125000002, 26.217734375) rotate(-45, 50, 0)"><rect height="15" width="51.69921875" y="13.5" x="34.150390625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="36.150390625">1-825c856</text></g><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 100, 0)"><rect height="15" width="52.2607421875" y="13.5" x="83.86962890625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="85.86962890625">2-39e23b0</text></g><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 150, 90)"><rect height="15" width="52.2607421875" y="103.5" x="133.86962890625" class="commit-label-bkg"></rect><text class="commit-label" y="115" x="135.86962890625">3-a0d7446</text></g></g>
 </svg>
 </div>
 </div>
@@ -1152,35 +1156,35 @@ command-line interface (CLI)<sup>1</sup></p>
 <section id="create-a-branch" class="slide level2">
 <h2>create a branch</h2>
 <p>all equivalent:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1"></a><span class="ex">❯</span> git branch new_branch</span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="ex">❯</span> git checkout new_branch</span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="ex">Switched</span> to branch <span class="st">'new_branch'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="ex">❯</span> git branch new_branch</span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="ex">❯</span> git checkout new_branch</span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="ex">Switched</span> to branch <span class="st">'new_branch'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <br>
 <hr>
 <p><br></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1"></a><span class="ex">❯</span> git checkout <span class="at">-b</span> new_branch</span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="ex">Switched</span> to a new branch <span class="st">'new_branch'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<br>
-<hr>
-<p><br></p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="ex">❯</span> git switch <span class="at">--create</span> new_branch</span>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1"></a><span class="ex">❯</span> git checkout <span class="at">-b</span> new_branch</span>
 <span id="cb22-2"><a href="#cb22-2"></a><span class="ex">Switched</span> to a new branch <span class="st">'new_branch'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<br>
+<hr>
+<p><br></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="ex">❯</span> git switch <span class="at">--create</span> new_branch</span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="ex">Switched</span> to a new branch <span class="st">'new_branch'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="git-status-4" class="slide level2">
 <h2><code>git status</code></h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1"></a><span class="ex">❯</span> git status</span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="ex">On</span> branch new_branch</span>
-<span id="cb23-3"><a href="#cb23-3"></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="ex">❯</span> git status</span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="ex">On</span> branch new_branch</span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="ex">nothing</span> to commit, working tree clean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="back-to-main" class="slide level2">
 <h2>back to main</h2>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1"></a><span class="ex">❯</span> git checkout main</span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="ex">Switched</span> to branch <span class="st">'main'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1"></a><span class="ex">❯</span> git checkout main</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="ex">Switched</span> to branch <span class="st">'main'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <br>
 <hr>
 <p><br></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1"></a><span class="ex">❯</span> git switch main</span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="ex">Switched</span> to branch <span class="st">'main'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="ex">❯</span> git switch main</span>
+<span id="cb26-2"><a href="#cb26-2"></a><span class="ex">Switched</span> to branch <span class="st">'main'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="multiverse" class="slide level2">
 <h2>multiverse</h2>
@@ -1193,19 +1197,19 @@ command-line interface (CLI)<sup>1</sup></p>
 </section>
 <section id="section-8" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1"></a><span class="ex">❯</span> git commit <span class="at">-am</span> <span class="st">"commit on a branch"</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="ex">[new_branch</span> f1c234b] commit on a branch</span>
-<span id="cb26-3"><a href="#cb26-3"></a> <span class="ex">1</span> file changed, 3 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a></span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="ex">❯</span> cat index.qmd</span>
-<span id="cb26-6"><a href="#cb26-6"></a><span class="ex">---</span></span>
-<span id="cb26-7"><a href="#cb26-7"></a><span class="ex">title:</span> happy git</span>
-<span id="cb26-8"><a href="#cb26-8"></a><span class="ex">---</span></span>
-<span id="cb26-9"><a href="#cb26-9"></a></span>
-<span id="cb26-10"><a href="#cb26-10"></a><span class="ex">❯</span> git checkout main</span>
-<span id="cb26-11"><a href="#cb26-11"></a><span class="ex">Switched</span> to branch <span class="st">'main'</span></span>
-<span id="cb26-12"><a href="#cb26-12"></a></span>
-<span id="cb26-13"><a href="#cb26-13"></a><span class="ex">❯</span> cat index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1"></a><span class="ex">❯</span> git commit <span class="at">-am</span> <span class="st">"commit on a branch"</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="ex">[new_branch</span> f1c234b] commit on a branch</span>
+<span id="cb27-3"><a href="#cb27-3"></a> <span class="ex">1</span> file changed, 3 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span>
+<span id="cb27-4"><a href="#cb27-4"></a></span>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="ex">❯</span> cat index.qmd</span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="ex">---</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a><span class="ex">title:</span> happy git</span>
+<span id="cb27-8"><a href="#cb27-8"></a><span class="ex">---</span></span>
+<span id="cb27-9"><a href="#cb27-9"></a></span>
+<span id="cb27-10"><a href="#cb27-10"></a><span class="ex">❯</span> git checkout main</span>
+<span id="cb27-11"><a href="#cb27-11"></a><span class="ex">Switched</span> to branch <span class="st">'main'</span></span>
+<span id="cb27-12"><a href="#cb27-12"></a></span>
+<span id="cb27-13"><a href="#cb27-13"></a><span class="ex">❯</span> cat index.qmd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="merge" class="slide level2">
 <h2>merge</h2>
@@ -1213,9 +1217,9 @@ command-line interface (CLI)<sup>1</sup></p>
 <div class="cell-output-display">
 <div>
 <div>
-<svg aria-roledescription="gitGraph" role="graphics-document document" viewbox="-140.703125 -18 398.703125 173.57765197753906" height="480" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-3" style="; display: block; margin: auto auto auto auto">
+<svg aria-roledescription="gitGraph" role="graphics-document document" viewbox="-140.703125 -18 398.703125 171.6473388671875" height="480" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-3" style="; display: block; margin: auto auto auto auto">
 <style>#mermaid-figure-3{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-3 .error-icon{fill:#552222;}#mermaid-figure-3 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-3 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-3 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-3 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-3 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-3 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-3 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-3 .marker.cross{stroke:#333333;}#mermaid-figure-3 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-3 .commit-id,#mermaid-figure-3 .commit-msg,#mermaid-figure-3 .branch-label{fill:lightgrey;color:lightgrey;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}#mermaid-figure-3 .branch-label0{fill:#ffffff;}#mermaid-figure-3 .commit0{stroke:hsl(240, 100%, 46.2745098039%);fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight0{stroke:hsl(60, 100%, 3.7254901961%);fill:hsl(60, 100%, 3.7254901961%);}#mermaid-figure-3 .label0{fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow0{stroke:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label1{fill:black;}#mermaid-figure-3 .commit1{stroke:hsl(60, 100%, 43.5294117647%);fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-3 .commit-highlight1{stroke:rgb(0, 0, 160.5);fill:rgb(0, 0, 160.5);}#mermaid-figure-3 .label1{fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-3 .arrow1{stroke:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-3 .branch-label2{fill:black;}#mermaid-figure-3 .commit2{stroke:hsl(80, 100%, 46.2745098039%);fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight2{stroke:rgb(48.8333333334, 0, 146.5000000001);fill:rgb(48.8333333334, 0, 146.5000000001);}#mermaid-figure-3 .label2{fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow2{stroke:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label3{fill:#ffffff;}#mermaid-figure-3 .commit3{stroke:hsl(210, 100%, 46.2745098039%);fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight3{stroke:rgb(146.5000000001, 73.2500000001, 0);fill:rgb(146.5000000001, 73.2500000001, 0);}#mermaid-figure-3 .label3{fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow3{stroke:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label4{fill:black;}#mermaid-figure-3 .commit4{stroke:hsl(180, 100%, 46.2745098039%);fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight4{stroke:rgb(146.5000000001, 0, 0);fill:rgb(146.5000000001, 0, 0);}#mermaid-figure-3 .label4{fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow4{stroke:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label5{fill:black;}#mermaid-figure-3 .commit5{stroke:hsl(150, 100%, 46.2745098039%);fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight5{stroke:rgb(146.5000000001, 0, 73.2500000001);fill:rgb(146.5000000001, 0, 73.2500000001);}#mermaid-figure-3 .label5{fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow5{stroke:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label6{fill:black;}#mermaid-figure-3 .commit6{stroke:hsl(300, 100%, 46.2745098039%);fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight6{stroke:rgb(0, 146.5000000001, 0);fill:rgb(0, 146.5000000001, 0);}#mermaid-figure-3 .label6{fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow6{stroke:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-3 .branch-label7{fill:black;}#mermaid-figure-3 .commit7{stroke:hsl(0, 100%, 46.2745098039%);fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-3 .commit-highlight7{stroke:rgb(0, 146.5000000001, 146.5000000001);fill:rgb(0, 146.5000000001, 146.5000000001);}#mermaid-figure-3 .label7{fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-3 .arrow7{stroke:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-3 .branch{stroke-width:1;stroke:#333333;stroke-dasharray:2;}#mermaid-figure-3 .commit-label{font-size:10px;fill:#000021;}#mermaid-figure-3 .commit-label-bkg{font-size:10px;fill:#ffffde;opacity:0.5;}#mermaid-figure-3 .tag-label{font-size:10px;fill:#131300;}#mermaid-figure-3 .tag-label-bkg{fill:#ECECFF;stroke:hsl(240, 60%, 86.2745098039%);}#mermaid-figure-3 .tag-hole{fill:#333;}#mermaid-figure-3 .commit-merge{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-3 .commit-reverse{stroke:#ECECFF;fill:#ECECFF;stroke-width:3;}#mermaid-figure-3 .commit-highlight-inner{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-3 .arrow{stroke-width:8;stroke-linecap:round;fill:none;}#mermaid-figure-3 .gitTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-3 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
-<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="250" y1="0" x1="0"></line><rect transform="translate(-19, -8.5)" height="21" width="52.6875" y="-0.5" x="-68.6875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.6875, -9.5)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g><line class="branch branch1" y2="90" x2="250" y1="90" x1="0"></line><rect transform="translate(-19, 81.5)" height="21" width="97.703125" y="-0.5" x="-113.703125" ry="4" rx="4" class="branchLabelBkg label1"></rect><g class="branchLabel"><g transform="translate(-123.703125, 80.5)" class="label branch-label1"><text><tspan class="row" x="0" dy="1em" space="preserve">experiment</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path><path class="arrow arrow1" d="M 110 0 L 110 70 A 20 20, 0, 0, 0, 130 90 L 160 90"></path><path class="arrow arrow0" d="M 110 0 L 110 0  110 0 L 210 0"></path><path class="arrow arrow1" d="M 160 90 L 190 90 A 20 20, 0, 0, 0, 210 70 L 210 0"></path></g><g class="commit-bullets"><circle class="commit 0-fdebc3b commit0" r="10" cy="0" cx="10"></circle><circle class="commit 1-6d4192a commit0" r="10" cy="0" cx="60"></circle><circle class="commit 2-3cdaeed commit0" r="10" cy="0" cx="110"></circle><circle class="commit 3-a4cead2 commit1" r="10" cy="90" cx="160"></circle><circle class="commit 4-55a4ae2 commit0" r="9" cy="0" cx="210"></circle><circle class="commit commit-merge 4-55a4ae2 commit0" r="6" cy="0" cx="210"></circle></g><g class="commit-labels"><g transform="translate(-28.368085937500002, 25.2714453125) rotate(-45, 0, 0)"><rect height="15" width="48.916015625" y="13.5" x="-14.4580078125" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-12.4580078125">0-fdebc3b</text></g><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 50, 0)"><rect height="15" width="52.2607421875" y="13.5" x="33.86962890625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="35.86962890625">1-6d4192a</text></g><g transform="translate(-29.2609375, 26.0703125) rotate(-45, 100, 0)"><rect height="15" width="51.265625" y="13.5" x="84.3671875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="86.3671875">2-3cdaeed</text></g><g transform="translate(-29.425703125000002, 26.217734375) rotate(-45, 150, 90)"><rect height="15" width="51.69921875" y="103.5" x="134.150390625" class="commit-label-bkg"></rect><text class="commit-label" y="115" x="136.150390625">3-a4cead2</text></g></g>
+<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="250" y1="0" x1="0"></line><rect transform="translate(-19, -8.5)" height="21" width="52.6875" y="-0.5" x="-68.6875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.6875, -9.5)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g><line class="branch branch1" y2="90" x2="250" y1="90" x1="0"></line><rect transform="translate(-19, 81.5)" height="21" width="97.703125" y="-0.5" x="-113.703125" ry="4" rx="4" class="branchLabelBkg label1"></rect><g class="branchLabel"><g transform="translate(-123.703125, 80.5)" class="label branch-label1"><text><tspan class="row" x="0" dy="1em" space="preserve">experiment</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path><path class="arrow arrow1" d="M 110 0 L 110 70 A 20 20, 0, 0, 0, 130 90 L 160 90"></path><path class="arrow arrow0" d="M 110 0 L 110 0  110 0 L 210 0"></path><path class="arrow arrow1" d="M 160 90 L 190 90 A 20 20, 0, 0, 0, 210 70 L 210 0"></path></g><g class="commit-bullets"><circle class="commit 0-d5d44b3 commit0" r="10" cy="0" cx="10"></circle><circle class="commit 1-e3af4c3 commit0" r="10" cy="0" cx="60"></circle><circle class="commit 2-07765e8 commit0" r="10" cy="0" cx="110"></circle><circle class="commit 3-9fca940 commit1" r="10" cy="90" cx="160"></circle><circle class="commit 4-f80a480 commit0" r="9" cy="0" cx="210"></circle><circle class="commit commit-merge 4-f80a480 commit0" r="6" cy="0" cx="210"></circle></g><g class="commit-labels"><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 0, 0)"><rect height="15" width="52.2607421875" y="13.5" x="-16.13037109375" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-14.13037109375">0-d5d44b3</text></g><g transform="translate(-28.368085937500002, 25.2714453125) rotate(-45, 50, 0)"><rect height="15" width="48.916015625" y="13.5" x="35.5419921875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="37.5419921875">1-e3af4c3</text></g><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 100, 0)"><rect height="15" width="52.2607421875" y="13.5" x="83.86962890625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="85.86962890625">2-07765e8</text></g><g transform="translate(-28.368085937500002, 25.2714453125) rotate(-45, 150, 90)"><rect height="15" width="48.916015625" y="103.5" x="135.5419921875" class="commit-label-bkg"></rect><text class="commit-label" y="115" x="137.5419921875">3-9fca940</text></g></g>
 </svg>
 </div>
 </div>
@@ -1224,12 +1228,12 @@ command-line interface (CLI)<sup>1</sup></p>
 </section>
 <section id="git-merge" class="slide level2">
 <h2><code>git merge</code></h2>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">git</span> merge new_branch</span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="ex">❯</span> git merge new_branch</span>
-<span id="cb27-3"><a href="#cb27-3"></a><span class="ex">Updating</span> 7614b5c..f1c234b</span>
-<span id="cb27-4"><a href="#cb27-4"></a><span class="ex">Fast-forward</span></span>
-<span id="cb27-5"><a href="#cb27-5"></a> <span class="ex">index.qmd</span> <span class="kw">|</span> <span class="ex">3</span> +++</span>
-<span id="cb27-6"><a href="#cb27-6"></a> <span class="ex">1</span> file changed, 3 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">git</span> merge new_branch</span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="ex">❯</span> git merge new_branch</span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="ex">Updating</span> 7614b5c..f1c234b</span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="ex">Fast-forward</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a> <span class="ex">index.qmd</span> <span class="kw">|</span> <span class="ex">3</span> +++</span>
+<span id="cb28-6"><a href="#cb28-6"></a> <span class="ex">1</span> file changed, 3 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="prs" class="slide level2">
 <h2>PRs</h2>
@@ -1242,14 +1246,14 @@ command-line interface (CLI)<sup>1</sup></p>
 </section>
 <section id="set-upstream" class="slide level2">
 <h2><code>--set-upstream</code></h2>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1"></a><span class="ex">❯</span> git push</span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="ex">fatal:</span> The current branch second-branch has no upstream branch.</span>
-<span id="cb28-3"><a href="#cb28-3"></a><span class="ex">To</span> push the current branch and set the remote as upstream, use</span>
-<span id="cb28-4"><a href="#cb28-4"></a></span>
-<span id="cb28-5"><a href="#cb28-5"></a>    <span class="fu">git</span> push <span class="at">--set-upstream</span> origin second-branch</span>
-<span id="cb28-6"><a href="#cb28-6"></a></span>
-<span id="cb28-7"><a href="#cb28-7"></a><span class="ex">To</span> have this happen automatically for branches without a tracking</span>
-<span id="cb28-8"><a href="#cb28-8"></a><span class="ex">upstream,</span> see <span class="st">'push.autoSetupRemote'</span> in <span class="st">'git help config'</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1"></a><span class="ex">❯</span> git push</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="ex">fatal:</span> The current branch second-branch has no upstream branch.</span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="ex">To</span> push the current branch and set the remote as upstream, use</span>
+<span id="cb29-4"><a href="#cb29-4"></a></span>
+<span id="cb29-5"><a href="#cb29-5"></a>    <span class="fu">git</span> push <span class="at">--set-upstream</span> origin second-branch</span>
+<span id="cb29-6"><a href="#cb29-6"></a></span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="ex">To</span> have this happen automatically for branches without a tracking</span>
+<span id="cb29-8"><a href="#cb29-8"></a><span class="ex">upstream,</span> see <span class="st">'push.autoSetupRemote'</span> in <span class="st">'git help config'</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="git-config" class="slide level2">
 <h2><code>git config</code></h2>
@@ -1275,39 +1279,39 @@ command-line interface (CLI)<sup>1</sup></p>
 </section>
 <section id="push-rejection" class="slide level2">
 <h2>push rejection</h2>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1"></a><span class="ex">❯</span> git push</span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="ex">To</span> https://github.com/edavidaja/intro-git.git</span>
-<span id="cb29-3"><a href="#cb29-3"></a> <span class="ot">! </span><span class="ex">[rejected]</span>        main <span class="at">-</span><span class="op">&gt;</span> main <span class="er">(</span><span class="ex">fetch</span> first<span class="kw">)</span></span>
-<span id="cb29-4"><a href="#cb29-4"></a><span class="ex">error:</span> failed to push some refs to <span class="st">'https://github.com/edavidaja/intro-git.git'</span></span>
-<span id="cb29-5"><a href="#cb29-5"></a><span class="ex">hint:</span> Updates were rejected because the remote contains work that you do</span>
-<span id="cb29-6"><a href="#cb29-6"></a><span class="ex">hint:</span> not have locally. This is usually caused by another repository pushing</span>
-<span id="cb29-7"><a href="#cb29-7"></a><span class="ex">hint:</span> to the same ref. You may want to first integrate the remote changes</span>
-<span id="cb29-8"><a href="#cb29-8"></a><span class="ex">hint:</span> <span class="er">(</span><span class="ex">e.g.,</span> <span class="st">'git pull ...'</span><span class="kw">)</span> <span class="ex">before</span> pushing again.</span>
-<span id="cb29-9"><a href="#cb29-9"></a><span class="ex">hint:</span> See the <span class="st">'Note about fast-forwards'</span> in <span class="st">'git push --help'</span> for details.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1"></a><span class="ex">❯</span> git push</span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="ex">To</span> https://github.com/edavidaja/intro-git.git</span>
+<span id="cb30-3"><a href="#cb30-3"></a> <span class="ot">! </span><span class="ex">[rejected]</span>        main <span class="at">-</span><span class="op">&gt;</span> main <span class="er">(</span><span class="ex">fetch</span> first<span class="kw">)</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="ex">error:</span> failed to push some refs to <span class="st">'https://github.com/edavidaja/intro-git.git'</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a><span class="ex">hint:</span> Updates were rejected because the remote contains work that you do</span>
+<span id="cb30-6"><a href="#cb30-6"></a><span class="ex">hint:</span> not have locally. This is usually caused by another repository pushing</span>
+<span id="cb30-7"><a href="#cb30-7"></a><span class="ex">hint:</span> to the same ref. You may want to first integrate the remote changes</span>
+<span id="cb30-8"><a href="#cb30-8"></a><span class="ex">hint:</span> <span class="er">(</span><span class="ex">e.g.,</span> <span class="st">'git pull ...'</span><span class="kw">)</span> <span class="ex">before</span> pushing again.</span>
+<span id="cb30-9"><a href="#cb30-9"></a><span class="ex">hint:</span> See the <span class="st">'Note about fast-forwards'</span> in <span class="st">'git push --help'</span> for details.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="merge-strategy" class="slide level2">
 <h2>merge strategy</h2>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1"></a><span class="ex">❯</span> git pull</span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="ex">remote:</span> Enumerating objects: 5, done.</span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="ex">remote:</span> Counting objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb30-4"><a href="#cb30-4"></a><span class="ex">remote:</span> Compressing objects: 100% <span class="er">(</span><span class="ex">2/2</span><span class="kw">)</span><span class="ex">,</span> done.</span>
-<span id="cb30-5"><a href="#cb30-5"></a><span class="ex">remote:</span> Total 3 <span class="er">(</span><span class="ex">delta</span> 1<span class="kw">)</span><span class="ex">,</span> reused 0 <span class="er">(</span><span class="ex">delta</span> 0<span class="kw">)</span><span class="ex">,</span> pack-reused 0</span>
-<span id="cb30-6"><a href="#cb30-6"></a><span class="ex">Unpacking</span> objects: 100% <span class="er">(</span><span class="ex">3/3</span><span class="kw">)</span><span class="ex">,</span> 636 bytes <span class="kw">|</span> <span class="ex">212.00</span> KiB/s, done.</span>
-<span id="cb30-7"><a href="#cb30-7"></a><span class="ex">From</span> https://github.com/edavidaja/intro-git</span>
-<span id="cb30-8"><a href="#cb30-8"></a>   <span class="ex">2bdda53..424444e</span>  main       <span class="at">-</span><span class="op">&gt;</span> origin/main</span>
-<span id="cb30-9"><a href="#cb30-9"></a><span class="ex">hint:</span> You have divergent branches and need to specify how to reconcile them.</span>
-<span id="cb30-10"><a href="#cb30-10"></a><span class="ex">hint:</span> You can do so by running one of the following commands sometime before</span>
-<span id="cb30-11"><a href="#cb30-11"></a><span class="ex">hint:</span> your next pull:</span>
-<span id="cb30-12"><a href="#cb30-12"></a><span class="ex">hint:</span></span>
-<span id="cb30-13"><a href="#cb30-13"></a><span class="ex">hint:</span>   git config pull.rebase false  <span class="co"># merge</span></span>
-<span id="cb30-14"><a href="#cb30-14"></a><span class="ex">hint:</span>   git config pull.rebase true   <span class="co"># rebase</span></span>
-<span id="cb30-15"><a href="#cb30-15"></a><span class="ex">hint:</span>   git config pull.ff only       <span class="co"># fast-forward only</span></span>
-<span id="cb30-16"><a href="#cb30-16"></a><span class="ex">hint:</span></span>
-<span id="cb30-17"><a href="#cb30-17"></a><span class="ex">hint:</span> You can replace <span class="st">"git config"</span> with <span class="st">"git config --global"</span> to set a default</span>
-<span id="cb30-18"><a href="#cb30-18"></a><span class="ex">hint:</span> preference for all repositories. You can also pass <span class="at">--rebase,</span> <span class="at">--no-rebase,</span></span>
-<span id="cb30-19"><a href="#cb30-19"></a><span class="ex">hint:</span> or <span class="at">--ff-only</span> on the command line to override the configured default per</span>
-<span id="cb30-20"><a href="#cb30-20"></a><span class="ex">hint:</span> invocation.</span>
-<span id="cb30-21"><a href="#cb30-21"></a><span class="ex">fatal:</span> Need to specify how to reconcile divergent branches.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1"></a><span class="ex">❯</span> git pull</span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="ex">remote:</span> Enumerating objects: 5, done.</span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="ex">remote:</span> Counting objects: 100% <span class="er">(</span><span class="ex">5/5</span><span class="kw">)</span><span class="ex">,</span> done.</span>
+<span id="cb31-4"><a href="#cb31-4"></a><span class="ex">remote:</span> Compressing objects: 100% <span class="er">(</span><span class="ex">2/2</span><span class="kw">)</span><span class="ex">,</span> done.</span>
+<span id="cb31-5"><a href="#cb31-5"></a><span class="ex">remote:</span> Total 3 <span class="er">(</span><span class="ex">delta</span> 1<span class="kw">)</span><span class="ex">,</span> reused 0 <span class="er">(</span><span class="ex">delta</span> 0<span class="kw">)</span><span class="ex">,</span> pack-reused 0</span>
+<span id="cb31-6"><a href="#cb31-6"></a><span class="ex">Unpacking</span> objects: 100% <span class="er">(</span><span class="ex">3/3</span><span class="kw">)</span><span class="ex">,</span> 636 bytes <span class="kw">|</span> <span class="ex">212.00</span> KiB/s, done.</span>
+<span id="cb31-7"><a href="#cb31-7"></a><span class="ex">From</span> https://github.com/edavidaja/intro-git</span>
+<span id="cb31-8"><a href="#cb31-8"></a>   <span class="ex">2bdda53..424444e</span>  main       <span class="at">-</span><span class="op">&gt;</span> origin/main</span>
+<span id="cb31-9"><a href="#cb31-9"></a><span class="ex">hint:</span> You have divergent branches and need to specify how to reconcile them.</span>
+<span id="cb31-10"><a href="#cb31-10"></a><span class="ex">hint:</span> You can do so by running one of the following commands sometime before</span>
+<span id="cb31-11"><a href="#cb31-11"></a><span class="ex">hint:</span> your next pull:</span>
+<span id="cb31-12"><a href="#cb31-12"></a><span class="ex">hint:</span></span>
+<span id="cb31-13"><a href="#cb31-13"></a><span class="ex">hint:</span>   git config pull.rebase false  <span class="co"># merge</span></span>
+<span id="cb31-14"><a href="#cb31-14"></a><span class="ex">hint:</span>   git config pull.rebase true   <span class="co"># rebase</span></span>
+<span id="cb31-15"><a href="#cb31-15"></a><span class="ex">hint:</span>   git config pull.ff only       <span class="co"># fast-forward only</span></span>
+<span id="cb31-16"><a href="#cb31-16"></a><span class="ex">hint:</span></span>
+<span id="cb31-17"><a href="#cb31-17"></a><span class="ex">hint:</span> You can replace <span class="st">"git config"</span> with <span class="st">"git config --global"</span> to set a default</span>
+<span id="cb31-18"><a href="#cb31-18"></a><span class="ex">hint:</span> preference for all repositories. You can also pass <span class="at">--rebase,</span> <span class="at">--no-rebase,</span></span>
+<span id="cb31-19"><a href="#cb31-19"></a><span class="ex">hint:</span> or <span class="at">--ff-only</span> on the command line to override the configured default per</span>
+<span id="cb31-20"><a href="#cb31-20"></a><span class="ex">hint:</span> invocation.</span>
+<span id="cb31-21"><a href="#cb31-21"></a><span class="ex">fatal:</span> Need to specify how to reconcile divergent branches.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="merge-conflicts" class="slide level2">
 <h2>merge conflicts</h2>
@@ -1315,9 +1319,9 @@ command-line interface (CLI)<sup>1</sup></p>
 <div class="cell-output-display">
 <div>
 <div>
-<svg aria-roledescription="gitGraph" role="graphics-document document" viewbox="-140.703125 -18 398.703125 172.0367889404297" height="480" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-2" style="; display: block; margin: auto auto auto auto">
+<svg aria-roledescription="gitGraph" role="graphics-document document" viewbox="-140.703125 -18 398.703125 173.57765197753906" height="480" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="960" id="mermaid-figure-2" style="; display: block; margin: auto auto auto auto">
 <style>#mermaid-figure-2{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-figure-2 .error-icon{fill:#552222;}#mermaid-figure-2 .error-text{fill:#552222;stroke:#552222;}#mermaid-figure-2 .edge-thickness-normal{stroke-width:2px;}#mermaid-figure-2 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-figure-2 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-figure-2 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-figure-2 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-figure-2 .marker{fill:#333333;stroke:#333333;}#mermaid-figure-2 .marker.cross{stroke:#333333;}#mermaid-figure-2 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-figure-2 .commit-id,#mermaid-figure-2 .commit-msg,#mermaid-figure-2 .branch-label{fill:lightgrey;color:lightgrey;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}#mermaid-figure-2 .branch-label0{fill:#ffffff;}#mermaid-figure-2 .commit0{stroke:hsl(240, 100%, 46.2745098039%);fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight0{stroke:hsl(60, 100%, 3.7254901961%);fill:hsl(60, 100%, 3.7254901961%);}#mermaid-figure-2 .label0{fill:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow0{stroke:hsl(240, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label1{fill:black;}#mermaid-figure-2 .commit1{stroke:hsl(60, 100%, 43.5294117647%);fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-2 .commit-highlight1{stroke:rgb(0, 0, 160.5);fill:rgb(0, 0, 160.5);}#mermaid-figure-2 .label1{fill:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-2 .arrow1{stroke:hsl(60, 100%, 43.5294117647%);}#mermaid-figure-2 .branch-label2{fill:black;}#mermaid-figure-2 .commit2{stroke:hsl(80, 100%, 46.2745098039%);fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight2{stroke:rgb(48.8333333334, 0, 146.5000000001);fill:rgb(48.8333333334, 0, 146.5000000001);}#mermaid-figure-2 .label2{fill:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow2{stroke:hsl(80, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label3{fill:#ffffff;}#mermaid-figure-2 .commit3{stroke:hsl(210, 100%, 46.2745098039%);fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight3{stroke:rgb(146.5000000001, 73.2500000001, 0);fill:rgb(146.5000000001, 73.2500000001, 0);}#mermaid-figure-2 .label3{fill:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow3{stroke:hsl(210, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label4{fill:black;}#mermaid-figure-2 .commit4{stroke:hsl(180, 100%, 46.2745098039%);fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight4{stroke:rgb(146.5000000001, 0, 0);fill:rgb(146.5000000001, 0, 0);}#mermaid-figure-2 .label4{fill:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow4{stroke:hsl(180, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label5{fill:black;}#mermaid-figure-2 .commit5{stroke:hsl(150, 100%, 46.2745098039%);fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight5{stroke:rgb(146.5000000001, 0, 73.2500000001);fill:rgb(146.5000000001, 0, 73.2500000001);}#mermaid-figure-2 .label5{fill:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow5{stroke:hsl(150, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label6{fill:black;}#mermaid-figure-2 .commit6{stroke:hsl(300, 100%, 46.2745098039%);fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight6{stroke:rgb(0, 146.5000000001, 0);fill:rgb(0, 146.5000000001, 0);}#mermaid-figure-2 .label6{fill:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow6{stroke:hsl(300, 100%, 46.2745098039%);}#mermaid-figure-2 .branch-label7{fill:black;}#mermaid-figure-2 .commit7{stroke:hsl(0, 100%, 46.2745098039%);fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-2 .commit-highlight7{stroke:rgb(0, 146.5000000001, 146.5000000001);fill:rgb(0, 146.5000000001, 146.5000000001);}#mermaid-figure-2 .label7{fill:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-2 .arrow7{stroke:hsl(0, 100%, 46.2745098039%);}#mermaid-figure-2 .branch{stroke-width:1;stroke:#333333;stroke-dasharray:2;}#mermaid-figure-2 .commit-label{font-size:10px;fill:#000021;}#mermaid-figure-2 .commit-label-bkg{font-size:10px;fill:#ffffde;opacity:0.5;}#mermaid-figure-2 .tag-label{font-size:10px;fill:#131300;}#mermaid-figure-2 .tag-label-bkg{fill:#ECECFF;stroke:hsl(240, 60%, 86.2745098039%);}#mermaid-figure-2 .tag-hole{fill:#333;}#mermaid-figure-2 .commit-merge{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-2 .commit-reverse{stroke:#ECECFF;fill:#ECECFF;stroke-width:3;}#mermaid-figure-2 .commit-highlight-inner{stroke:#ECECFF;fill:#ECECFF;}#mermaid-figure-2 .arrow{stroke-width:8;stroke-linecap:round;fill:none;}#mermaid-figure-2 .gitTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-figure-2 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
-<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="250" y1="0" x1="0"></line><rect transform="translate(-19, -8.5)" height="21" width="52.6875" y="-0.5" x="-68.6875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.6875, -9.5)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g><line class="branch branch1" y2="90" x2="250" y1="90" x1="0"></line><rect transform="translate(-19, 81.5)" height="21" width="97.703125" y="-0.5" x="-113.703125" ry="4" rx="4" class="branchLabelBkg label1"></rect><g class="branchLabel"><g transform="translate(-123.703125, 80.5)" class="label branch-label1"><text><tspan class="row" x="0" dy="1em" space="preserve">experiment</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path><path class="arrow arrow1" d="M 110 0 L 110 70 A 20 20, 0, 0, 0, 130 90 L 160 90"></path><path class="arrow arrow0" d="M 110 0 L 110 0  110 0 L 210 0"></path></g><g class="commit-bullets"><circle class="commit 0-23e6444 commit0" r="10" cy="0" cx="10"></circle><circle class="commit 1-20b6450 commit0" r="10" cy="0" cx="60"></circle><circle class="commit 2-8d6c5f8 commit0" r="10" cy="0" cx="110"></circle><circle class="commit 3-f1e6b2a commit1" r="10" cy="90" cx="160"></circle><circle class="commit 4-c79bfbf commit0" r="10" cy="0" cx="210"></circle></g><g class="commit-labels"><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 0, 0)"><rect height="15" width="52.2607421875" y="13.5" x="-16.13037109375" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-14.13037109375">0-23e6444</text></g><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 50, 0)"><rect height="15" width="52.2607421875" y="13.5" x="33.86962890625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="35.86962890625">1-20b6450</text></g><g transform="translate(-28.368085937500002, 25.2714453125) rotate(-45, 100, 0)"><rect height="15" width="48.916015625" y="13.5" x="85.5419921875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="87.5419921875">2-8d6c5f8</text></g><g transform="translate(-28.581464843750002, 25.46236328125) rotate(-45, 150, 90)"><rect height="15" width="49.4775390625" y="103.5" x="135.26123046875" class="commit-label-bkg"></rect><text class="commit-label" y="115" x="137.26123046875">3-f1e6b2a</text></g><g transform="translate(-27.2280859375, 24.251445312500003) rotate(-45, 200, 0)"><rect height="15" width="45.916015625" y="13.5" x="187.0419921875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="189.0419921875">4-c79bfbf</text></g></g>
+<g></g><g class="commit-bullets"></g><g class="commit-labels"></g><g><line class="branch branch0" y2="0" x2="250" y1="0" x1="0"></line><rect transform="translate(-19, -8.5)" height="21" width="52.6875" y="-0.5" x="-68.6875" ry="4" rx="4" class="branchLabelBkg label0"></rect><g class="branchLabel"><g transform="translate(-78.6875, -9.5)" class="label branch-label0"><text><tspan class="row" x="0" dy="1em" space="preserve">main</tspan></text></g></g><line class="branch branch1" y2="90" x2="250" y1="90" x1="0"></line><rect transform="translate(-19, 81.5)" height="21" width="97.703125" y="-0.5" x="-113.703125" ry="4" rx="4" class="branchLabelBkg label1"></rect><g class="branchLabel"><g transform="translate(-123.703125, 80.5)" class="label branch-label1"><text><tspan class="row" x="0" dy="1em" space="preserve">experiment</tspan></text></g></g></g><g class="commit-arrows"><path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path><path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 110 0"></path><path class="arrow arrow1" d="M 110 0 L 110 70 A 20 20, 0, 0, 0, 130 90 L 160 90"></path><path class="arrow arrow0" d="M 110 0 L 110 0  110 0 L 210 0"></path></g><g class="commit-bullets"><circle class="commit 0-8d3241a commit0" r="10" cy="0" cx="10"></circle><circle class="commit 1-f8c8d34 commit0" r="10" cy="0" cx="60"></circle><circle class="commit 2-9adcfaf commit0" r="10" cy="0" cx="110"></circle><circle class="commit 3-2c196e4 commit1" r="10" cy="90" cx="160"></circle><circle class="commit 4-9a475a7 commit0" r="10" cy="0" cx="210"></circle></g><g class="commit-labels"><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 0, 0)"><rect height="15" width="52.2607421875" y="13.5" x="-16.13037109375" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="-14.13037109375">0-8d3241a</text></g><g transform="translate(-28.368085937500002, 25.2714453125) rotate(-45, 50, 0)"><rect height="15" width="48.916015625" y="13.5" x="35.5419921875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="37.5419921875">1-f8c8d34</text></g><g transform="translate(-27.2280859375, 24.251445312500003) rotate(-45, 100, 0)"><rect height="15" width="45.916015625" y="13.5" x="87.0419921875" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="89.0419921875">2-9adcfaf</text></g><g transform="translate(-29.425703125000002, 26.217734375) rotate(-45, 150, 90)"><rect height="15" width="51.69921875" y="103.5" x="134.150390625" class="commit-label-bkg"></rect><text class="commit-label" y="115" x="136.150390625">3-2c196e4</text></g><g transform="translate(-29.639082031250002, 26.40865234375) rotate(-45, 200, 0)"><rect height="15" width="52.2607421875" y="13.5" x="183.86962890625" class="commit-label-bkg"></rect><text class="commit-label" y="25" x="185.86962890625">4-9a475a7</text></g></g>
 </svg>
 </div>
 </div>
@@ -1326,24 +1330,24 @@ command-line interface (CLI)<sup>1</sup></p>
 </section>
 <section id="merge-conflict" class="slide level2">
 <h2>merge conflict</h2>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1"></a><span class="ex">❯</span> git pull <span class="at">--rebase</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="ex">Auto-merging</span> main.R</span>
-<span id="cb31-3"><a href="#cb31-3"></a><span class="ex">CONFLICT</span> <span class="er">(</span><span class="ex">content</span><span class="kw">)</span><span class="bu">:</span> Merge conflict in main.R</span>
-<span id="cb31-4"><a href="#cb31-4"></a><span class="ex">error:</span> could not apply 160ea3e... added tidyverse</span>
-<span id="cb31-5"><a href="#cb31-5"></a><span class="ex">hint:</span> Resolve all conflicts manually, mark them as resolved with</span>
-<span id="cb31-6"><a href="#cb31-6"></a><span class="ex">hint:</span> <span class="st">"git add/rm &lt;conflicted_files&gt;"</span>, then run <span class="st">"git rebase --continue"</span>.</span>
-<span id="cb31-7"><a href="#cb31-7"></a><span class="ex">hint:</span> You can instead skip this commit: run <span class="st">"git rebase --skip"</span>.</span>
-<span id="cb31-8"><a href="#cb31-8"></a><span class="ex">hint:</span> To abort and get back to the state before <span class="st">"git rebase"</span>, run <span class="st">"git rebase --abort"</span>.</span>
-<span id="cb31-9"><a href="#cb31-9"></a><span class="ex">Could</span> not apply 160ea3e... added tidyverse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1"></a><span class="ex">❯</span> git pull <span class="at">--rebase</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a><span class="ex">Auto-merging</span> main.R</span>
+<span id="cb32-3"><a href="#cb32-3"></a><span class="ex">CONFLICT</span> <span class="er">(</span><span class="ex">content</span><span class="kw">)</span><span class="bu">:</span> Merge conflict in main.R</span>
+<span id="cb32-4"><a href="#cb32-4"></a><span class="ex">error:</span> could not apply 160ea3e... added tidyverse</span>
+<span id="cb32-5"><a href="#cb32-5"></a><span class="ex">hint:</span> Resolve all conflicts manually, mark them as resolved with</span>
+<span id="cb32-6"><a href="#cb32-6"></a><span class="ex">hint:</span> <span class="st">"git add/rm &lt;conflicted_files&gt;"</span>, then run <span class="st">"git rebase --continue"</span>.</span>
+<span id="cb32-7"><a href="#cb32-7"></a><span class="ex">hint:</span> You can instead skip this commit: run <span class="st">"git rebase --skip"</span>.</span>
+<span id="cb32-8"><a href="#cb32-8"></a><span class="ex">hint:</span> To abort and get back to the state before <span class="st">"git rebase"</span>, run <span class="st">"git rebase --abort"</span>.</span>
+<span id="cb32-9"><a href="#cb32-9"></a><span class="ex">Could</span> not apply 160ea3e... added tidyverse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="section-9" class="slide level2">
 <h2></h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="sc">&lt;</span><span class="er">&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD</span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="fu">library</span>(shiny)</span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="sc">||</span><span class="er">|||||</span> parent of <span class="dv">160</span><span class="fu">ea3e</span> (added tidyverse)</span>
-<span id="cb32-4"><a href="#cb32-4"></a><span class="sc">==</span><span class="er">=====</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb32-6"><a href="#cb32-6"></a><span class="sc">&gt;</span><span class="er">&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="dv">160</span><span class="fu">ea3e</span> (added tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="sc">&lt;</span><span class="er">&lt;&lt;&lt;&lt;&lt;&lt;</span> HEAD</span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="sc">||</span><span class="er">|||||</span> parent of <span class="dv">160</span><span class="fu">ea3e</span> (added tidyverse)</span>
+<span id="cb33-4"><a href="#cb33-4"></a><span class="sc">==</span><span class="er">=====</span></span>
+<span id="cb33-5"><a href="#cb33-5"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb33-6"><a href="#cb33-6"></a><span class="sc">&gt;</span><span class="er">&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="dv">160</span><span class="fu">ea3e</span> (added tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 <img src="img/wtf-logo-square-transparent.png" class="slide-logo r-stretch"><div class="footer footer-default">
