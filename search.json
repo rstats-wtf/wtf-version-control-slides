@@ -326,7 +326,7 @@
     "href": "index.html#branch",
     "title": "Version Control",
     "section": "branch",
-    "text": "branch\n\n\n\n\n\n\nmainexperiment0-309d81b1-825c8562-39e23b03-a0d7446"
+    "text": "branch\n\n\n\n\n\n\nmainexperiment0-b7db9521-0f29b792-6331ced3-bc7d9b1"
   },
   {
     "objectID": "index.html#create-a-branch",
@@ -368,7 +368,7 @@
     "href": "index.html#merge",
     "title": "Version Control",
     "section": "merge",
-    "text": "merge\n\n\n\n\n\n\nmainexperiment0-d5d44b31-e3af4c32-07765e83-9fca940"
+    "text": "merge\n\n\n\n\n\n\nmainexperiment0-0d42bdd1-9b314e22-e91b6313-e1531be"
   },
   {
     "objectID": "index.html#git-merge",
@@ -396,7 +396,21 @@
     "href": "index.html#git-config",
     "title": "Version Control",
     "section": "git config",
-    "text": "git config\ngit config --global push.autoSetupRemote true\n\n\n\n\n\n\n\n\n\nI set this globally because my workflow is pretty basic, ymmv"
+    "text": "git config\ngit config --global push.autoSetupRemote true\n\n\n\n\n\n\n\n\n\n\nI set this globally because my workflow is pretty basic, ymmv"
+  },
+  {
+    "objectID": "index.html#git-push--u",
+    "href": "index.html#git-push--u",
+    "title": "Version Control",
+    "section": "git push -u",
+    "text": "git push -u\n❯ git push -u origin second-branch\nEnumerating objects: 5, done.\nCounting objects: 100% (5/5), done.\nDelta compression using up to 8 threads\nCompressing objects: 100% (2/2), done.\nWriting objects: 100% (3/3), 308 bytes | 308.00 KiB/s, done.\nTotal 3 (delta 0), reused 0 (delta 0), pack-reused 0\nremote:\nremote: Create a pull request for 'second-branch' on GitHub by visiting:\nremote:      https://github.com/edavidaja/intro-git/pull/new/second-branch\nremote:\nTo https://github.com/edavidaja/intro-git.git\n * [new branch]      second-branch -&gt; second-branch\nbranch 'second-branch' set up to track 'origin/second-branch'."
+  },
+  {
+    "objectID": "index.html#permissions-project-management",
+    "href": "index.html#permissions-project-management",
+    "title": "Version Control",
+    "section": "permissions & project management",
+    "text": "permissions & project management\n\n\nGitHub makes it easier to collaborate on who is allowed to make changes to projects and under what circumstances you might want to condition a merge on whether all your test pass with the new code"
   },
   {
     "objectID": "index.html#push-rejection",
@@ -417,7 +431,7 @@
     "href": "index.html#merge-conflicts",
     "title": "Version Control",
     "section": "merge conflicts",
-    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-8d3241a1-f8c8d342-9adcfaf3-2c196e44-9a475a7"
+    "text": "merge conflicts\n\n\n\n\n\n\nmainexperiment0-fdcbbea1-7007a722-3ad737d3-47672b84-8e3ee41"
   },
   {
     "objectID": "index.html#merge-conflict",
