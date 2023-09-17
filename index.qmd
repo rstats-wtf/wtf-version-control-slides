@@ -31,6 +31,23 @@ how should we do that?
   - how will we know we did that?
   - whose edits should win?
 
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # Fanfare when it's over
+  play_sound = FALSE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  bottom = "30%"
+  )
+```
+
 ## some solutions
 
 ::: {layout-nrow=1}
@@ -247,12 +264,39 @@ command-line interface (CLI)[^so]
 
 ## creating
 
-`mkdir`  
-`rmdir`  
-`touch`  
-`cp`  
-`mv`  
-`rm`
+`mkdir <directory-name>`  
+`rmdir <directory-name>`  
+`touch <file-name.ext>`  
+`cp <from-file> <to-file>`  
+`mv `
+
+::: callout-caution
+`rm -rf <directory>`
+::
+
+
+## look around
+
+- create a directory
+- put some files in it
+- delete it
+
+```{r}
+countdown::countdown(
+  minutes = 3,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em",
+  bottom = "30%"
+  )
+```
 
 # workflows: I
 
@@ -542,6 +586,40 @@ To https://github.com/edavidaja/intro-git.git
 branch 'main' set up to track 'origin/main'.
 ```
 
+
+## all together now
+
+```bash
+mkdir intro-git
+cd intro-git
+git init
+touch _quarto.yml
+git stage _quarto.yml
+git commit -m "added quarto yml"
+touch index.qmd
+git stage index.qmd
+git commit -m "added quarto document"
+```
+
+create intro-git on GH  
+follow instructions to push
+
+```{r}
+countdown::countdown(
+  minutes = 10,
+  # Fanfare when it's over
+  play_sound = TRUE,
+  # Set timer theme to match solarized colors
+  color_border              = "#FFFFFF",
+  color_text                = "#7aa81e",
+  color_running_background  = "#7aa81e",
+  color_running_text        = "#FFFFFF",
+  color_finished_background = "#ffa07a",
+  color_finished_text       = "#FFFFFF",
+  font_size = "2em"
+  )
+```
+
 ## `.gitignore`
 
 ```bash
@@ -728,7 +806,7 @@ Switched to branch 'main'
 - commit
 - switch back to main
 
-## 
+## commit on branch
 
 ```bash
 ❯ git commit -am "commit on a branch"
