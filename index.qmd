@@ -329,6 +329,12 @@ nothing to commit (create/copy files and use "git add" to track)
 ## add some files
 
 ```bash
+touch index.qmd
+```
+
+## untracked files
+
+```bash
 ❯ git status
 On branch main
 
